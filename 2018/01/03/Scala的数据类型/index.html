@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>Scala的数据类型 | 木子李</title><meta name="description" content="Scala的数据类型"><meta name="keywords" content="scala"><meta name="author" content="木子李"><meta name="copyright" content="木子李"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="preconnect" href="//cdn.jsdelivr.net"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Scala的数据类型"><meta name="twitter:description" content="Scala的数据类型"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png"><meta property="og:type" content="article"><meta property="og:title" content="Scala的数据类型"><meta property="og:url" content="https://lg118.github.io/2018/01/03/Scala%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"><meta property="og:site_name" content="木子李"><meta property="og:description" content="Scala的数据类型"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = 'false'
+var t = Cookies.get("theme");
+if (autoChangeMode == '1'){
+const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+if (t === undefined){
+  if (isLightMode) activateLightMode()
+  else if (isDarkMode) activateDarkMode()
+  else if (isNotSpecified || hasNoSupport){
+    console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+    now = new Date();
+    hour = now.getHours();
+    isNight = hour < 6 || hour >= 18
+    isNight ? activateDarkMode() : activateLightMode()
+}
+} else if (t == 'light') activateLightMode()
+else activateDarkMode()
+
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"><link rel="canonical" href="https://lg118.github.io/2018/01/03/Scala%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"><link rel="prev" title="Hello World" href="https://lg118.github.io/2019/11/22/hello-world/"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><link rel="dns-prefetch" href="https://hm.baidu.com"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?a51ad774aa1a9485bdd516750dc41615";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://lg118.github.io","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'false',
+  highlight_lang: 'true',
+  highlight_shrink: 'false',
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  copyright: undefined,
+  copy_copyright_js: false,
+  ClickShowText: undefined,
+  medium_zoom: 'true',
+  Snackbar: undefined
+  
+}</script><link rel="alternate" href="/atom.xml" title="木子李" type="application/atom+xml">
+</head><body><div id="header"> <div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">木子李</a></span><i class="fa fa-bars fa-fw toggle-menu pull_right close" aria-hidden="true"></i><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></span><span class="pull_right" id="search_button"></span></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="lazyload avatar_img" src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item is_center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">2</div></a></div></div><div class="mobile_data_item is_center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">1</div></a></div></div><div class="mobile_data_item is_center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">1</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div></div></div><div id="mobile-sidebar-toc"><div class="toc_mobile_headline">目录</div><ol class="toc_mobile_items"><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#前言"><span class="toc_mobile_items-number">1.</span> <span class="toc_mobile_items-text">前言</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-2"><a class="toc_mobile_items-link" href="#Scala的数据类型"><span class="toc_mobile_items-number">2.</span> <span class="toc_mobile_items-text">Scala的数据类型</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-3"><a class="toc_mobile_items-link" href="#Any"><span class="toc_mobile_items-number">2.1.</span> <span class="toc_mobile_items-text">Any</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#AnyVal"><span class="toc_mobile_items-number">2.1.1.</span> <span class="toc_mobile_items-text">AnyVal</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-5"><a class="toc_mobile_items-link" href="#Unit"><span class="toc_mobile_items-number">2.1.1.1.</span> <span class="toc_mobile_items-text">Unit</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-5"><a class="toc_mobile_items-link" href="#总结"><span class="toc_mobile_items-number">2.1.1.2.</span> <span class="toc_mobile_items-text">总结</span></a></li></ol></li><li class="toc_mobile_items-item toc_mobile_items-level-4"><a class="toc_mobile_items-link" href="#AnyRef"><span class="toc_mobile_items-number">2.1.2.</span> <span class="toc_mobile_items-text">AnyRef</span></a><ol class="toc_mobile_items-child"><li class="toc_mobile_items-item toc_mobile_items-level-5"><a class="toc_mobile_items-link" href="#Nothing"><span class="toc_mobile_items-number">2.1.2.1.</span> <span class="toc_mobile_items-text">Nothing</span></a></li><li class="toc_mobile_items-item toc_mobile_items-level-5"><a class="toc_mobile_items-link" href="#Null"><span class="toc_mobile_items-number">2.1.2.2.</span> <span class="toc_mobile_items-text">Null</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div id="body-wrap"><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true">     </i><div class="auto_open" id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Scala的数据类型"><span class="toc-number">2.</span> <span class="toc-text">Scala的数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Any"><span class="toc-number">2.1.</span> <span class="toc-text">Any</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#AnyVal"><span class="toc-number">2.1.1.</span> <span class="toc-text">AnyVal</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Unit"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">Unit</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#总结"><span class="toc-number">2.1.1.2.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AnyRef"><span class="toc-number">2.1.2.</span> <span class="toc-text">AnyRef</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Nothing"><span class="toc-number">2.1.2.1.</span> <span class="toc-text">Nothing</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Null"><span class="toc-number">2.1.2.2.</span> <span class="toc-text">Null</span></a></li></ol></li></ol></li></ol></li></ol></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png)"><div id="post-info"><div id="post-title"><div class="posttitle">Scala的数据类型</div></div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2018-01-03<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-12-13</time><span class="post-meta__separator mobile_hidden">|</span><span class="mobile_hidden"><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/Scala/">Scala</a></span><div class="post-meta-wordcount"><i class="fa fa-file-word-o post-meta__icon" aria-hidden="true"></i><span>字数总计: </span><span class="word-count">776</span><span class="post-meta__separator">|</span><i class="fa fa-clock-o post-meta__icon" aria-hidden="true"></i><span>阅读时长: 2 分钟</span><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true">       </i><span>阅读量: </span><span id="busuanzi_value_page_pv"></span></div></div></div></div><div class="layout layout_post" id="content-inner">   <article id="post"><div class="article-container" id="post-content"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>学过Java我们知道Java中的数据类型分为：基本数据类型和引用数据类型。</p>
+<p>Java中的基本数据类型不能当作对象使用，所以Java也不能称之为纯面向对象的语言。</p>
+<p>而今天我们介绍的Scala却是一个纯面向对象的语言，真的很纯哦。。。。</p>
+<p>那么，既然Scala是一个纯面向对象的语言，所以其中的数据类型应该也和对象有关联，接下来我们就来看看Scala中的数据类型。</p>
+<h2 id="Scala的数据类型"><a href="#Scala的数据类型" class="headerlink" title="Scala的数据类型"></a>Scala的数据类型</h2><p>在Scala中，所有的值（包括数值和函数）都有类型，下图展示了Scala中数据类型层次结构：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">![<span class="string">data.jpg</span>](<span class="link">https://i.loli.net/2019/12/13/9tvcKjRgbFym8Qo.jpg</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Any"><a href="#Any" class="headerlink" title="Any"></a>Any</h3><ul>
+<li><p>Any是Scala中所有数据类型的超类型，也叫做<strong><em>顶级类型</em></strong>。</p>
+</li>
+<li><p>Any定义了一些通用的方法：equals、hashCode、toString和getClass等。</p>
+</li>
+<li><p>Any有两个直接的子类：</p>
+<ul>
+<li><p><strong>AnyVal</strong></p>
+</li>
+<li><p><strong>AnyRef</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="AnyVal"><a href="#AnyVal" class="headerlink" title="AnyVal"></a>AnyVal</h4><ul>
+<li><p>AnyVal表示<strong>值类型</strong></p>
+</li>
+<li><p>AnyVal包括9个子类型：</p>
+<ol>
+<li>Byte</li>
+<li>Short</li>
+<li>Int</li>
+<li>Long</li>
+<li>Char</li>
+<li>Float</li>
+<li>Double</li>
+<li>Boolean</li>
+<li>Unit</li>
+</ol>
+<p>其中1-7又被称为<strong><em>数值类型</em></strong>（numeric value types）;</p>
+<p>​        8-9又被称为<strong><em>非数值类型</em></strong>（non-numeric value types）</p>
+</li>
+</ul>
+<p>  <strong>当然，AnyVal的9个子类型还有一种分组方式：</strong></p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- The &apos;&apos;subrange types&apos;&apos; are [[scala.Byte]], [[scala.Short]], and [[scala.Char]].</span><br><span class="line"></span><br><span class="line">- The &apos;&apos;integer types&apos;&apos; include the subrange types as well as [[scala.Int]] and [[scala.Long]].</span><br><span class="line"></span><br><span class="line">- The &apos;&apos;floating point types&apos;&apos; are [[scala.Float]] and [[scala.Double]].</span><br></pre></td></tr></table></figure>
+<h5 id="Unit"><a href="#Unit" class="headerlink" title="Unit"></a>Unit</h5><p>  ​    Unit是不带任何意义的值类型，它仅有一个实例可以像这样声明：()。</p>
+<p>  ​    因为Scala中所有的函数必须有返回，所以说有时候Unit也是有用的返回类型。</p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>  AnyVal的9种类型 就是java中8种基本数据类型 + Unit类型。不过Scala中的Byte、Int等不是基本数据类型，而是可以做对象使用的。比如：</p>
+  <figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> num:<span class="type">Int</span> = <span class="number">10</span></span><br><span class="line">println(num.toString)<span class="comment">//num可以调用方法</span></span><br></pre></td></tr></table></figure>
+<h4 id="AnyRef"><a href="#AnyRef" class="headerlink" title="AnyRef"></a>AnyRef</h4><ul>
+<li><p>AnyRef代表引用类型。</p>
+</li>
+<li><p>所有非值类型都被定义为引用类型。</p>
+</li>
+<li><p>在Scala中，每个用户自定义的类型都是AnyRef的子类型。</p>
+</li>
+<li><p>如果Scala被应用在Java的运行环境中，AnyRef相当于java.lang.Object。</p>
+</li>
+</ul>
+<h5 id="Nothing"><a href="#Nothing" class="headerlink" title="Nothing"></a>Nothing</h5><ul>
+<li><p>Nothing是所有类型的子类型，也称为<strong><em>底部类型</em></strong></p>
+</li>
+<li><p>没有一个值是Nothing类型的。它的用途之一是给出非正常终止的信号，如抛出异常、程序退出或者一个无限循环（可以理解为它是一个不对值进行定义的表达式的类型，或者是一个不能正常返回的方法）。</p>
+<p><strong><em>比如：</em></strong></p>
+<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="comment">//该方法是用来抛出异常的，不需要返回具体的结果。所以返回值定义成Nothing即可</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">break</span></span>(): <span class="type">Nothing</span> = &#123; <span class="keyword">throw</span> breakException &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="Null"><a href="#Null" class="headerlink" title="Null"></a>Null</h5><ul>
+<li><p>Null是所有引用类型的子类型（即AnyRef的任意子类型）。</p>
+</li>
+<li><p>它有一个单例值由关键字null所定义。</p>
+</li>
+<li><p>Null主要是使得Scala满足和其他JVM语言的互操作性，但是几乎不应该在Scala代码中使用。</p>
+<p><strong><em>比如：</em></strong></p>
+<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> </span>&#123;</span><br><span class="line">  <span class="comment">//在类型定义的属性，初始化的时候就不推荐使用null,而是用_</span></span><br><span class="line">  <span class="keyword">var</span> name:<span class="type">String</span>=_</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" target="_blank" rel="noopener">木子李</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://lg118.github.io/2018/01/03/Scala%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">https://lg118.github.io/2018/01/03/Scala%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://lg118.github.io">木子李</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/scala/">scala    </a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button"><i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/wechat.jpg"><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/alipay.jpg"><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull-full"><a href="/2019/11/22/hello-world/"><img class="prev_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/cover/default_bg.png" onerror="onerror=null;src='/img/404.jpg'"><div class="label">上一篇</div><div class="prev_info"><span>Hello World</span></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: '348f080fa76566489252',
+  clientSecret: '1a35362bf0c70de810bc375773dc272624f5e5ec',
+  repo: 'https://github.com/lg118/lg118.github.io',
+  owner: 'lg118',
+  admin: 'lg118',
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN'
+})
+gitalk.render('gitalk-container')</script></div></div></div><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2019 By 木子李</div><div class="framework-info"><span>技术 </span><a href="https://lg118.github.io"><span>博客</span></a><span class="footer-separator">|</span><span>分享 </span><a href="https://lg118.github.io"><span>学习</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://lg118.github.io/">blog</a>!</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script></body></html>
