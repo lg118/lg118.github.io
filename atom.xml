@@ -5,9 +5,9 @@
   <subtitle>JUST DO IT</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://muzilig.gitee.io/"/>
-  <updated>2020-01-08T11:58:08.672Z</updated>
-  <id>http://muzilig.gitee.io/</id>
+  <link href="https://lg118.github.io/"/>
+  <updated>2020-11-10T06:40:24.076Z</updated>
+  <id>https://lg118.github.io/</id>
   
   <author>
     <name>木子李</name>
@@ -17,9 +17,63 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux学习-02</title>
+    <link href="https://lg118.github.io/2020/11/10/Linux%E5%AD%A6%E4%B9%A0-02/"/>
+    <id>https://lg118.github.io/2020/11/10/Linux%E5%AD%A6%E4%B9%A0-02/</id>
+    <published>2020-11-10T06:36:11.244Z</published>
+    <updated>2020-11-10T06:40:24.076Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Vim编辑器"><a href="#Vim编辑器" class="headerlink" title="Vim编辑器"></a>Vim编辑器</h2><p>vim 是 vi 的增强版</p><p>ctrl+s 锁定shell窗口</p><p>ctrl+q 解锁shell窗口</p><p><img alt="1604990135712.png" data-src="https://i.loli.net/2020/11/10/EtaezGNJrdy5x6f.png" class="lazyload"></p><h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">d: 删除  y：复制</span><br><span class="line">dd  删除当前行 -- 剪切</span><br><span class="line">dG 从当前行删除到行尾</span><br><span class="line">dgg  从当前行删除到行首</span><br><span class="line">ndd  从当前光标行开始删除n行</span><br><span class="line">D    从光标开始删除到行尾</span><br><span class="line">d0   从光标开始删除到行首</span><br><span class="line">yy  复制当前行</span><br><span class="line">nyy  复制n行</span><br><span class="line">p  粘贴到光标位置</span><br><span class="line">u  (undo) 撤销</span><br><span class="line">ctrl+r  撤销还原</span><br><span class="line">gg  回到行首</span><br><span class="line">ngg 回到第n行</span><br><span class="line">shift + g  回到行尾</span><br><span class="line">ygg   从当前行复制到行首</span><br><span class="line">yG    从当前行复制到行尾</span><br><span class="line">0 或者 ^      回到当前行的开始位置</span><br><span class="line"><span class="meta">$</span><span class="bash">     回到当前行的尾部位置</span></span><br><span class="line">/搜索的文字   n 表示下一个  N 向上查找</span><br><span class="line">/^字符串    查找以什么字符串开头的</span><br><span class="line">/字符串$    查找以什么字符串结尾的</span><br><span class="line">   如果替换的时候需要忽略大小写，需要到末行模式设置set noic</span><br><span class="line">r  替换单个字符</span><br><span class="line">shift+r  进入替换模式  替换光标后的多个字符</span><br><span class="line">x 从光标位置开始逐一删除后面的内容</span><br><span class="line">shift+x 从光标位置开始逐一删除前面的内容</span><br><span class="line">替换模式 ---&gt; esc ---&gt; 命令模式</span><br></pre></td></tr></table></figure><h3 id="末行模式（底部扩展命令模式）"><a href="#末行模式（底部扩展命令模式）" class="headerlink" title="末行模式（底部扩展命令模式）"></a>末行模式（底部扩展命令模式）</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">替换语法：</span><br><span class="line">:[范围] s/old/new/[选项]</span><br><span class="line">-------------------------------</span><br><span class="line">:s/root/abc/  将光标所在行的第一个root换成abc</span><br><span class="line">:2,2 s/root/abc/   将第二行的第一个root换成abc   </span><br><span class="line">:1,2 s/root/abc/g  将第一行到二行的所有的root换成abc   </span><br><span class="line">:% s/root/abc/g    将所有行的所有root换成abc</span><br><span class="line">:% s/.$//     将所有行的最后一个字符替换成空</span><br><span class="line">备注：上面的/是可以用其他的符号替换的。都遇见匹配的内容有/的时候就可以用其他符号</span><br><span class="line">比如：</span><br><span class="line">:s #/dev/null#abc#   将光标所在行的第一个/dev/null替换成abc</span><br><span class="line">:% s/.*/&amp;#/   在所有行的末尾添加#</span><br><span class="line">.* 表示一行的所有内容</span><br><span class="line">&amp; 表示的就是匹配到的内容</span><br><span class="line">--------------------------------</span><br><span class="line">:set nu  显示行号</span><br><span class="line">:set nonu 取消行号</span><br><span class="line">:set ic (ignore case) 忽略大小写</span><br><span class="line">:set noic 区分大小写</span><br><span class="line">:set list 查字符串中的符号  比如可以看换行符 空格符  制表符</span><br><span class="line">:set nolist 取消显示符号</span><br><span class="line">:set ai 设置缩进</span><br><span class="line">:set noai 取消缩进</span><br></pre></td></tr></table></figure><h3 id="可视化模式（visual）"><a href="#可视化模式（visual）" class="headerlink" title="可视化模式（visual）"></a>可视化模式（visual）</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ctrl+v 可视化块</span><br><span class="line">shfit+v 可视化行</span><br><span class="line"></span><br><span class="line">shfit + &gt; 向右缩进</span><br><span class="line">shfit + &lt; 向左缩进</span><br><span class="line"></span><br><span class="line">在多行前添加内容</span><br><span class="line">先选中内容 --&gt; I ---&gt; 输入添加的内容 --&gt;esc</span><br><span class="line">x 和 d 删除选中内容</span><br><span class="line">y 是复制</span><br></pre></td></tr></table></figure><h2 id="Linux文件类型"><a href="#Linux文件类型" class="headerlink" title="Linux文件类型"></a>Linux文件类型</h2><p>在LInux中一切皆文件。Linux中的文件是没有扩展名的。Linux文件如果加上扩展名也仅仅是告诉开发人员看的。</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">d：文件夹</span><br><span class="line">-：文件</span><br><span class="line">l：链接文件</span><br><span class="line">b：块设备文件  硬盘  U盘</span><br><span class="line">c: 字符设备文件  打印机  终端</span><br><span class="line">s：socket文件</span><br></pre></td></tr></table></figure><p>可以使用<code>file</code>命名查看文件和目录类型</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@hadoop10 dev]# file vcs</span><br><span class="line">vcs: character special</span><br></pre></td></tr></table></figure><h2 id="Linux文件的时间"><a href="#Linux文件的时间" class="headerlink" title="Linux文件的时间"></a>Linux文件的时间</h2><p>Access Time（atime）: 访问时间</p><p>访问时间要发生变化需要满足以下任意一个条件：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1、有数据写入</span><br><span class="line">2、本次访问时间和上一次访问时间间隔达到86400秒</span><br></pre></td></tr></table></figure><p>Modify Time (mtime): 文件内容发生变化的时间</p><p>Change Time (ctime): 文件属性发生变化的时间</p><h2 id="查看文件的属性"><a href="#查看文件的属性" class="headerlink" title="查看文件的属性"></a>查看文件的属性</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">stat 文件</span><br><span class="line"></span><br><span class="line">[root@hadoop10 opt]# stat 2.txt </span><br><span class="line">  File: `2.txt'</span><br><span class="line">  Size: 51      Blocks: 8      IO Block: 4096      regular file</span><br><span class="line">Device: fd00h/64768d    Inode: 267517      Links: 1</span><br><span class="line">Access: (0700/-rwx------)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2020-07-30 16:45:31.291999243 +0800</span><br><span class="line">Modify: 2020-07-30 16:45:31.291999243 +0800</span><br><span class="line">Change: 2020-07-30 16:45:31.362999191 +0800</span><br></pre></td></tr></table></figure><h2 id="复制和移动"><a href="#复制和移动" class="headerlink" title="复制和移动"></a>复制和移动</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp 文件  指定的文件路径  #拷贝文件到指定路径</span><br><span class="line">mv 文件/目录  指定的路径  #剪切文件/目录到指定路径  可以重命名文件</span><br><span class="line">cp -r 目录  指定的路径  #拷贝目录到指定路径</span><br></pre></td></tr></table></figure><h2 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat 文件</span><br><span class="line">head 文件 # 默认查看文件的前10行内容</span><br><span class="line">head -n 2 文件  # 查看文件的前2行内容</span><br><span class="line">tail 文件 # 默认查看文件的最后10行内容</span><br><span class="line">tail -n 2 文件  # 查看文件的最后2行内容</span><br><span class="line">tail -f 文件  # 根据文件的描述符信息监控文件。文件名更改后就监控不到了</span><br><span class="line">tail -F 文件 # 根据文件的名称监控文件，而且还有重试</span><br><span class="line">more 文件   # 分页查看</span><br><span class="line">    空格 下一页</span><br><span class="line">    b   上一页</span><br><span class="line">    回车 下一行</span><br><span class="line">less 文件    # 可以接收命令</span><br><span class="line">    空格 下一页</span><br><span class="line">    b   上一页</span><br><span class="line">    回车 下一行</span><br><span class="line">    q 退出</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Vim编辑器&quot;&gt;&lt;a href=&quot;#Vim编辑器&quot; class=&quot;headerlink&quot; title=&quot;Vim编辑器&quot;&gt;&lt;/a&gt;Vim编辑器&lt;/h2&gt;&lt;p&gt;vim 是 vi 的增强版&lt;/p&gt;
+&lt;p&gt;ctrl+s 锁定shell窗口&lt;/p&gt;
+&lt;p&gt;ctrl+q 解锁
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://lg118.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://lg118.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux学习-01</title>
+    <link href="https://lg118.github.io/2020/11/10/Linux%E5%AD%A6%E4%B9%A0-01/"/>
+    <id>https://lg118.github.io/2020/11/10/Linux%E5%AD%A6%E4%B9%A0-01/</id>
+    <published>2020-11-10T06:27:36.969Z</published>
+    <updated>2020-11-10T06:39:12.785Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Linux介绍"><a href="#Linux介绍" class="headerlink" title="Linux介绍"></a>Linux介绍</h2><p>​     Linux是一个基于<a href="https://baike.baidu.com/item/POSIX" target="_blank" rel="noopener">POSIX</a>和Unix的多用户、<a href="https://baike.baidu.com/item/多任务/1011764" target="_blank" rel="noopener">多任务</a>、支持<a href="https://baike.baidu.com/item/多线程/1190404" target="_blank" rel="noopener">多线程</a>和多<a href="https://baike.baidu.com/item/CPU" target="_blank" rel="noopener">CPU</a>的操作系统 </p><p><strong>平常说的Linux其实真正指的是Linux的内核。</strong></p><blockquote><p>RedHat：企业版、社区版</p><p>CentOS：就是RedHat的社区版</p><p>Ubuntu: 乌班图</p><p>中标麒麟：Kylin</p></blockquote><h2 id="Linux用户和用户组"><a href="#Linux用户和用户组" class="headerlink" title="Linux用户和用户组"></a>Linux用户和用户组</h2><p>root 是超级管理员。大Boss</p><p>推荐学习网站：<a href="https://man.linuxde.net/" target="_blank" rel="noopener">https://man.linuxde.net/</a></p><h3 id="使用帮助"><a href="#使用帮助" class="headerlink" title="使用帮助"></a>使用帮助</h3><p>1、命令  —help</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">useradd --help</span><br></pre></td></tr></table></figure><p>2、man 命令  （manual）</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">man手册的章节：</span><br><span class="line">1      User Commands</span><br><span class="line">5      File Formats and Conventions</span><br><span class="line">8      System Administration tools and Deamons</span><br></pre></td></tr></table></figure><p>按enter下一页</p><p>按q退出man</p><h3 id="清屏"><a href="#清屏" class="headerlink" title="清屏"></a>清屏</h3><p><code>ctrl + l</code></p><h3 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">useradd 用户名</span><br><span class="line">passwd 用户名</span><br></pre></td></tr></table></figure><p>在linux中添加用户会发生以下事情：</p><p>1、每一个用户都有自己的家的路径，叫做家目录(home)</p><p>每一个用户登录Linux系统都会进入自己家目录</p><p><code>~</code>表示的就是用户的家目录</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/root  这是root的家目录</span><br><span class="line">/home/用户名   普通用户的家目录</span><br></pre></td></tr></table></figure><p>2、每一个用户都有自己的用户组。如果在创建用户的时候没有明确的指定用户组，默认就是使用自己的用户名作为组名。</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat /etc/group   # 查看组信息</span><br><span class="line"></span><br><span class="line">cat /etc/passwd  #查看用户信息</span><br></pre></td></tr></table></figure><p>3、有自己的邮件地址</p><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/var/mail</span><br></pre></td></tr></table></figure><h3 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Usage: userdel [options] LOGIN</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -r, --remove                  remove home directory and mail spool</span><br></pre></td></tr></table></figure><p>删除用户的时候是否需要删除家目录？？？</p><p>   根据删除用户时，用户的数据是否还需要使用。一般情况下删除用户先不要删家目录。</p><h3 id="修改用户"><a href="#修改用户" class="headerlink" title="修改用户"></a>修改用户</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Usage: usermod [options] LOGIN</span><br></pre></td></tr></table></figure><h3 id="添加组"><a href="#添加组" class="headerlink" title="添加组"></a>添加组</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Usage: groupadd [options] GROUP</span><br></pre></td></tr></table></figure><h3 id="删除组"><a href="#删除组" class="headerlink" title="删除组"></a>删除组</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@hadoop10 hadoop]# groupdel baby</span><br><span class="line">groupdel: cannot remove the primary group of user 'xiaoming'</span><br></pre></td></tr></table></figure><h3 id="修改组"><a href="#修改组" class="headerlink" title="修改组"></a>修改组</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Usage: groupmod [options] GROUP</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -g, --gid GID                 change the group ID to GID</span><br><span class="line">  -h, --help                    display this help message and exit</span><br><span class="line">  -n, --new-name NEW_GROUP      change the name to NEW_GROUP</span><br></pre></td></tr></table></figure><h3 id="id"><a href="#id" class="headerlink" title="id"></a>id</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@hadoop10 var]# id</span><br><span class="line"></span><br><span class="line">uid=0(root) gid=0(root) groups=0(root) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023</span><br></pre></td></tr></table></figure><h3 id="whoami"><a href="#whoami" class="headerlink" title="whoami"></a>whoami</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@hadoop10 var]# whoami</span><br><span class="line">root</span><br></pre></td></tr></table></figure><h2 id="Linux文件系统"><a href="#Linux文件系统" class="headerlink" title="Linux文件系统"></a>Linux文件系统</h2><p>在Linux中是没有盘符的概念的。只有目录树层次结构</p><p>根目录就是 <code>/</code></p><p><img alt="image-20200729165157269.png" data-src="https://i.loli.net/2020/11/10/DTSLFaterzUgqlb.png" class="lazyload"></p><p><strong>*</strong> 在Linux中一切皆文件</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/bin：普通用户执行的命令</span><br><span class="line">/sbin: 管理员执行的命令</span><br><span class="line">/etc: 配置文件的目录</span><br><span class="line">/dev/null: 可以理解成回收站 里面永远是空的</span><br><span class="line">/home：普通用户的家目录</span><br><span class="line">/root: root用户的家目录</span><br><span class="line">/opt: 程序安装目录</span><br><span class="line">/proc: 程序的进程信息</span><br><span class="line">/usr/local: 程序安装目录</span><br><span class="line">/var: 存放变化的文件 日志、mail</span><br></pre></td></tr></table></figure><h3 id="文件和目录命令"><a href="#文件和目录命令" class="headerlink" title="文件和目录命令"></a>文件和目录命令</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd ~   #回到家目录</span><br><span class="line">cd     #回到家目录</span><br><span class="line">cd ..  #返回上级目录</span><br><span class="line">cd .   #当前目录</span><br><span class="line">cd -   #返回上一次的目录</span><br><span class="line">cd 路径 #进入指定路径</span><br><span class="line"></span><br><span class="line">ls: #查看目录下的文件和目录</span><br><span class="line">ls -l #详细信息显示目录下的文件和目录</span><br><span class="line">   -h #人性化</span><br><span class="line">   -a #all 包含隐藏文件</span><br><span class="line">ll 是ls -l的别名</span><br><span class="line"></span><br><span class="line">pwd #查看当前所在目录</span><br><span class="line"></span><br><span class="line">绝对路径：以/开头的</span><br><span class="line"></span><br><span class="line">相对路径：不是以/开头的</span><br></pre></td></tr></table></figure><h3 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir --help</span><br><span class="line">Usage: mkdir [OPTION]... DIRECTORY...</span><br><span class="line">  -p, --parents     no error if existing, make parent directories as needed</span><br><span class="line">  -v, --verbose     print a message for each created directory</span><br></pre></td></tr></table></figure><h3 id="删除文件夹"><a href="#删除文件夹" class="headerlink" title="删除文件夹"></a>删除文件夹</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rmdir 目录 #删除空目录</span><br><span class="line">rm -r -f # 递归强制删除目录和文件    谨慎使用</span><br></pre></td></tr></table></figure><h3 id="文件命令"><a href="#文件命令" class="headerlink" title="文件命令"></a>文件命令</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">touch 文件名 # 创建一个空文件;修改文件的时间</span><br><span class="line">cat 文件 # 查看文件内容</span><br><span class="line"></span><br><span class="line">echo “java”  #输出内容 默认到屏幕</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Linux介绍&quot;&gt;&lt;a href=&quot;#Linux介绍&quot; class=&quot;headerlink&quot; title=&quot;Linux介绍&quot;&gt;&lt;/a&gt;Linux介绍&lt;/h2&gt;&lt;p&gt;​     Linux是一个基于&lt;a href=&quot;https://baike.baidu.com/i
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://lg118.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://lg118.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>大数据平台的利器--Ambari+HDP</title>
-    <link href="http://muzilig.gitee.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/"/>
-    <id>http://muzilig.gitee.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/</id>
+    <link href="https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/"/>
+    <id>https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/</id>
     <published>2020-01-07T16:00:00.000Z</published>
     <updated>2020-01-08T11:58:08.672Z</updated>
     
@@ -36,17 +90,17 @@
     </summary>
     
     
-      <category term="Ambari+HDP" scheme="http://muzilig.gitee.io/categories/Ambari-HDP/"/>
+      <category term="Ambari+HDP" scheme="https://lg118.github.io/categories/Ambari-HDP/"/>
     
     
-      <category term="Ambari" scheme="http://muzilig.gitee.io/tags/Ambari/"/>
+      <category term="Ambari" scheme="https://lg118.github.io/tags/Ambari/"/>
     
   </entry>
   
   <entry>
     <title>Scala隐式转换的问题分析</title>
-    <link href="http://muzilig.gitee.io/2019/12/24/Scala%E4%B8%AD%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/"/>
-    <id>http://muzilig.gitee.io/2019/12/24/Scala%E4%B8%AD%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/</id>
+    <link href="https://lg118.github.io/2019/12/24/Scala%E4%B8%AD%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/"/>
+    <id>https://lg118.github.io/2019/12/24/Scala%E4%B8%AD%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/</id>
     <published>2019-12-23T16:00:00.000Z</published>
     <updated>2019-12-24T12:01:24.945Z</updated>
     
@@ -62,17 +116,17 @@
     </summary>
     
     
-      <category term="Scala" scheme="http://muzilig.gitee.io/categories/Scala/"/>
+      <category term="Scala" scheme="https://lg118.github.io/categories/Scala/"/>
     
     
-      <category term="scala" scheme="http://muzilig.gitee.io/tags/scala/"/>
+      <category term="scala" scheme="https://lg118.github.io/tags/scala/"/>
     
   </entry>
   
   <entry>
     <title>Oracle安装和卸载</title>
-    <link href="http://muzilig.gitee.io/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/"/>
-    <id>http://muzilig.gitee.io/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/</id>
+    <link href="https://lg118.github.io/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/"/>
+    <id>https://lg118.github.io/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/</id>
     <published>2018-03-09T16:00:00.000Z</published>
     <updated>2019-12-16T03:38:19.205Z</updated>
     
@@ -88,17 +142,17 @@
     </summary>
     
     
-      <category term="数据库" scheme="http://muzilig.gitee.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://lg118.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="Oracle" scheme="http://muzilig.gitee.io/tags/Oracle/"/>
+      <category term="Oracle" scheme="https://lg118.github.io/tags/Oracle/"/>
     
   </entry>
   
   <entry>
     <title>Scala的数据类型</title>
-    <link href="http://muzilig.gitee.io/2018/03/01/Scala%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
-    <id>http://muzilig.gitee.io/2018/03/01/Scala%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</id>
+    <link href="https://lg118.github.io/2018/03/01/Scala%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>https://lg118.github.io/2018/03/01/Scala%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</id>
     <published>2018-02-28T16:00:00.000Z</published>
     <updated>2019-12-16T05:39:10.495Z</updated>
     
@@ -115,10 +169,10 @@
     </summary>
     
     
-      <category term="Scala" scheme="http://muzilig.gitee.io/categories/Scala/"/>
+      <category term="Scala" scheme="https://lg118.github.io/categories/Scala/"/>
     
     
-      <category term="scala" scheme="http://muzilig.gitee.io/tags/scala/"/>
+      <category term="scala" scheme="https://lg118.github.io/tags/scala/"/>
     
   </entry>
   
