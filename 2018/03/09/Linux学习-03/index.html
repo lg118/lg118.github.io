@@ -1,30 +1,160 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang=zh>
 <head>
-    <meta charset="UTF-8">
+    <!-- so meta -->
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>
-        木子李G
-    </title>
-    <link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="查询命令which 命令   #查询的命令要求是配置了环境变量的。whereis  命令  #查询命令、源码文件、帮助手册 查询文件locate 文件名  #locate本地维护了一个数据库，查询的时候根据索引进行文件查找updatedb  #更新数据库locate的数据库每天更新一次，为了确保能够准确的查询出文件，建议查询前先更新数据库------------------------------">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux学习-03">
+<meta property="og:url" content="https:&#x2F;&#x2F;lg118.github.io&#x2F;2018&#x2F;03&#x2F;09&#x2F;Linux%E5%AD%A6%E4%B9%A0-03&#x2F;index.html">
+<meta property="og:site_name" content="木子李G">
+<meta property="og:description" content="查询命令which 命令   #查询的命令要求是配置了环境变量的。whereis  命令  #查询命令、源码文件、帮助手册 查询文件locate 文件名  #locate本地维护了一个数据库，查询的时候根据索引进行文件查找updatedb  #更新数据库locate的数据库每天更新一次，为了确保能够准确的查询出文件，建议查询前先更新数据库------------------------------">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-08T16:00:00.000Z">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Linux学习-03</title>
+    <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
 <link rel="alternate" href="/atom.xml" title="木子李G" type="application/atom+xml">
 </head>
 
-<body id="bodyx">
-    <div class="hd posts">
-    <a href="/index.html"><i class="fa fa-reply replay-btn" aria-hidden="true"></i></a>
-    <div class="post-title">
-        <p>
-            Linux学习-03
-        </p>
-        <hr>
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/link/">link</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/03/10/Linux%E5%AD%A6%E4%B9%A0-05/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&text=Linux学习-03" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&title=Linux学习-03" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&is_video=false&description=Linux学习-03" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Linux学习-03&body=Check out this article: https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&title=Linux学习-03" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&title=Linux学习-03" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&title=Linux学习-03" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&title=Linux学习-03" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&name=Linux学习-03&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&t=Linux学习-03" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
     </div>
-    <div class="post-content">
-        <h2 id="查询命令"><a href="#查询命令" class="headerlink" title="查询命令"></a>查询命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">which 命令   #查询的命令要求是配置了环境变量的。</span><br><span class="line">whereis  命令  #查询命令、源码文件、帮助手册</span><br></pre></td></tr></table></figure>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#查询命令"><span class="toc-number">1.</span> <span class="toc-text">查询命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查询文件"><span class="toc-number">2.</span> <span class="toc-text">查询文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#过滤"><span class="toc-number">3.</span> <span class="toc-text">过滤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#管道"><span class="toc-number">4.</span> <span class="toc-text">管道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#追加和重定向-覆盖"><span class="toc-number">5.</span> <span class="toc-text">追加和重定向(覆盖)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件的权限UGO"><span class="toc-number">6.</span> <span class="toc-text">文件的权限UGO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更改文件的用户及用户组"><span class="toc-number">7.</span> <span class="toc-text">更改文件的用户及用户组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打包和压缩"><span class="toc-number">8.</span> <span class="toc-text">打包和压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软连接"><span class="toc-number">9.</span> <span class="toc-text">软连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rpm包的安装"><span class="toc-number">10.</span> <span class="toc-text">rpm包的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yum"><span class="toc-number">11.</span> <span class="toc-text">yum</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#更改yum源"><span class="toc-number">11.1.</span> <span class="toc-text">更改yum源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yum-命令"><span class="toc-number">11.2.</span> <span class="toc-text">yum 命令</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Linux学习-03
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">木子李</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2018-03-08T16:00:00.000Z" itemprop="datePublished">2018-03-09</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Linux/">Linux</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Linux/" rel="tag">Linux</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="查询命令"><a href="#查询命令" class="headerlink" title="查询命令"></a>查询命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">which 命令   #查询的命令要求是配置了环境变量的。</span><br><span class="line">whereis  命令  #查询命令、源码文件、帮助手册</span><br></pre></td></tr></table></figure>
 <h2 id="查询文件"><a href="#查询文件" class="headerlink" title="查询文件"></a>查询文件</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">locate 文件名  #locate本地维护了一个数据库，查询的时候根据索引进行文件查找</span><br><span class="line">updatedb  #更新数据库</span><br><span class="line">locate的数据库每天更新一次，为了确保能够准确的查询出文件，建议查询前先更新数据库</span><br><span class="line">----------------------------------</span><br><span class="line">find 根据目录的层次结构进行搜索</span><br><span class="line">find / -name java.txt  #从/开始查找名字是java.txt的文件</span><br><span class="line">find /opt/ -size +100M #从/opt目录中查找大小大于100M的文件</span><br><span class="line">find / -user hadoop #从/开始查找属于hadoop用户的文件</span><br><span class="line">find / -atime -5 #从/开始查找访问时间是5天前的文件</span><br></pre></td></tr></table></figure>
 <h2 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">grep [OPTION]... PATTERN [FILE]...</span><br><span class="line">在遇到pattern的地方，*就是正则符号 </span><br><span class="line">---------------------------------------------</span><br><span class="line">-n: #过滤后的内容显示行号</span><br><span class="line">[root@hadoop10 opt]# grep -n 'hello' word.txt </span><br><span class="line">1:hello java</span><br><span class="line"></span><br><span class="line">-o: #仅显示匹配到的内容</span><br><span class="line">[root@hadoop10 opt]# grep -o 'hello' word.txt  </span><br><span class="line">hello</span><br><span class="line"></span><br><span class="line">-i #忽略大小写</span><br><span class="line">[root@hadoop10 opt]# grep -io 'HELLO' word.txt </span><br><span class="line">hello</span><br><span class="line"></span><br><span class="line">-v # 显示未匹配到的内容</span><br><span class="line">[root@hadoop10 opt]# grep -iv 'HELLO' word.txt  </span><br><span class="line">hadoop linux</span><br><span class="line"></span><br><span class="line">grep -E  ===&gt; egrep</span><br></pre></td></tr></table></figure>
 <h2 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">语法：</span><br><span class="line">  命令1 | 命令2 # 命令1的输出是命令2的输入</span><br><span class="line"></span><br><span class="line">[root@hadoop10 opt]# ll | grep '.*\.txt'</span><br><span class="line">.* #表示零个或多个任意字符</span><br><span class="line">\. #表示转义</span><br><span class="line"></span><br><span class="line">[root@hadoop10 opt]# ll | grep '.\+txt'  </span><br><span class="line">\+ #表示将实体符号+转义成正则的数量词</span><br><span class="line"></span><br><span class="line">在遇到pattern的地方，*就是正则符号 </span><br><span class="line"></span><br><span class="line">注意：</span><br><span class="line">[root@hadoop10 opt]# rm -rf *.txt</span><br><span class="line">此时的*就是通配符</span><br><span class="line"></span><br><span class="line">echo 123456 | passwd --stdin java</span><br></pre></td></tr></table></figure>
@@ -37,57 +167,134 @@
 <h2 id="yum"><a href="#yum" class="headerlink" title="yum"></a>yum</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">使用yum的前提是可以上网</span><br><span class="line">rpm相当于下载到本地的jar</span><br><span class="line">yum相当于maven</span><br><span class="line">yum 也提供了一个库，里面存放了rpm</span><br><span class="line">如果不能上外网，是可以搭建本地yum源。</span><br></pre></td></tr></table></figure>
 <h3 id="更改yum源"><a href="#更改yum源" class="headerlink" title="更改yum源"></a>更改yum源</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">1、进入到/etc/yum.repos.d/目录下，备份之前的CentOS-Base.repo地址。</span><br><span class="line">	cd /etc/yum.repos.d/</span><br><span class="line">	mv CentOS-Base.repo CentOS-Base.repo.bak</span><br><span class="line">2、下载阿里云yum源</span><br><span class="line">wget -O CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo</span><br><span class="line">	</span><br><span class="line">3、将服务器上的软件包信息缓存到本地,以提高搜索安装软件的速度</span><br><span class="line">	yum makecache</span><br></pre></td></tr></table></figure>
 <h3 id="yum-命令"><a href="#yum-命令" class="headerlink" title="yum 命令"></a>yum 命令</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum list: 列出yum中可以安装的package</span><br><span class="line">yum list installed:查询已安装的程序</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/link/">link</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
     </div>
 
-    
-        <hr class="fhr">
-        <div id="vcomments"></div>
-    
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#查询命令"><span class="toc-number">1.</span> <span class="toc-text">查询命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查询文件"><span class="toc-number">2.</span> <span class="toc-text">查询文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#过滤"><span class="toc-number">3.</span> <span class="toc-text">过滤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#管道"><span class="toc-number">4.</span> <span class="toc-text">管道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#追加和重定向-覆盖"><span class="toc-number">5.</span> <span class="toc-text">追加和重定向(覆盖)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件的权限UGO"><span class="toc-number">6.</span> <span class="toc-text">文件的权限UGO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更改文件的用户及用户组"><span class="toc-number">7.</span> <span class="toc-text">更改文件的用户及用户组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打包和压缩"><span class="toc-number">8.</span> <span class="toc-text">打包和压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#软连接"><span class="toc-number">9.</span> <span class="toc-text">软连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rpm包的安装"><span class="toc-number">10.</span> <span class="toc-text">rpm包的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#yum"><span class="toc-number">11.</span> <span class="toc-text">yum</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#更改yum源"><span class="toc-number">11.1.</span> <span class="toc-text">更改yum源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yum-命令"><span class="toc-number">11.2.</span> <span class="toc-text">yum 命令</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&text=Linux学习-03" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&title=Linux学习-03" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&is_video=false&description=Linux学习-03" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Linux学习-03&body=Check out this article: https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&title=Linux学习-03" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&title=Linux学习-03" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&title=Linux学习-03" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&title=Linux学习-03" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&name=Linux学习-03&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/&t=Linux学习-03" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
 </div>
-    <div class="footer" id="footer">
-    <p>Copyright © 2020 <a class="flink" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>-<a class="flink" href="https://github.com/sanjinhub/hexo-theme-geek" target="_blank" rel="noopener">Geek</a>.
-        <label class="el-switch el-switch-green el-switch-sm" style="vertical-align: sub;">
-            <input type="checkbox" name="switch" id="update_style">
-            <span class="el-switch-style"></span>
-        </label>
-<!--         <script type="text/javascript">
-        var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
-        document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-        </script> -->
-    </p>
-</div>
-<input type="hidden" id="web_style" value="black">
-<input type="hidden" id="valine_appid" value="CmCti21ooOOIzFOhEyFkFvR0-gzGzoHsz">
-<input type="hidden" id="valine_appKey" value="FqiyUqbg7McKN2eG0MCewupf">
-<script src="/libs/jquery.min.js"></script>
-<script src="/libs/highlight/highlight.pack.js"></script>
-<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
-<script src="/js/js.js"></script>
-<style type="text/css">
-.v * {
-    color: #698fca;
-}
 
-.v .vlist .vcard .vhead .vsys {
-    color: #3a3e4a;
-}
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2018-2021
+    木子李
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/link/">link</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
 
-.v .vlist .vcard .vh .vmeta .vat {
-    color: #638fd5;
-}
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
 
-.v .vlist .vcard .vhead .vnick {
-    color: #6ba1ff;
-}
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
 
-.v a {
-    color: #8696b1;
-}
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
 
-.v .vlist .vcard .vhead .vnick:hover {
-    color: #669bfc;
-}
-</style>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
 </body>
-
 </html>

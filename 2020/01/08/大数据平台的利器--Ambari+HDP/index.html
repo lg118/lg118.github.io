@@ -1,30 +1,160 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang=zh>
 <head>
-    <meta charset="UTF-8">
+    <!-- so meta -->
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>
-        木子李G
-    </title>
-    <link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Ambari是什么Ambari 是 Apache 软件基金会 的一个顶级项目。 Apache Ambari项目用于配置、管理和监视Apache Hadoop集群的软件，简化Hadoop管理。Ambari提供了一个直观、易于使用的Hadoop管理web UI。 但是这里的 Hadoop 是广义，指的是 Hadoop 整个生态圈（例如 Hive，Hbase，Sqoop，Zookeeper 等），而并不">
+<meta name="keywords" content="Ambari">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大数据平台的利器--Ambari+HDP">
+<meta property="og:url" content="https:&#x2F;&#x2F;lg118.github.io&#x2F;2020&#x2F;01&#x2F;08&#x2F;%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP&#x2F;index.html">
+<meta property="og:site_name" content="木子李G">
+<meta property="og:description" content="Ambari是什么Ambari 是 Apache 软件基金会 的一个顶级项目。 Apache Ambari项目用于配置、管理和监视Apache Hadoop集群的软件，简化Hadoop管理。Ambari提供了一个直观、易于使用的Hadoop管理web UI。 但是这里的 Hadoop 是广义，指的是 Hadoop 整个生态圈（例如 Hive，Hbase，Sqoop，Zookeeper 等），而并不">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;01&#x2F;08&#x2F;d1klgM6E2LJsqYf.png">
+<meta property="og:updated_time" content="2020-01-08T11:58:08.672Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;01&#x2F;08&#x2F;d1klgM6E2LJsqYf.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>大数据平台的利器--Ambari+HDP</title>
+    <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
 <link rel="alternate" href="/atom.xml" title="木子李G" type="application/atom+xml">
 </head>
 
-<body id="bodyx">
-    <div class="hd posts">
-    <a href="/index.html"><i class="fa fa-reply replay-btn" aria-hidden="true"></i></a>
-    <div class="post-title">
-        <p>
-            大数据平台的利器--Ambari+HDP
-        </p>
-        <hr>
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/link/">link</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2019/12/24/Scala%E4%B8%AD%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&text=大数据平台的利器--Ambari+HDP" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&title=大数据平台的利器--Ambari+HDP" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&is_video=false&description=大数据平台的利器--Ambari+HDP" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=大数据平台的利器--Ambari+HDP&body=Check out this article: https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&title=大数据平台的利器--Ambari+HDP" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&title=大数据平台的利器--Ambari+HDP" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&title=大数据平台的利器--Ambari+HDP" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&title=大数据平台的利器--Ambari+HDP" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&name=大数据平台的利器--Ambari+HDP&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&t=大数据平台的利器--Ambari+HDP" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
     </div>
-    <div class="post-content">
-        <h1 id="Ambari是什么"><a href="#Ambari是什么" class="headerlink" title="Ambari是什么"></a>Ambari是什么</h1><p>Ambari 是 Apache 软件基金会 的一个顶级项目。</p>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ambari是什么"><span class="toc-number">1.</span> <span class="toc-text">Ambari是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ambari组成"><span class="toc-number">2.</span> <span class="toc-text">Ambari组成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HDP是什么"><span class="toc-number">3.</span> <span class="toc-text">HDP是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装步骤"><span class="toc-number">4.</span> <span class="toc-text">安装步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、集群规划"><span class="toc-number">4.1.</span> <span class="toc-text">一、集群规划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、下载安装包"><span class="toc-number">4.2.</span> <span class="toc-text">二、下载安装包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、新建虚拟机，安装CentOS"><span class="toc-number">4.3.</span> <span class="toc-text">三、新建虚拟机，安装CentOS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、关闭防火墙"><span class="toc-number">4.4.</span> <span class="toc-text">四、关闭防火墙</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、关闭SELINUX"><span class="toc-number">4.5.</span> <span class="toc-text">五、关闭SELINUX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、为提升hadoop性能，hadoop环境上要求关闭Transparent-Hugepages（THP，页面内存透明化）"><span class="toc-number">4.6.</span> <span class="toc-text">六、为提升hadoop性能，hadoop环境上要求关闭Transparent Hugepages（THP，页面内存透明化）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、查看是否启用"><span class="toc-number">4.6.1.</span> <span class="toc-text">1、查看是否启用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、禁用-编辑rc-local启动文件"><span class="toc-number">4.6.2.</span> <span class="toc-text">2、禁用　编辑rc.local启动文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、重启"><span class="toc-number">4.6.3.</span> <span class="toc-text">3、重启</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、配置aliYum源"><span class="toc-number">4.7.</span> <span class="toc-text">七、配置aliYum源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、备份"><span class="toc-number">4.7.1.</span> <span class="toc-text">1、备份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、下载新的CentOS-Base-repo-到-etc-yum-repos-d"><span class="toc-number">4.7.2.</span> <span class="toc-text">2、下载新的CentOS-Base.repo 到/etc/yum.repos.d/</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、之后运行yum-makecache生成缓存"><span class="toc-number">4.7.3.</span> <span class="toc-text">3、之后运行yum makecache生成缓存</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、配置时间同步"><span class="toc-number">4.8.</span> <span class="toc-text">八、配置时间同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#九、安装jdk"><span class="toc-number">4.9.</span> <span class="toc-text">九、安装jdk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十、配置IP映射"><span class="toc-number">4.10.</span> <span class="toc-text">十、配置IP映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十一、克隆虚拟机"><span class="toc-number">4.11.</span> <span class="toc-text">十一、克隆虚拟机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十二、安装MySQL【hadoop102】"><span class="toc-number">4.12.</span> <span class="toc-text">十二、安装MySQL【hadoop102】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十三、安装httpd-hadoop101节点安装"><span class="toc-number">4.13.</span> <span class="toc-text">十三、安装httpd(hadoop101节点安装)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、安装httpd"><span class="toc-number">4.13.1.</span> <span class="toc-text">1、安装httpd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、在-var-www-html下创建ambari和hdp目录"><span class="toc-number">4.13.2.</span> <span class="toc-text">2、在/var/www/html下创建ambari和hdp目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、上传资源包"><span class="toc-number">4.13.3.</span> <span class="toc-text">3、上传资源包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、解压到指定目录"><span class="toc-number">4.13.4.</span> <span class="toc-text">4、解压到指定目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、启动httpd"><span class="toc-number">4.13.5.</span> <span class="toc-text">5、启动httpd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、web访问"><span class="toc-number">4.13.6.</span> <span class="toc-text">6、web访问</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十四、配置Ambari-HDP本地yum源"><span class="toc-number">4.14.</span> <span class="toc-text">十四、配置Ambari+HDP本地yum源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、-安装本地源制作相关工具"><span class="toc-number">4.14.1.</span> <span class="toc-text">1、 安装本地源制作相关工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、编辑ambari-repo"><span class="toc-number">4.14.2.</span> <span class="toc-text">2、编辑ambari.repo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、复制ambari-repo"><span class="toc-number">4.14.3.</span> <span class="toc-text">3、复制ambari.repo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、编辑hdp-repo"><span class="toc-number">4.14.4.</span> <span class="toc-text">4、编辑hdp.repo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、复制hdp-repo"><span class="toc-number">4.14.5.</span> <span class="toc-text">5、复制hdp.repo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、配置免密登录"><span class="toc-number">4.14.6.</span> <span class="toc-text">6、配置免密登录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、将创建好的文件拷贝到子节点"><span class="toc-number">4.14.7.</span> <span class="toc-text">7、将创建好的文件拷贝到子节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、生成本地源"><span class="toc-number">4.14.8.</span> <span class="toc-text">8、生成本地源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十五、安装Ambari-Server【hadoop102】"><span class="toc-number">4.15.</span> <span class="toc-text">十五、安装Ambari Server【hadoop102】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、安装和配置ambari-server"><span class="toc-number">4.15.1.</span> <span class="toc-text">1、安装和配置ambari-server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、python中英文编码问题"><span class="toc-number">4.15.2.</span> <span class="toc-text">2、python中英文编码问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、配置ambari-server"><span class="toc-number">4.15.3.</span> <span class="toc-text">3、配置ambari-server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、启动ambari"><span class="toc-number">4.15.4.</span> <span class="toc-text">4、启动ambari</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十六、安装agent"><span class="toc-number">4.16.</span> <span class="toc-text">十六、安装agent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十七、官方文档"><span class="toc-number">4.17.</span> <span class="toc-text">十七、官方文档</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        大数据平台的利器--Ambari+HDP
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">木子李</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-01-07T16:00:00.000Z" itemprop="datePublished">2020-01-08</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Ambari-HDP/">Ambari+HDP</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Ambari/" rel="tag">Ambari</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="Ambari是什么"><a href="#Ambari是什么" class="headerlink" title="Ambari是什么"></a>Ambari是什么</h1><p>Ambari 是 Apache 软件基金会 的一个顶级项目。</p>
 <p>Apache Ambari项目用于配置、管理和监视Apache Hadoop集群的软件，简化Hadoop管理。Ambari提供了一个直观、易于使用的Hadoop管理web UI。</p>
 <p>但是这里的 Hadoop 是广义，指的是 Hadoop 整个生态圈（例如 Hive，Hbase，Sqoop，Zookeeper 等），而并不仅是特指 Hadoop。</p>
 <p>用一句话来说，<strong>Ambari 就是为了让 Hadoop 以及相关的大数据软件更容易使用的一个工具。</strong></p>
@@ -112,57 +242,134 @@
 <h2 id="十七、官方文档"><a href="#十七、官方文档" class="headerlink" title="十七、官方文档"></a>十七、官方文档</h2><p><a href="https://docs.cloudera.com/HDPDocuments/HDP2/HDP-2.6.4/bk_release-notes/bk_release-notes.pdf" target="_blank" rel="noopener">https://docs.cloudera.com/HDPDocuments/HDP2/HDP-2.6.4/bk_release-notes/bk_release-notes.pdf</a></p>
 <p><a href="https://docs.cloudera.com/HDPDocuments/Ambari-2.5.1.0/bk_ambari-installation/bk_ambari-installation.pdf" target="_blank" rel="noopener">https://docs.cloudera.com/HDPDocuments/Ambari-2.5.1.0/bk_ambari-installation/bk_ambari-installation.pdf</a></p>
 
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/link/">link</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
     </div>
 
-    
-        <hr class="fhr">
-        <div id="vcomments"></div>
-    
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ambari是什么"><span class="toc-number">1.</span> <span class="toc-text">Ambari是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ambari组成"><span class="toc-number">2.</span> <span class="toc-text">Ambari组成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HDP是什么"><span class="toc-number">3.</span> <span class="toc-text">HDP是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装步骤"><span class="toc-number">4.</span> <span class="toc-text">安装步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、集群规划"><span class="toc-number">4.1.</span> <span class="toc-text">一、集群规划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、下载安装包"><span class="toc-number">4.2.</span> <span class="toc-text">二、下载安装包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、新建虚拟机，安装CentOS"><span class="toc-number">4.3.</span> <span class="toc-text">三、新建虚拟机，安装CentOS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、关闭防火墙"><span class="toc-number">4.4.</span> <span class="toc-text">四、关闭防火墙</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、关闭SELINUX"><span class="toc-number">4.5.</span> <span class="toc-text">五、关闭SELINUX</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、为提升hadoop性能，hadoop环境上要求关闭Transparent-Hugepages（THP，页面内存透明化）"><span class="toc-number">4.6.</span> <span class="toc-text">六、为提升hadoop性能，hadoop环境上要求关闭Transparent Hugepages（THP，页面内存透明化）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、查看是否启用"><span class="toc-number">4.6.1.</span> <span class="toc-text">1、查看是否启用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、禁用-编辑rc-local启动文件"><span class="toc-number">4.6.2.</span> <span class="toc-text">2、禁用　编辑rc.local启动文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、重启"><span class="toc-number">4.6.3.</span> <span class="toc-text">3、重启</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#七、配置aliYum源"><span class="toc-number">4.7.</span> <span class="toc-text">七、配置aliYum源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、备份"><span class="toc-number">4.7.1.</span> <span class="toc-text">1、备份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、下载新的CentOS-Base-repo-到-etc-yum-repos-d"><span class="toc-number">4.7.2.</span> <span class="toc-text">2、下载新的CentOS-Base.repo 到/etc/yum.repos.d/</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、之后运行yum-makecache生成缓存"><span class="toc-number">4.7.3.</span> <span class="toc-text">3、之后运行yum makecache生成缓存</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#八、配置时间同步"><span class="toc-number">4.8.</span> <span class="toc-text">八、配置时间同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#九、安装jdk"><span class="toc-number">4.9.</span> <span class="toc-text">九、安装jdk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十、配置IP映射"><span class="toc-number">4.10.</span> <span class="toc-text">十、配置IP映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十一、克隆虚拟机"><span class="toc-number">4.11.</span> <span class="toc-text">十一、克隆虚拟机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十二、安装MySQL【hadoop102】"><span class="toc-number">4.12.</span> <span class="toc-text">十二、安装MySQL【hadoop102】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十三、安装httpd-hadoop101节点安装"><span class="toc-number">4.13.</span> <span class="toc-text">十三、安装httpd(hadoop101节点安装)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、安装httpd"><span class="toc-number">4.13.1.</span> <span class="toc-text">1、安装httpd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、在-var-www-html下创建ambari和hdp目录"><span class="toc-number">4.13.2.</span> <span class="toc-text">2、在/var/www/html下创建ambari和hdp目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、上传资源包"><span class="toc-number">4.13.3.</span> <span class="toc-text">3、上传资源包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、解压到指定目录"><span class="toc-number">4.13.4.</span> <span class="toc-text">4、解压到指定目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、启动httpd"><span class="toc-number">4.13.5.</span> <span class="toc-text">5、启动httpd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、web访问"><span class="toc-number">4.13.6.</span> <span class="toc-text">6、web访问</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十四、配置Ambari-HDP本地yum源"><span class="toc-number">4.14.</span> <span class="toc-text">十四、配置Ambari+HDP本地yum源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、-安装本地源制作相关工具"><span class="toc-number">4.14.1.</span> <span class="toc-text">1、 安装本地源制作相关工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、编辑ambari-repo"><span class="toc-number">4.14.2.</span> <span class="toc-text">2、编辑ambari.repo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、复制ambari-repo"><span class="toc-number">4.14.3.</span> <span class="toc-text">3、复制ambari.repo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、编辑hdp-repo"><span class="toc-number">4.14.4.</span> <span class="toc-text">4、编辑hdp.repo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、复制hdp-repo"><span class="toc-number">4.14.5.</span> <span class="toc-text">5、复制hdp.repo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、配置免密登录"><span class="toc-number">4.14.6.</span> <span class="toc-text">6、配置免密登录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、将创建好的文件拷贝到子节点"><span class="toc-number">4.14.7.</span> <span class="toc-text">7、将创建好的文件拷贝到子节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、生成本地源"><span class="toc-number">4.14.8.</span> <span class="toc-text">8、生成本地源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十五、安装Ambari-Server【hadoop102】"><span class="toc-number">4.15.</span> <span class="toc-text">十五、安装Ambari Server【hadoop102】</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、安装和配置ambari-server"><span class="toc-number">4.15.1.</span> <span class="toc-text">1、安装和配置ambari-server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、python中英文编码问题"><span class="toc-number">4.15.2.</span> <span class="toc-text">2、python中英文编码问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、配置ambari-server"><span class="toc-number">4.15.3.</span> <span class="toc-text">3、配置ambari-server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、启动ambari"><span class="toc-number">4.15.4.</span> <span class="toc-text">4、启动ambari</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十六、安装agent"><span class="toc-number">4.16.</span> <span class="toc-text">十六、安装agent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#十七、官方文档"><span class="toc-number">4.17.</span> <span class="toc-text">十七、官方文档</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&text=大数据平台的利器--Ambari+HDP" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&title=大数据平台的利器--Ambari+HDP" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&is_video=false&description=大数据平台的利器--Ambari+HDP" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=大数据平台的利器--Ambari+HDP&body=Check out this article: https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&title=大数据平台的利器--Ambari+HDP" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&title=大数据平台的利器--Ambari+HDP" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&title=大数据平台的利器--Ambari+HDP" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&title=大数据平台的利器--Ambari+HDP" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&name=大数据平台的利器--Ambari+HDP&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://lg118.github.io/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/&t=大数据平台的利器--Ambari+HDP" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
 </div>
-    <div class="footer" id="footer">
-    <p>Copyright © 2020 <a class="flink" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>-<a class="flink" href="https://github.com/sanjinhub/hexo-theme-geek" target="_blank" rel="noopener">Geek</a>.
-        <label class="el-switch el-switch-green el-switch-sm" style="vertical-align: sub;">
-            <input type="checkbox" name="switch" id="update_style">
-            <span class="el-switch-style"></span>
-        </label>
-<!--         <script type="text/javascript">
-        var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
-        document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-        </script> -->
-    </p>
-</div>
-<input type="hidden" id="web_style" value="black">
-<input type="hidden" id="valine_appid" value="CmCti21ooOOIzFOhEyFkFvR0-gzGzoHsz">
-<input type="hidden" id="valine_appKey" value="FqiyUqbg7McKN2eG0MCewupf">
-<script src="/libs/jquery.min.js"></script>
-<script src="/libs/highlight/highlight.pack.js"></script>
-<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
-<script src="/js/js.js"></script>
-<style type="text/css">
-.v * {
-    color: #698fca;
-}
 
-.v .vlist .vcard .vhead .vsys {
-    color: #3a3e4a;
-}
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2018-2021
+    木子李
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/archives/">归档</a></li>
+         
+          <li><a href="/link/">link</a></li>
+         
+          <li><a href="/search/">搜索</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
 
-.v .vlist .vcard .vh .vmeta .vat {
-    color: #638fd5;
-}
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
 
-.v .vlist .vcard .vhead .vnick {
-    color: #6ba1ff;
-}
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard -->
 
-.v a {
-    color: #8696b1;
-}
+  <script src="/lib/clipboard/clipboard.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
 
-.v .vlist .vcard .vhead .vnick:hover {
-    color: #669bfc;
-}
-</style>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
 </body>
-
 </html>
