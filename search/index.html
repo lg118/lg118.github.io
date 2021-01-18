@@ -9,12 +9,12 @@
     <meta name="description" content="分享IT编程知识">
 <meta name="keywords" content="java,hadoop,spark,大数据,hbase,hive,scala,kafka,flume">
 <meta property="og:type" content="website">
-<meta property="og:title" content="search">
+<meta property="og:title" content="Search">
 <meta property="og:url" content="https:&#x2F;&#x2F;lg118.github.io&#x2F;search&#x2F;index.html">
 <meta property="og:site_name" content="木子李G">
 <meta property="og:description" content="分享IT编程知识">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-01-17T13:50:53.387Z">
+<meta property="og:updated_time" content="2021-01-18T05:40:45.432Z">
 <meta name="twitter:card" content="summary">
     
     
@@ -25,17 +25,17 @@
       
       
         
-          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
         
       
       
         
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
         
       
     
     <!-- title -->
-    <title>search</title>
+    <title>Search</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <!-- persian styles -->
@@ -73,7 +73,7 @@
        
         <li><a href="/archives/">归档</a></li>
        
-        <li><a href="/link/">link</a></li>
+        <li><a href="/tags/">标签</a></li>
        
         <li><a href="/search/">搜索</a></li>
        
@@ -89,8 +89,15 @@
 
   <div class="content" itemprop="articleBody">
       
-          
-        
+        <section id="search">
+  <form>
+    <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+  </form>
+  <div id="search-result"></div>
+  <p class="search-no-result">抱歉，没有符合您搜索条件的结果。请换其它关键词再试。</p>
+</section>
+
+      
   </div>
 </article>
 
@@ -111,7 +118,7 @@
          
           <li><a href="/archives/">归档</a></li>
          
-          <li><a href="/link/">link</a></li>
+          <li><a href="/tags/">标签</a></li>
          
           <li><a href="/search/">搜索</a></li>
          
@@ -134,6 +141,43 @@
 
 <script src="/js/main.js"></script>
 <!-- search -->
+
+  <script src="/js/search.js"></script>
+  <script type="text/javascript">
+  $(function() {
+
+    var $inputArea = $("input#search-input");
+    var $resultArea = document.querySelector("div#search-result");
+
+    $inputArea.focus(function() {
+      var search_path = "search.xml";
+      if (search_path.length == 0) {
+        search_path = "search.xml";
+      }
+      var path = "/" + search_path;
+      searchFunc(path, 'search-input', 'search-result');
+    });
+
+    $inputArea.keydown(function(e) {
+      if (e.which == 13) {
+        e.preventDefault();
+      }
+    });
+
+    var observer = new MutationObserver(function(mutationsList, observer) {
+      if (mutationsList.length == 1) {
+        if (mutationsList[0].addedNodes.length) {
+          $(".search-no-result").hide();
+        } else if (mutationsList[0].removedNodes.length) {
+          $(".search-no-result").show(200);
+        }
+      }
+    });
+
+    observer.observe($resultArea, { childList: true });
+
+  });
+  </script>
 
 <!-- Google Analytics -->
 
