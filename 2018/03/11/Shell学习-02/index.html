@@ -77,7 +77,7 @@
         <li><a class="icon" href="/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-01/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/03/10/Linux%E5%AD%A6%E4%B9%A0-05/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -165,6 +165,13 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">sed语法格式</span></span><br><span class="line">sed [可选] command 文件</span><br><span class="line"><span class="meta">#</span><span class="bash">可选</span></span><br><span class="line">-n: #只会打印到匹配到的行</span><br><span class="line">-i: #修改原文件</span><br><span class="line">-r: #扩展正则</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">command</span></span></span><br><span class="line">这里可以是命令和正则规则</span><br><span class="line">d #删除</span><br><span class="line">n #</span><br><span class="line">p # 打印输出</span><br><span class="line"></span><br><span class="line">--------------------</span><br><span class="line">[root@hadoop10 opt]# sed -i '9,$d' 1.txt #删除第9行到最后一行，-i更改源文件</span><br><span class="line">[root@hadoop10 opt]# sed -n /daemon/p 1.txt #打印匹配的行</span><br><span class="line"></span><br><span class="line">[root@hadoop10 opt]# sed /adm/d 1.txt  #删除匹配内容的行</span><br><span class="line"></span><br><span class="line">[root@hadoop10 opt]# sed 's/bin/xxx/g' 1.txt &gt; 2.txt #将所有的bin替换成xxx,修改后的内容保存成2.txt</span><br></pre></td></tr></table></figure>
   </div>
 </article>
+
+    <div class="blog-post-comments">
+        
+        
+        <div class="vcomment"></div>
+        
+    </div>
 
 
 
@@ -290,6 +297,33 @@
 <!-- Umami Analytics -->
 
 <!-- Disqus Comments -->
+
+
+
+<!-- Valine Comments -->
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+<script type="text/javascript">
+    var notify = 'false' == true ? true : false;
+    var verify = 'false' == true ? true : false;
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+      return GUEST_INFO.indexOf(item) > -1
+    });
+    guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "",
+        appKey: "",
+        avatar:"",
+        placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+        guest_info:guest_info,
+        pageSize:"10"
+    })
+</script>
 
 
 </body>

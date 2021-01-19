@@ -99,35 +99,11 @@
             <i class="fab fa-github"></i><!--
       ---></a><!--
     ---><!--
-    --->  
-        
-      
-        
-          <a class="icon" target="_blank" rel="noopener" href="/">
-            <i class="fab fa-twitter"></i><!--
-      ---></a><!--
-    ---><!--
-    --->  
-        
-      
-        
-          <a class="icon" target="_blank" rel="noopener" href="/">
-            <i class="fab fa-facebook"></i><!--
-      ---></a><!--
-    ---><!--
-    --->  
-        
-      
-        
-          <a class="icon" target="_blank" rel="noopener" href="/">
-            <i class="fab fa-linkedin"></i><!--
-      ---></a><!--
-    ---><!--
     --->   
         
       
         
-          <a class="icon" target="_blank" rel="noopener" href="mailto:name@email.com">
+          <a class="icon" target="_blank" rel="noopener" href="mailto:muzilig@163.com">
             <i class="fas fa-envelope"></i><!--
       ---></a>
         <!--
@@ -260,7 +236,7 @@
 
         <span>
     
-        <a class="" href="/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/">Oracle安装和卸载</a>
+        <a class="" href="/2018/03/10/Linux%E5%AD%A6%E4%B9%A0-05/">Linux学习-05</a>
     
 
 
@@ -280,7 +256,7 @@
 
         <span>
     
-        <a class="" href="/2018/03/10/Linux%E5%AD%A6%E4%B9%A0-05/">Linux学习-05</a>
+        <a class="" href="/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/">Oracle安装和卸载</a>
     
 
 
@@ -313,7 +289,7 @@
 
 
 <section id="projects">
-  <span class="h1"><a href="http://github.com/lg118" target="_blank" rel="noopener">推荐</a></span>
+  <span class="h1"><a href="http://ligang123.com" target="_blank" rel="noopener">推荐</a></span>
   <ul class="project-list">
     
       <li class="project-item">
@@ -380,6 +356,33 @@
 <!-- Umami Analytics -->
 
 <!-- Disqus Comments -->
+
+
+
+<!-- Valine Comments -->
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+<script type="text/javascript">
+    var notify = 'false' == true ? true : false;
+    var verify = 'false' == true ? true : false;
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+      return GUEST_INFO.indexOf(item) > -1
+    });
+    guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "",
+        appKey: "",
+        avatar:"",
+        placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+        guest_info:guest_info,
+        pageSize:"10"
+    })
+</script>
 
 
 </body>

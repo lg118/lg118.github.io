@@ -82,10 +82,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -203,6 +203,13 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@hadoop10 opt]# cat &lt;&lt;EOF &gt;xxx.txt</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> ni hao a </span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> wo shuo hua </span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> hao hao xuexi </span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> -bash: warning: here-document at line 94 delimited by end-of-file (wanted `EOF<span class="string">')</span></span></span><br><span class="line">ctrl+d 表示EOF</span><br></pre></td></tr></table></figure>
   </div>
 </article>
+
+    <div class="blog-post-comments">
+        
+        
+        <div class="vcomment"></div>
+        
+    </div>
 
 
 
@@ -328,6 +335,33 @@
 <!-- Umami Analytics -->
 
 <!-- Disqus Comments -->
+
+
+
+<!-- Valine Comments -->
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+<script type="text/javascript">
+    var notify = 'false' == true ? true : false;
+    var verify = 'false' == true ? true : false;
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+      return GUEST_INFO.indexOf(item) > -1
+    });
+    guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "",
+        appKey: "",
+        avatar:"",
+        placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+        guest_info:guest_info,
+        pageSize:"10"
+    })
+</script>
 
 
 </body>

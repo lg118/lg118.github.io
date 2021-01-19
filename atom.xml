@@ -149,32 +149,6 @@
   </entry>
   
   <entry>
-    <title>Oracle安装和卸载</title>
-    <link href="https://lg118.github.io/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/"/>
-    <id>https://lg118.github.io/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/</id>
-    <published>2018-03-09T16:00:00.000Z</published>
-    <updated>2019-12-16T03:38:19.205Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Oracle安装和卸载"><a href="#Oracle安装和卸载" class="headerlink" title="Oracle安装和卸载"></a>Oracle安装和卸载</h1><h2 id="Oracle版本说明"><a href="#Oracle版本说明" class="headerlink" title="Oracle版本说明"></a>Oracle版本说明</h2><p>Oracle 9i<br>Oracle 10g<br>Oracle 11g<br>Oracle 12c</p><p>i：i 代表 Internet。8i 版本开启对 Internet 的支持。所以，在版本号之后，添加了标识 i。<br>g：g 代表 Grid 网格。10g 加入了网格计算的功能，因此版本号之后的标识使用了字母g。<br>c：c 代表云(cloud)计算设计。12c 版本表示对云计算的支持。</p><h2 id="Oracle安装"><a href="#Oracle安装" class="headerlink" title="Oracle安装"></a>Oracle安装</h2><ol><li><p>两个.zip文件下载完成后，解压两个压缩包到同一目录（默认是“database”）。</p></li><li><p>双击解压目录下的setup.exe安装oracle（注意：安装文件路径不要使用特殊字符、空格、汉字等）。执行安装程序，会出现一个命令行窗口。</p></li><li><p>命令行窗口小时候，如果出现以下界面：</p><p><img src="https://i.loli.net/2019/12/16/pRQrNP8syHDjvBS.jpg" alt="0.jpg"></p><p>出现这个问题是因为配置文件中配置了对应的系统，所以需要添加自己对应的系统。<br>首先打开解压后的database文件夹，找到stage文件夹，再找到cvu文件夹，进去后打开cvu_prereq.xml文件，在该文件中的CERTIFIED_SYSTEMS标签中添加如下内容：</p><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">OPERATING_SYSTEM</span> <span class="attr">RELEASE</span>=<span class="string">"6.2"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">VERSION</span> <span class="attr">VALUE</span>=<span class="string">"3"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ARCHITECTURE</span> <span class="attr">VALUE</span>=<span class="string">"64-bit"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">NAME</span> <span class="attr">VALUE</span>=<span class="string">"Windows 10"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ENV_VAR_LIST</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ENV_VAR</span> <span class="attr">NAME</span>=<span class="string">"PATH"</span> <span class="attr">MAX_LENGTH</span>=<span class="string">"1023"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ENV_VAR_LIST</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">OPERATING_SYSTEM</span>&gt;</span></span><br></pre></td></tr></table></figure><p>修改完成后保存退出，再次点击setup.exe运行就不会出现这个错误了。</p></li><li><p>开始安装<br><img src="https://i.loli.net/2019/12/16/jza9GdfpF6BknMu.jpg" alt="1.jpg"></p><p><img src="https://i.loli.net/2019/12/16/KOXfQHAoj5iRZsm.jpg" alt="2.jpg"></p></li></ol><p>​        <img src="https://i.loli.net/2019/12/16/bMKkYPWxU69hHDn.jpg" alt="3.jpg"></p><p><img src="https://i.loli.net/2019/12/16/i5CFNlHKczEAQRg.jpg" alt="4.jpg"></p><p><img src="https://i.loli.net/2019/12/16/NKAMr5Z3ByLgVzD.jpg" alt="4-1.jpg"></p><p><img src="https://i.loli.net/2019/12/16/CfMtenBqkVXU4vS.jpg" alt="4-2.jpg"></p><p><img src="https://i.loli.net/2019/12/16/EFTkZA6sQaw4mqj.jpg" alt="5.jpg"></p><p><img src="https://i.loli.net/2019/12/16/cvMHVqlZw9uf5rg.jpg" alt="6.jpg"></p><p><img src="https://i.loli.net/2019/12/16/YBj39618g52PFGp.jpg" alt="7.jpg"></p><p><img src="https://i.loli.net/2019/12/16/wqvpmD3tkcoBx6S.jpg" alt="7-1.jpg"></p><p><img src="https://i.loli.net/2019/12/16/IjraQJVFX5HZuSk.jpg" alt="7-2.jpg"></p><p><img src="https://i.loli.net/2019/12/16/1MQrmJ4n6Wy2D9d.jpg" alt="7-3.jpg"></p><p><img src="https://i.loli.net/2019/12/16/RMyVxrPzDUNwQJE.jpg" alt="7-4.jpg"></p><p><img src="https://i.loli.net/2019/12/16/NaidTWpsxj5PLol.jpg" alt="8.jpg"></p><h2 id="Oracle卸载"><a href="#Oracle卸载" class="headerlink" title="Oracle卸载"></a>Oracle卸载</h2><ol><li><p>停止使用 Oracle 的服务</p><p>进入计算机管理，在服务中，找到 oracle 开头的所有服务，右击选择停止。</p></li><li><p>运行卸载 Oracle 数据库程</p><p>在开始菜单中找到 Oracle 安装产品，点击运行 Oracle 自带的卸载程序 Universal Installer工具卸载。</p></li><li><p>删除使用 Oracle 的服务</p><p>开始菜单中，找到 Universal Installer，运行 Oracle Universal Installer，单击卸载产品，在产品清单窗口中，单击全部展开，除了 OraDb11g_home1 外，勾选其他项目，单击删除，根据软件提示单击下一步最终完成卸载。</p></li><li><p>删除注册表中 Oracle 相关项</p><ul><li><p>在 命 令 窗 口 ， 输 入 regedit ， 打 开 注 册 表 ， 依 次 展 开<code>HKEY_LOCAL_MACHINE\SOFTWARE</code>，找到 oracle删除</p></li><li><p>依次展开 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services</code> 中，删除所有oracle 开头的项</p></li><li><p>依 次 展 开<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application</code>，删除<br>所有 oracle 开头的项</p></li><li>扩展删除（以下不是必须的注册表删除项），如果安装不成功也可以把这些删除了<ul><li>在 <code>HKEY_CLASSES_ROOT</code>，删除以 Ora、Oracle、Orcl 或 EnumOra 为前缀的键</li><li>删 除<br><code>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MenuOrder\StartMenu\Programs</code> 中所有以 oracle 开头的键</li><li>删 除 <code>HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBCINST.INI</code> 中 除 <code>Microsoft ODBC for Oracle</code>注册表键以外的所有含有 Oracle 的键</li></ul></li></ul></li><li><p>删除 Oracle 环境变量</p><p>右键点击我的电脑—&gt;属性—&gt;高级—&gt;环境变量,删除环境变量 ORACLE_HOME、TNS_ADMIN 等环境变量，删除 PATH 中等环境变量有关 Oracle 的设定的路径信息</p></li><li><p>删除“开始”菜单中 Oracle 目录</p><p>打开资源管理器，在地址栏中输入“%userprofile%\「开始」菜单\程序”回车，删除安装的 Oracle 目录。然后再到地址栏中输入“%allusersprofile%\「开始」菜单\程序”回车，删除安装的 Oracle 目录</p></li><li><p>重新启动计算机</p></li><li><p>删除 Program Files\Oracle 目录</p><p>如果 Program Files\Oracle 目录存在，则删除 Program Files\Oracle 目录。</p></li><li><p>删除 Oracle 安装目录</p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Oracle安装和卸载&quot;&gt;&lt;a href=&quot;#Oracle安装和卸载&quot; class=&quot;headerlink&quot; title=&quot;Oracle安装和卸载&quot;&gt;&lt;/a&gt;Oracle安装和卸载&lt;/h1&gt;&lt;h2 id=&quot;Oracle版本说明&quot;&gt;&lt;a href=&quot;#Oracle版
-      
-    
-    </summary>
-    
-    
-      <category term="数据库" scheme="https://lg118.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="Oracle" scheme="https://lg118.github.io/tags/Oracle/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Linux学习-05</title>
     <link href="https://lg118.github.io/2018/03/10/Linux%E5%AD%A6%E4%B9%A0-05/"/>
     <id>https://lg118.github.io/2018/03/10/Linux%E5%AD%A6%E4%B9%A0-05/</id>
@@ -197,6 +171,32 @@
     
     
       <category term="Linux" scheme="https://lg118.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Oracle安装和卸载</title>
+    <link href="https://lg118.github.io/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/"/>
+    <id>https://lg118.github.io/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/</id>
+    <published>2018-03-09T16:00:00.000Z</published>
+    <updated>2019-12-16T03:38:19.205Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Oracle安装和卸载"><a href="#Oracle安装和卸载" class="headerlink" title="Oracle安装和卸载"></a>Oracle安装和卸载</h1><h2 id="Oracle版本说明"><a href="#Oracle版本说明" class="headerlink" title="Oracle版本说明"></a>Oracle版本说明</h2><p>Oracle 9i<br>Oracle 10g<br>Oracle 11g<br>Oracle 12c</p><p>i：i 代表 Internet。8i 版本开启对 Internet 的支持。所以，在版本号之后，添加了标识 i。<br>g：g 代表 Grid 网格。10g 加入了网格计算的功能，因此版本号之后的标识使用了字母g。<br>c：c 代表云(cloud)计算设计。12c 版本表示对云计算的支持。</p><h2 id="Oracle安装"><a href="#Oracle安装" class="headerlink" title="Oracle安装"></a>Oracle安装</h2><ol><li><p>两个.zip文件下载完成后，解压两个压缩包到同一目录（默认是“database”）。</p></li><li><p>双击解压目录下的setup.exe安装oracle（注意：安装文件路径不要使用特殊字符、空格、汉字等）。执行安装程序，会出现一个命令行窗口。</p></li><li><p>命令行窗口小时候，如果出现以下界面：</p><p><img src="https://i.loli.net/2019/12/16/pRQrNP8syHDjvBS.jpg" alt="0.jpg"></p><p>出现这个问题是因为配置文件中配置了对应的系统，所以需要添加自己对应的系统。<br>首先打开解压后的database文件夹，找到stage文件夹，再找到cvu文件夹，进去后打开cvu_prereq.xml文件，在该文件中的CERTIFIED_SYSTEMS标签中添加如下内容：</p><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">OPERATING_SYSTEM</span> <span class="attr">RELEASE</span>=<span class="string">"6.2"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">VERSION</span> <span class="attr">VALUE</span>=<span class="string">"3"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ARCHITECTURE</span> <span class="attr">VALUE</span>=<span class="string">"64-bit"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">NAME</span> <span class="attr">VALUE</span>=<span class="string">"Windows 10"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ENV_VAR_LIST</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ENV_VAR</span> <span class="attr">NAME</span>=<span class="string">"PATH"</span> <span class="attr">MAX_LENGTH</span>=<span class="string">"1023"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ENV_VAR_LIST</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">OPERATING_SYSTEM</span>&gt;</span></span><br></pre></td></tr></table></figure><p>修改完成后保存退出，再次点击setup.exe运行就不会出现这个错误了。</p></li><li><p>开始安装<br><img src="https://i.loli.net/2019/12/16/jza9GdfpF6BknMu.jpg" alt="1.jpg"></p><p><img src="https://i.loli.net/2019/12/16/KOXfQHAoj5iRZsm.jpg" alt="2.jpg"></p></li></ol><p>​        <img src="https://i.loli.net/2019/12/16/bMKkYPWxU69hHDn.jpg" alt="3.jpg"></p><p><img src="https://i.loli.net/2019/12/16/i5CFNlHKczEAQRg.jpg" alt="4.jpg"></p><p><img src="https://i.loli.net/2019/12/16/NKAMr5Z3ByLgVzD.jpg" alt="4-1.jpg"></p><p><img src="https://i.loli.net/2019/12/16/CfMtenBqkVXU4vS.jpg" alt="4-2.jpg"></p><p><img src="https://i.loli.net/2019/12/16/EFTkZA6sQaw4mqj.jpg" alt="5.jpg"></p><p><img src="https://i.loli.net/2019/12/16/cvMHVqlZw9uf5rg.jpg" alt="6.jpg"></p><p><img src="https://i.loli.net/2019/12/16/YBj39618g52PFGp.jpg" alt="7.jpg"></p><p><img src="https://i.loli.net/2019/12/16/wqvpmD3tkcoBx6S.jpg" alt="7-1.jpg"></p><p><img src="https://i.loli.net/2019/12/16/IjraQJVFX5HZuSk.jpg" alt="7-2.jpg"></p><p><img src="https://i.loli.net/2019/12/16/1MQrmJ4n6Wy2D9d.jpg" alt="7-3.jpg"></p><p><img src="https://i.loli.net/2019/12/16/RMyVxrPzDUNwQJE.jpg" alt="7-4.jpg"></p><p><img src="https://i.loli.net/2019/12/16/NaidTWpsxj5PLol.jpg" alt="8.jpg"></p><h2 id="Oracle卸载"><a href="#Oracle卸载" class="headerlink" title="Oracle卸载"></a>Oracle卸载</h2><ol><li><p>停止使用 Oracle 的服务</p><p>进入计算机管理，在服务中，找到 oracle 开头的所有服务，右击选择停止。</p></li><li><p>运行卸载 Oracle 数据库程</p><p>在开始菜单中找到 Oracle 安装产品，点击运行 Oracle 自带的卸载程序 Universal Installer工具卸载。</p></li><li><p>删除使用 Oracle 的服务</p><p>开始菜单中，找到 Universal Installer，运行 Oracle Universal Installer，单击卸载产品，在产品清单窗口中，单击全部展开，除了 OraDb11g_home1 外，勾选其他项目，单击删除，根据软件提示单击下一步最终完成卸载。</p></li><li><p>删除注册表中 Oracle 相关项</p><ul><li><p>在 命 令 窗 口 ， 输 入 regedit ， 打 开 注 册 表 ， 依 次 展 开<code>HKEY_LOCAL_MACHINE\SOFTWARE</code>，找到 oracle删除</p></li><li><p>依次展开 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services</code> 中，删除所有oracle 开头的项</p></li><li><p>依 次 展 开<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application</code>，删除<br>所有 oracle 开头的项</p></li><li>扩展删除（以下不是必须的注册表删除项），如果安装不成功也可以把这些删除了<ul><li>在 <code>HKEY_CLASSES_ROOT</code>，删除以 Ora、Oracle、Orcl 或 EnumOra 为前缀的键</li><li>删 除<br><code>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MenuOrder\StartMenu\Programs</code> 中所有以 oracle 开头的键</li><li>删 除 <code>HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBCINST.INI</code> 中 除 <code>Microsoft ODBC for Oracle</code>注册表键以外的所有含有 Oracle 的键</li></ul></li></ul></li><li><p>删除 Oracle 环境变量</p><p>右键点击我的电脑—&gt;属性—&gt;高级—&gt;环境变量,删除环境变量 ORACLE_HOME、TNS_ADMIN 等环境变量，删除 PATH 中等环境变量有关 Oracle 的设定的路径信息</p></li><li><p>删除“开始”菜单中 Oracle 目录</p><p>打开资源管理器，在地址栏中输入“%userprofile%\「开始」菜单\程序”回车，删除安装的 Oracle 目录。然后再到地址栏中输入“%allusersprofile%\「开始」菜单\程序”回车，删除安装的 Oracle 目录</p></li><li><p>重新启动计算机</p></li><li><p>删除 Program Files\Oracle 目录</p><p>如果 Program Files\Oracle 目录存在，则删除 Program Files\Oracle 目录。</p></li><li><p>删除 Oracle 安装目录</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Oracle安装和卸载&quot;&gt;&lt;a href=&quot;#Oracle安装和卸载&quot; class=&quot;headerlink&quot; title=&quot;Oracle安装和卸载&quot;&gt;&lt;/a&gt;Oracle安装和卸载&lt;/h1&gt;&lt;h2 id=&quot;Oracle版本说明&quot;&gt;&lt;a href=&quot;#Oracle版
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://lg118.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="Oracle" scheme="https://lg118.github.io/tags/Oracle/"/>
     
   </entry>
   

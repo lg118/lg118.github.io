@@ -74,7 +74,7 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2018/03/10/Linux%E5%AD%A6%E4%B9%A0-05/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" href="/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -169,6 +169,13 @@
 <h3 id="yum-命令"><a href="#yum-命令" class="headerlink" title="yum 命令"></a>yum 命令</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">yum list: 列出yum中可以安装的package</span><br><span class="line">yum list installed:查询已安装的程序</span><br></pre></td></tr></table></figure>
   </div>
 </article>
+
+    <div class="blog-post-comments">
+        
+        
+        <div class="vcomment"></div>
+        
+    </div>
 
 
 
@@ -294,6 +301,33 @@
 <!-- Umami Analytics -->
 
 <!-- Disqus Comments -->
+
+
+
+<!-- Valine Comments -->
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+<script type="text/javascript">
+    var notify = 'false' == true ? true : false;
+    var verify = 'false' == true ? true : false;
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+      return GUEST_INFO.indexOf(item) > -1
+    });
+    guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "",
+        appKey: "",
+        avatar:"",
+        placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+        guest_info:guest_info,
+        pageSize:"10"
+    })
+</script>
 
 
 </body>
