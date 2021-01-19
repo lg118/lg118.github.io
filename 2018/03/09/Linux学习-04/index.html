@@ -5,45 +5,31 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="yum源rpm需要手动管理依赖。yum自动刚我们管理了依赖。 阿里云镜像地址： https:&#x2F;&#x2F;mirrors.aliyun.com 显示使用的yum源[root@hadoop10 ~]# yum repolistLoaded plugins: fastestmirror, securityLoading mirror speeds from cached hostfile * base: mir">
-<meta name="keywords" content="Linux">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Linux学习-04">
-<meta property="og:url" content="https:&#x2F;&#x2F;lg118.github.io&#x2F;2018&#x2F;03&#x2F;09&#x2F;Linux%E5%AD%A6%E4%B9%A0-04&#x2F;index.html">
-<meta property="og:site_name" content="木子李G">
-<meta property="og:description" content="yum源rpm需要手动管理依赖。yum自动刚我们管理了依赖。 阿里云镜像地址： https:&#x2F;&#x2F;mirrors.aliyun.com 显示使用的yum源[root@hadoop10 ~]# yum repolistLoaded plugins: fastestmirror, securityLoading mirror speeds from cached hostfile * base: mir">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;11&#x2F;10&#x2F;SCHTxvy48k9XK67.png">
-<meta property="og:updated_time" content="2018-03-08T16:00:00.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2020&#x2F;11&#x2F;10&#x2F;SCHTxvy48k9XK67.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     
     
-      
         
-          <link rel="shortcut icon" href="/images/favicon.ico">
+            
+                <link rel="shortcut icon" href="/images/favicon.ico">
+            
         
-      
-      
         
-          <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+            
+                <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+            
         
-      
-      
         
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+            
+                <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+            
         
-      
     
     <!-- title -->
     <title>Linux学习-04</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
-    <!-- persian styles -->
-    
-      <link rel="stylesheet" href="/css/rtl.css">
-    
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/fira_code.css" rel="stylesheet">
     <!-- rss -->
     
     
@@ -51,38 +37,51 @@
 </head>
 
 <body class="max-width mx-auto px3 ltr">
-    
-      <div id="header-post">
-  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
+
+    <div id="header-post">
+    <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+    <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+    <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i
+                class="fas fa-chevron-up fa-lg"></i></a>
+    <span id="menu">
     <span id="nav">
       <ul>
-         
-          <li><a href="/">首页</a></li>
-         
-          <li><a href="/archives/">归档</a></li>
-         
-          <li><a href="/tags/">标签</a></li>
-         
-          <li><a href="/search/">搜索</a></li>
-         
-          <li><a href="/about/">关于</a></li>
-        
+          
+              <li><a href="/">首页</a></li>
+          
+              <li><a href="/archives/">归档</a></li>
+          
+              <li><a href="/categories/">分类</a></li>
+          
+              <li><a href="/tags/">标签</a></li>
+          
+              <li><a href="/search/">搜索</a></li>
+          
+              <li><a href="/about/">关于</a></li>
+          
       </ul>
     </span>
     <br/>
     <span id="actions">
       <ul>
-        
-        <li><a class="icon" href="/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
-        
-        
-        <li><a class="icon" href="/2018/03/08/Linux%E5%AD%A6%E4%B9%A0-02/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
-        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+          
+              <li><a class="icon" href="/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-03/"><i class="fas fa-chevron-left"
+                                                                           aria-hidden="true"
+                                                                           onmouseover="$('#i-prev').toggle();"
+                                                                           onmouseout="$('#i-prev').toggle();"></i></a></li>
+          
+          
+              <li><a class="icon" href="/2018/03/08/Linux%E5%AD%A6%E4%B9%A0-02/"><i class="fas fa-chevron-right"
+                                                                           aria-hidden="true"
+                                                                           onmouseover="$('#i-next').toggle();"
+                                                                           onmouseout="$('#i-next').toggle();"></i></a></li>
+          
+          <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i
+                          class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();"
+                          onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true"
+                                        onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();"
+                                        onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
       <span id="i-prev" class="info" style="display:none;">上一篇</span>
       <span id="i-next" class="info" style="display:none;">下一篇</span>
@@ -92,19 +91,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&text=Linux学习-04" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&title=Linux学习-04" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&is_video=false&description=Linux学习-04" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Linux学习-04&body=Check out this article: https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&title=Linux学习-04" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&title=Linux学习-04" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&title=Linux学习-04" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&title=Linux学习-04" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&name=Linux学习-04&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&t=Linux学习-04" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+    <li><a class="icon"
+           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&title=Linux学习-04"><i
+                    class="fab fa-qq " aria-hidden="true"></i></a></li>
+    <li><a class="icon"
+           href="https://service.weibo.com/share/share.php?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&title=Linux学习-04"><i
+                    class="fab fa-weibo " aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&text=Linux学习-04" target="_blank" rel="noopener"><i
+                    class="fab fa-twitter " aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="mailto:?subject=Linux学习-04&body=Check out this article: https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/"><i
+                    class="fas fa-envelope " aria-hidden="true"></i></a></li>
 </ul>
-
     </div>
     <div id="toc">
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#yum源"><span class="toc-number">1.</span> <span class="toc-text">yum源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#显示使用的yum源"><span class="toc-number">1.1.</span> <span class="toc-text">显示使用的yum源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EPEL"><span class="toc-number">1.2.</span> <span class="toc-text">EPEL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用命令"><span class="toc-number">1.3.</span> <span class="toc-text">常用命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换用户"><span class="toc-number">2.</span> <span class="toc-text">切换用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前台和后台执行"><span class="toc-number">3.</span> <span class="toc-text">前台和后台执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户提权"><span class="toc-number">4.</span> <span class="toc-text">用户提权</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络配置"><span class="toc-number">5.</span> <span class="toc-text">网络配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关机-重启"><span class="toc-number">6.</span> <span class="toc-text">关机/重启</span></a></li></ol>
@@ -112,51 +109,52 @@
   </span>
 </div>
 
+<div class="content index py4">
     
-    <div class="content index py4">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
     <h1 class="posttitle" itemprop="name headline">
         Linux学习-04
     </h1>
 
-
-
-    <div class="meta">
+        <div class="meta">
       <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">木子李</span>
+        <span itemprop="name">
+            木子李
+            
+        </span>
       </span>
-      
+            
     <div class="postdate">
-      
-        <time datetime="2018-03-08T16:00:00.000Z" itemprop="datePublished">2018-03-09</time>
         
-      
+            <time datetime="2018-03-08T16:00:00.000Z"
+                  itemprop="datePublished">2018-03-09</time>
+            
+                (Updated:
+                <time datetime="2018-03-08T16:00:00.000Z"
+                      itemprop="dateModified">2018-03-09</time>)
+            
+        
     </div>
 
-
-      
+            
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Linux/">Linux</a>
     </div>
 
-
-      
+            
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link" href="/tags/Linux/" rel="tag">Linux</a>
     </div>
 
-
-    </div>
-  </header>
-  
-
-  <div class="content" itemprop="articleBody">
-    <h2 id="yum源"><a href="#yum源" class="headerlink" title="yum源"></a>yum源</h2><p>rpm需要手动管理依赖。yum自动刚我们管理了依赖。</p>
+        </div>
+    </header>
+    
+    <div class="content" itemprop="articleBody">
+        <h2 id="yum源"><a href="#yum源" class="headerlink" title="yum源"></a>yum源</h2><p>rpm需要手动管理依赖。yum自动刚我们管理了依赖。</p>
 <p>阿里云镜像地址：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https://mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
 <h3 id="显示使用的yum源"><a href="#显示使用的yum源" class="headerlink" title="显示使用的yum源"></a>显示使用的yum源</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@hadoop10 ~]# yum repolist</span><br><span class="line">Loaded plugins: fastestmirror, security</span><br><span class="line">Loading mirror speeds from cached hostfile</span><br><span class="line"> * base: mirrors.aliyun.com</span><br><span class="line"> * extras: mirrors.aliyun.com</span><br><span class="line"> * updates: mirrors.aliyun.com</span><br><span class="line">repo id              repo name     status</span><br><span class="line">base                 CentOS-6 - Base - mirrors.aliyun.com  6,713</span><br><span class="line">extras               CentOS-6 - Extras - mirrors.aliyun.com     47</span><br><span class="line">updates              CentOS-6 - Updates - mirrors.aliyun.com    1,068</span><br><span class="line">repolist: 7,828</span><br></pre></td></tr></table></figure>
@@ -172,168 +170,356 @@
 <h2 id="用户提权"><a href="#用户提权" class="headerlink" title="用户提权"></a>用户提权</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">方式一：</span><br><span class="line">vim /etc/sudoers</span><br><span class="line"><span class="meta">%</span><span class="bash">wheel  ALL=(ALL)       ALL</span></span><br><span class="line"></span><br><span class="line">方式二：</span><br><span class="line">vim /etc/sudoers</span><br><span class="line">bigdata ALL=(ALL)       ALL</span><br><span class="line"></span><br><span class="line">sudo 执行管理员的命令</span><br></pre></td></tr></table></figure>
 <h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看ip地址</span></span><br><span class="line">ifconfig</span><br><span class="line">ip a </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 设置ip地址</span></span><br><span class="line">可视化方式：setup</span><br><span class="line">命令方式：</span><br><span class="line">vim /etc/sysconfig/network-scripts/ifcfg-eth0</span><br><span class="line">    DEVICE=eth0  #网卡名称</span><br><span class="line">    HWADDR=00:0c:29:aa:a3:f3 #网卡的物理地址</span><br><span class="line">    TYPE=Ethernet #网卡的网络类型</span><br><span class="line">    UUID=54302fd2-862e-4608-bdb6-e937fab26f81</span><br><span class="line">    ONBOOT=yes # 系统启动的时候自动连接网络</span><br><span class="line">    BOOTPROTO=none # 静态IP</span><br><span class="line">    IPADDR=192.168.10.10 # ip地址</span><br><span class="line">    NETMASK=255.255.255.0 #子网掩码</span><br><span class="line">    GATEWAY=192.168.10.2 # 网关</span><br><span class="line">    DNS1=192.168.10.2 #DNS服务器地址</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span><span class="bash"> 网卡对应的文件信息</span></span><br><span class="line">/etc/udev/rules.d/70-persistent-net.rules</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 服务相关的命令</span></span><br><span class="line">service 服务名 start/stop/restart/status  </span><br><span class="line"></span><br><span class="line">网络服务：network</span><br><span class="line">防火墙服务：iptables</span><br><span class="line">  service iptables stop</span><br><span class="line">  </span><br><span class="line">以上操作服务的命令，关机就无效了</span><br><span class="line"></span><br><span class="line">永久生效：（开机启动）</span><br><span class="line">chkconfig 服务名 on/off</span><br><span class="line">   重启才生效</span><br><span class="line"></span><br><span class="line">所以一般需要两个一起使用：</span><br><span class="line">先用service 再用 chkconfig</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">查看软件对应的网络端口</span></span><br><span class="line">[root@hadoop10 ~]# netstat -nltp | grep httpd</span><br><span class="line">[root@hadoop10 ~]# netstat -nltp | grep 5275 # 5275是进程号</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">查看进程</span></span><br><span class="line">ps -ef | grep 程序名 #查看进程</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">Java程序查看进程名</span></span><br><span class="line">jps #jps不是Linux命令，是jdk自带的命令</span><br></pre></td></tr></table></figure>
 <h2 id="关机-重启"><a href="#关机-重启" class="headerlink" title="关机/重启"></a>关机/重启</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">关机：</span><br><span class="line"> poweroff</span><br><span class="line"> halt</span><br><span class="line"> shutdown -h now #立刻关机</span><br><span class="line"> init 0</span><br><span class="line"> </span><br><span class="line">重启：</span><br><span class="line">  reboot</span><br><span class="line">  init 6</span><br><span class="line">  </span><br><span class="line"><span class="meta">#</span><span class="bash">Linux的初始化级别</span></span><br><span class="line">cat /etc/inittab</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Default runlevel. The runlevels used are:</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   0 - halt (Do NOT <span class="built_in">set</span> initdefault to this)</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   1 - Single user mode</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   2 - Multiuser, without NFS (The same as 3, <span class="keyword">if</span> you <span class="keyword">do</span> not have networking)</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   3 - Full multiuser mode</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   4 - unused</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   5 - X11</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   6 - reboot (Do NOT <span class="built_in">set</span> initdefault to this)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> </span></span><br><span class="line">id:3:initdefault:</span><br></pre></td></tr></table></figure>
-  </div>
+    </div>
 </article>
 
-    <div class="blog-post-comments">
-        
-        
-        <div class="vcomment"></div>
-        
-    </div>
-
-
-
-        
-          <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/">首页</a></li>
-         
-          <li><a href="/archives/">归档</a></li>
-         
-          <li><a href="/tags/">标签</a></li>
-         
-          <li><a href="/search/">搜索</a></li>
-         
-          <li><a href="/about/">关于</a></li>
-        
-      </ul>
-    </div>
-
-    <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#yum源"><span class="toc-number">1.</span> <span class="toc-text">yum源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#显示使用的yum源"><span class="toc-number">1.1.</span> <span class="toc-text">显示使用的yum源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EPEL"><span class="toc-number">1.2.</span> <span class="toc-text">EPEL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用命令"><span class="toc-number">1.3.</span> <span class="toc-text">常用命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换用户"><span class="toc-number">2.</span> <span class="toc-text">切换用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前台和后台执行"><span class="toc-number">3.</span> <span class="toc-text">前台和后台执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户提权"><span class="toc-number">4.</span> <span class="toc-text">用户提权</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络配置"><span class="toc-number">5.</span> <span class="toc-text">网络配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关机-重启"><span class="toc-number">6.</span> <span class="toc-text">关机/重启</span></a></li></ol>
-    </div>
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&text=Linux学习-04" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&title=Linux学习-04" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&is_video=false&description=Linux学习-04" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Linux学习-04&body=Check out this article: https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&title=Linux学习-04" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&title=Linux学习-04" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&title=Linux学习-04" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&title=Linux学习-04" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&name=Linux学习-04&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&t=Linux学习-04" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
-    </div>
-
-  </div>
+<div class="blog-post-comments">
+  <section id="comment">
+    <div id="valine_container" class="valine_thread"></div>
+  </section>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script>
+    var GUEST_INFO = ["nick", "mail", "link"];
+    var guest_info = "nick,mail,link"
+      .split(",")
+      .filter(function (item) {
+        return GUEST_INFO.indexOf(item) > -1;
+      });
+    var valine = new Valine();
+    valine.init({
+      el: "#valine_container",
+      appId: "",
+      appKey: "",
+      placeholder: "Just go go",
+      pageSize: "15",
+      avatar: "mp",
+      lang: "zh-cn",
+      emojiCDN: "https://mirrorcdn.bili33.top/",
+      // 表情title和图片映射
+      emojiMaps: {
+        Tieba2: "Tieba/i_f01.png",
+        Tieba3: "Tieba/i_f02.png",
+        Tieba4: "Tieba/i_f03.png",
+        Tieba5: "Tieba/i_f04.png",
+        Tieba6: "Tieba/i_f05.png",
+        Tieba7: "Tieba/i_f06.png",
+        Tieba8: "Tieba/i_f07.png",
+        Tieba9: "Tieba/i_f08.png",
+        Tieba10: "Tieba/i_f09.png",
+        Tieba11: "Tieba/i_f10.png",
+        Tieba12: "Tieba/i_f11.png",
+        Tieba13: "Tieba/i_f12.png",
+        Tieba14: "Tieba/i_f13.png",
+        Tieba15: "Tieba/i_f14.png",
+        Tieba16: "Tieba/i_f15.png",
+        Tieba17: "Tieba/i_f16.png",
+        Tieba18: "Tieba/i_f17.png",
+        Tieba19: "Tieba/i_f18.png",
+        Tieba20: "Tieba/i_f19.png",
+        Tieba21: "Tieba/i_f20.png",
+        Tieba22: "Tieba/i_f21.png",
+        Tieba23: "Tieba/i_f22.png",
+        Tieba24: "Tieba/i_f23.png",
+        Tieba25: "Tieba/i_f24.png",
+        Tieba26: "Tieba/i_f25.png",
+        Tieba27: "Tieba/i_f26.png",
+        Tieba28: "Tieba/i_f27.png",
+        Tieba29: "Tieba/i_f28.png",
+        Tieba30: "Tieba/i_f29.png",
+        Tieba31: "Tieba/i_f30.png",
+        Tieba32: "Tieba/i_f31.png",
+        Tieba33: "Tieba/i_f32.png",
+        Tieba34: "Tieba/i_f33.png",
+        bilibilitv2: "bilibilitv/[tv_doge].png",
+        bilibilitv3: "bilibilitv/[tv_亲亲].png",
+        bilibilitv4: "bilibilitv/[tv_偷笑].png",
+        bilibilitv5: "bilibilitv/[tv_再见].png",
+        bilibilitv6: "bilibilitv/[tv_冷漠].png",
+        bilibilitv7: "bilibilitv/[tv_发怒].png",
+        bilibilitv8: "bilibilitv/[tv_发财].png",
+        bilibilitv9: "bilibilitv/[tv_可爱].png",
+        bilibilitv10: "bilibilitv/[tv_吐血].png",
+        bilibilitv11: "bilibilitv/[tv_呆].png",
+        bilibilitv12: "bilibilitv/[tv_呕吐].png",
+        bilibilitv13: "bilibilitv/[tv_困].png",
+        bilibilitv14: "bilibilitv/[tv_坏笑].png",
+        bilibilitv15: "bilibilitv/[tv_大佬].png",
+        bilibilitv16: "bilibilitv/[tv_大哭].png",
+        bilibilitv17: "bilibilitv/[tv_委屈].png",
+        bilibilitv18: "bilibilitv/[tv_害羞].png",
+        bilibilitv19: "bilibilitv/[tv_尴尬].png",
+        bilibilitv20: "bilibilitv/[tv_微笑].png",
+        bilibilitv21: "bilibilitv/[tv_思考].png",
+        bilibilitv22: "bilibilitv/[tv_惊吓].png",
+        bilibilitv23: "bilibilitv/[tv_打脸].png",
+        bilibilitv24: "bilibilitv/[tv_抓狂].png",
+        bilibilitv25: "bilibilitv/[tv_抠鼻].png",
+        bilibilitv26: "bilibilitv/[tv_斜眼笑].png",
+        bilibilitv27: "bilibilitv/[tv_无奈].png",
+        bilibilitv28: "bilibilitv/[tv_晕].png",
+        bilibilitv29: "bilibilitv/[tv_流汗].png",
+        bilibilitv30: "bilibilitv/[tv_流泪].png",
+        bilibilitv31: "bilibilitv/[tv_流鼻血].png",
+        bilibilitv32: "bilibilitv/[tv_点赞].png",
+        bilibilitv33: "bilibilitv/[tv_生气].png",
+        bilibilitv34: "bilibilitv/[tv_生病].png",
+        bilibilitv35: "bilibilitv/[tv_疑问].png",
+        bilibilitv36: "bilibilitv/[tv_白眼].png",
+        bilibilitv37: "bilibilitv/[tv_皱眉].png",
+        bilibilitv38: "bilibilitv/[tv_目瞪口呆].png",
+        bilibilitv39: "bilibilitv/[tv_睡着].png",
+        bilibilitv40: "bilibilitv/[tv_笑哭].png",
+        bilibilitv41: "bilibilitv/[tv_腼腆].png",
+        bilibilitv42: "bilibilitv/[tv_色].png",
+        bilibilitv43: "bilibilitv/[tv_调侃].png",
+        bilibilitv44: "bilibilitv/[tv_调皮].png",
+        bilibilitv45: "bilibilitv/[tv_鄙视].png",
+        bilibilitv46: "bilibilitv/[tv_闭嘴].png",
+        bilibilitv47: "bilibilitv/[tv_难过].png",
+        bilibilitv48: "bilibilitv/[tv_馋].png",
+        bilibilitv49: "bilibilitv/[tv_鬼脸].png",
+        bilibilitv50: "bilibilitv/[tv_黑人问号].png",
+        bilibilitv51: "bilibilitv/[tv_鼓掌].png",
+        bilibili22332: "bilibili2233/[2233娘_卖萌].png",
+        bilibili22333: "bilibili2233/[2233娘_吃惊].png",
+        bilibili22334: "bilibili2233/[2233娘_吐魂].png",
+        bilibili22335: "bilibili2233/[2233娘_喝水].png",
+        bilibili22336: "bilibili2233/[2233娘_困惑].png",
+        bilibili22337: "bilibili2233/[2233娘_大哭].png",
+        bilibili22338: "bilibili2233/[2233娘_大笑].png",
+        bilibili22339: "bilibili2233/[2233娘_委屈].png",
+        bilibili223310: "bilibili2233/[2233娘_怒].png",
+        bilibili223311: "bilibili2233/[2233娘_无言].png",
+        bilibili223312: "bilibili2233/[2233娘_汗].png",
+        bilibili223313: "bilibili2233/[2233娘_疑问].png",
+        bilibili223314: "bilibili2233/[2233娘_第一].png",
+        bilibili223315: "bilibili2233/[2233娘_耶].png",
+        bilibili223316: "bilibili2233/[2233娘_郁闷].png",
+      },
+    });
+  </script>
 </div>
 
-        
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
+
+
+<script>
+    //检测推送
+    var pushType = "";
+    var pushLink = "";
+    var siteName = "木子李G";
+  
+    var ValineButton = document.getElementsByClassName("vsubmit vbtn")[0];
+    //分情况推送
+    if (pushType === "sc") {
+      var title = "text=" + siteName + "上又有新评论啦~!";
+      function send_valine_Server() {
+        //获取元素信息
+        var pagename = document.title;
+        var wz = pagename.indexOf("|");
+        var res = pagename.substring(0, wz);
+        var pageurl = document.URL;
+        var ptime = new Date();
+        var vnick = document.getElementsByClassName("vnick vinput")[0].value;
+        var vmail = document.getElementsByClassName("vmail vinput")[0].value;
+        var vlink = document.getElementsByClassName("vlink vinput")[0].value;
+        var veditor = document.getElementsByClassName("veditor vinput")[0].value;
+        var text = "desp=";
+        var data =
+          text +
+          "|昵称：" +
+          "|邮箱：" +
+          "|网站地址：" +
+          "|当前页面：" +
+          "|评论内容：" +
+          "|跳转链接：" +
+          "|评论时间" +
+          "\n" +
+          "|----|----|----|----|" +
+          "\n" +
+          "|   " +
+          vnick +
+          "   |   " +
+          vmail +
+          "  |  " +
+          vlink +
+          "|   " +
+          res +
+          "| " +
+          veditor +
+          "| " +
+          pageurl +
+          "|" +
+          ptime.toLocaleString() +
+          "|";
+        var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
+        httpRequest.open("POST", pushLink, true); //第二步：打开连接
+        httpRequest.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+        httpRequest.send(title + "&" + data); //发送请求 将情头体写在send中
+      }
+      ValineButton.onclick = send_valine_Server;
+    } else if (pushType === "qmsg") {
+      var title = "msg=" + siteName + "上又有新评论啦~!\n";
+      function send_valine_Qmsg() {
+        //获取元素信息
+        var pagename = document.title;
+        var wz = pagename.indexOf("|");
+        var res = pagename.substring(0, wz);
+        var pageurl = document.URL;
+        var ptime = new Date();
+        var vnick = document.getElementsByClassName("vnick vinput")[0].value;
+        var vmail = document.getElementsByClassName("vmail vinput")[0].value;
+        var vlink = document.getElementsByClassName("vlink vinput")[0].value;
+        var veditor = document.getElementsByClassName("veditor vinput")[0].value;
+        var data =
+          "昵称：" +
+          vnick +
+          "\n邮箱：" +
+          vmail +
+          "\n网站地址：" +
+          vlink +
+          "\n当前页面：" +
+          pagename +
+          "\n评论内容：" +
+          veditor +
+          "\n跳转链接：" +
+          pageurl +
+          "\n评论时间" +
+          ptime.toLocaleString();
+        var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
+        httpRequest.open("POST", pushLink, true); //第二步：打开连接
+        httpRequest.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+        httpRequest.send(title + data); //发送请求 将情头体写在send中
+      }
+      ValineButton.onclick = send_valine_Qmsg;
+    }
+  </script>
     
+        <div id="footer-post-container">
+    <div id="footer-post">
+
+        <div id="nav-footer" style="display: none">
+            <ul>
+                
+                    <li><a href="/">首页</a></li>
+                
+                    <li><a href="/archives/">归档</a></li>
+                
+                    <li><a href="/categories/">分类</a></li>
+                
+                    <li><a href="/tags/">标签</a></li>
+                
+                    <li><a href="/search/">搜索</a></li>
+                
+                    <li><a href="/about/">关于</a></li>
+                
+            </ul>
+        </div>
+
+        <div id="toc-footer" style="display: none">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#yum源"><span class="toc-number">1.</span> <span class="toc-text">yum源</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#显示使用的yum源"><span class="toc-number">1.1.</span> <span class="toc-text">显示使用的yum源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EPEL"><span class="toc-number">1.2.</span> <span class="toc-text">EPEL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用命令"><span class="toc-number">1.3.</span> <span class="toc-text">常用命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切换用户"><span class="toc-number">2.</span> <span class="toc-text">切换用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前台和后台执行"><span class="toc-number">3.</span> <span class="toc-text">前台和后台执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户提权"><span class="toc-number">4.</span> <span class="toc-text">用户提权</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网络配置"><span class="toc-number">5.</span> <span class="toc-text">网络配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关机-重启"><span class="toc-number">6.</span> <span class="toc-text">关机/重启</span></a></li></ol>
+        </div>
+
+        <div id="share-footer" style="display: none">
+            <ul>
+    <li><a class="icon"
+           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&title=Linux学习-04"><i
+                    class="fab fa-qq fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon"
+           href="https://service.weibo.com/share/share.php?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&title=Linux学习-04"><i
+                    class="fab fa-weibo fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/&text=Linux学习-04" target="_blank" rel="noopener"><i
+                    class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="mailto:?subject=Linux学习-04&body=Check out this article: https://lg118.github.io/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/"><i
+                    class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+        </div>
+
+        <div id="actions-footer">
+            <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i
+                        class="fas fa-bars fa-lg"
+                        aria-hidden="true"></i> 菜单</a>
+            <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i
+                        class="fas fa-list fa-lg"
+                        aria-hidden="true"></i> 目录</a>
+            <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i
+                        class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+            <a id="top" style="display:none" class="icon" href="#"
+               onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg"
+                                                                               aria-hidden="true"></i> 返回顶部
+            </a>
+        </div>
+
+    </div>
+</div>
     
-    2018-2021
-    木子李
+    <footer id="footer">
+  <div class="footer-top">
+    &copy; 2021 <i class="fas fa-heart"></i>
+    木子李 
   </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-          <li><a href="/">首页</a></li>
-         
-          <li><a href="/archives/">归档</a></li>
-         
-          <li><a href="/tags/">标签</a></li>
-         
-          <li><a href="/search/">搜索</a></li>
-         
-          <li><a href="/about/">关于</a></li>
-        
-      </ul>
-    </nav>
+
+  <div class="footer-bottom">
+    
+    <!-- tongji -->
+    <script
+      async
+      src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+	
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+    <br />
+     
   </div>
 </footer>
 
-    </div>
-    <!-- styles -->
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+</div>
+<!-- styles -->
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/justifiedGallery/3.7.0/css/justifiedGallery.min.css">
+<!-- jquery -->
+<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard 
 
-    <!-- jquery -->
-<script src="/lib/jquery/jquery.min.js"></script>
-<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
-<!-- clipboard -->
+    <script src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // copy-btn HTML
+            var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+            btn += '<i class="far fa-clone"></i>';
+            btn += '</span>';
+            // mount it!
+            $(".highlight .code pre").before(btn);
+            var clip = new ClipboardJS('.btn-copy', {
+                target: function (trigger) {
+                    return trigger.nextElementSibling;
+                }
+            });
+            clip.on('success', function (e) {
+                e.trigger.setAttribute('aria-label', "复制成功!");
+                e.clearSelection();
+            })
+        })
+    </script>
 
-  <script src="/lib/clipboard/clipboard.min.js"></script>
-  <script type="text/javascript">
-  $(function() {
-    // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
-    btn += '<i class="far fa-clone"></i>';
-    btn += '</span>'; 
-    // mount it!
-    $(".highlight table").before(btn);
-    var clip = new ClipboardJS('.btn-copy', {
-      text: function(trigger) {
-        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
-      }
-    });
-    clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "复制成功!");
-      e.clearSelection();
-    })
-  })
-  </script>
-
+-->
 <script src="/js/main.js"></script>
 <!-- search -->
 
-<!-- Google Analytics -->
-
-<!-- Baidu Analytics -->
-
-<!-- Cloudflare Analytics -->
-
-<!-- Umami Analytics -->
-
-<!-- Disqus Comments -->
-
-
-
-<!-- Valine Comments -->
-
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
-<script type="text/javascript">
-    var notify = 'false' == true ? true : false;
-    var verify = 'false' == true ? true : false;
-    var GUEST_INFO = ['nick','mail','link'];
-    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-      return GUEST_INFO.indexOf(item) > -1
-    });
-    guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
-    new Valine({
-        el: '.vcomment',
-        notify: notify,
-        verify: verify,
-        appId: "",
-        appKey: "",
-        avatar:"",
-        placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
-        guest_info:guest_info,
-        pageSize:"10"
-    })
-</script>
-
-
 </body>
+
 </html>

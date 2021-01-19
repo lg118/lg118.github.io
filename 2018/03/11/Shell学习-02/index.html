@@ -5,43 +5,31 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="for循环格式二for...in 语句&amp;#123;1..10&amp;#125; #表示集合 1到10&amp;#123;1,2,3&amp;#125; #表示集合 1 2 3------------------------------#!&#x2F;bin&#x2F;bash##循环输出1-10的所有数for i in &amp;#123;1..10&amp;#125;do  echo $idone----------------------------">
-<meta name="keywords" content="Shell">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Shell学习-02">
-<meta property="og:url" content="https:&#x2F;&#x2F;lg118.github.io&#x2F;2018&#x2F;03&#x2F;11&#x2F;Shell%E5%AD%A6%E4%B9%A0-02&#x2F;index.html">
-<meta property="og:site_name" content="木子李G">
-<meta property="og:description" content="for循环格式二for...in 语句&amp;#123;1..10&amp;#125; #表示集合 1到10&amp;#123;1,2,3&amp;#125; #表示集合 1 2 3------------------------------#!&#x2F;bin&#x2F;bash##循环输出1-10的所有数for i in &amp;#123;1..10&amp;#125;do  echo $idone----------------------------">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-10T16:00:00.000Z">
-<meta name="twitter:card" content="summary">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     
     
-      
         
-          <link rel="shortcut icon" href="/images/favicon.ico">
+            
+                <link rel="shortcut icon" href="/images/favicon.ico">
+            
         
-      
-      
         
-          <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+            
+                <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+            
         
-      
-      
         
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+            
+                <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+            
         
-      
     
     <!-- title -->
     <title>Shell学习-02</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
-    <!-- persian styles -->
-    
-      <link rel="stylesheet" href="/css/rtl.css">
-    
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/fira_code.css" rel="stylesheet">
     <!-- rss -->
     
     
@@ -49,38 +37,51 @@
 </head>
 
 <body class="max-width mx-auto px3 ltr">
-    
-      <div id="header-post">
-  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
+
+    <div id="header-post">
+    <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+    <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+    <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i
+                class="fas fa-chevron-up fa-lg"></i></a>
+    <span id="menu">
     <span id="nav">
       <ul>
-         
-          <li><a href="/">首页</a></li>
-         
-          <li><a href="/archives/">归档</a></li>
-         
-          <li><a href="/tags/">标签</a></li>
-         
-          <li><a href="/search/">搜索</a></li>
-         
-          <li><a href="/about/">关于</a></li>
-        
+          
+              <li><a href="/">首页</a></li>
+          
+              <li><a href="/archives/">归档</a></li>
+          
+              <li><a href="/categories/">分类</a></li>
+          
+              <li><a href="/tags/">标签</a></li>
+          
+              <li><a href="/search/">搜索</a></li>
+          
+              <li><a href="/about/">关于</a></li>
+          
       </ul>
     </span>
     <br/>
     <span id="actions">
       <ul>
-        
-        <li><a class="icon" href="/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-01/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
-        
-        
-        <li><a class="icon" href="/2018/03/10/Linux%E5%AD%A6%E4%B9%A0-05/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
-        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+          
+              <li><a class="icon" href="/2018/03/12/Shell%E5%AD%A6%E4%B9%A0-03/"><i class="fas fa-chevron-left"
+                                                                           aria-hidden="true"
+                                                                           onmouseover="$('#i-prev').toggle();"
+                                                                           onmouseout="$('#i-prev').toggle();"></i></a></li>
+          
+          
+              <li><a class="icon" href="/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-01/"><i class="fas fa-chevron-right"
+                                                                           aria-hidden="true"
+                                                                           onmouseover="$('#i-next').toggle();"
+                                                                           onmouseout="$('#i-next').toggle();"></i></a></li>
+          
+          <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i
+                          class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();"
+                          onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true"
+                                        onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();"
+                                        onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
       <span id="i-prev" class="info" style="display:none;">上一篇</span>
       <span id="i-next" class="info" style="display:none;">下一篇</span>
@@ -90,19 +91,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&text=Shell学习-02" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&title=Shell学习-02" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&is_video=false&description=Shell学习-02" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Shell学习-02&body=Check out this article: https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&title=Shell学习-02" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&title=Shell学习-02" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&title=Shell学习-02" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&title=Shell学习-02" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&name=Shell学习-02&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&t=Shell学习-02" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+    <li><a class="icon"
+           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&title=Shell学习-02"><i
+                    class="fab fa-qq " aria-hidden="true"></i></a></li>
+    <li><a class="icon"
+           href="https://service.weibo.com/share/share.php?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&title=Shell学习-02"><i
+                    class="fab fa-weibo " aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&text=Shell学习-02" target="_blank" rel="noopener"><i
+                    class="fab fa-twitter " aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="mailto:?subject=Shell学习-02&body=Check out this article: https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/"><i
+                    class="fas fa-envelope " aria-hidden="true"></i></a></li>
 </ul>
-
     </div>
     <div id="toc">
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#for循环格式二"><span class="toc-number">1.</span> <span class="toc-text">for循环格式二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#while循环"><span class="toc-number">2.</span> <span class="toc-text">while循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#until循环"><span class="toc-number">3.</span> <span class="toc-text">until循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环中断"><span class="toc-number">4.</span> <span class="toc-text">循环中断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写脚本，检测当前网络中哪些服务器在线？？"><span class="toc-number">5.</span> <span class="toc-text">编写脚本，检测当前网络中哪些服务器在线？？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#批量添加用户"><span class="toc-number">6.</span> <span class="toc-text">批量添加用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写一个脚本，实现将文件分发到其他远程节点"><span class="toc-number">7.</span> <span class="toc-text">编写一个脚本，实现将文件分发到其他远程节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sed流编辑器-—-扩展"><span class="toc-number">8.</span> <span class="toc-text">sed流编辑器 —- 扩展</span></a></li></ol>
@@ -110,51 +109,52 @@
   </span>
 </div>
 
+<div class="content index py4">
     
-    <div class="content index py4">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
     <h1 class="posttitle" itemprop="name headline">
         Shell学习-02
     </h1>
 
-
-
-    <div class="meta">
+        <div class="meta">
       <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">木子李</span>
+        <span itemprop="name">
+            木子李
+            
+        </span>
       </span>
-      
+            
     <div class="postdate">
-      
-        <time datetime="2018-03-10T16:00:00.000Z" itemprop="datePublished">2018-03-11</time>
         
-      
+            <time datetime="2018-03-10T16:00:00.000Z"
+                  itemprop="datePublished">2018-03-11</time>
+            
+                (Updated:
+                <time datetime="2018-03-10T16:00:00.000Z"
+                      itemprop="dateModified">2018-03-11</time>)
+            
+        
     </div>
 
-
-      
+            
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Shell/">Shell</a>
     </div>
 
-
-      
+            
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link" href="/tags/Shell/" rel="tag">Shell</a>
     </div>
 
-
-    </div>
-  </header>
-  
-
-  <div class="content" itemprop="articleBody">
-    <h2 id="for循环格式二"><a href="#for循环格式二" class="headerlink" title="for循环格式二"></a>for循环格式二</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">for...in 语句</span><br><span class="line">&#123;1..10&#125; #表示集合 1到10</span><br><span class="line">&#123;1,2,3&#125; #表示集合 1 2 3</span><br><span class="line">------------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#循环输出1-10的所有数</span></span></span><br><span class="line">for i in &#123;1..10&#125;</span><br><span class="line">do</span><br><span class="line">  echo $i</span><br><span class="line">done</span><br><span class="line">--------------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#循环输出1-10的所有数</span></span></span><br><span class="line">for i in &#123;1,2,3,4,5,6,7,8,9,10&#125;</span><br><span class="line">do</span><br><span class="line">  echo $i</span><br><span class="line">done</span><br><span class="line">------------------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">for i in 1 2 3 4 5</span><br><span class="line">do</span><br><span class="line"> echo $i</span><br><span class="line">done</span><br><span class="line">-----------------------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">a=(1 2 3 4 5)</span><br><span class="line">for i in $&#123;a[*]&#125;</span><br><span class="line">do</span><br><span class="line"> echo $i</span><br><span class="line">done</span><br><span class="line">--------------------------------------------</span><br><span class="line"></span><br><span class="line">"$*": #循环的时候，把所有的参数当作整体</span><br><span class="line">"$@": #循环的时候,把所有参数当成一个一个的元素</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">for i in "$*"</span><br><span class="line">do</span><br><span class="line">  echo $i</span><br><span class="line">done</span><br><span class="line">[root@hadoop10 opt]# ./forin03.sh 1 2 3 4 5</span><br><span class="line">1 2 3 4 5</span><br><span class="line">-------------------------------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">seq</span></span><br><span class="line">NAME</span><br><span class="line">       seq - print a sequence of numbers</span><br><span class="line">SYNOPSIS</span><br><span class="line">       seq [OPTION]... LAST</span><br><span class="line">       seq [OPTION]... FIRST LAST</span><br><span class="line">       seq [OPTION]... FIRST INCREMENT LAST</span><br><span class="line"></span><br><span class="line">----------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">for i in `seq 1 10`</span><br><span class="line">do</span><br><span class="line">  echo $i</span><br><span class="line">done</span><br><span class="line">----------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">for i in $(seq 1 10)</span><br><span class="line">do</span><br><span class="line">  echo $i</span><br><span class="line">done</span><br><span class="line">----------------------</span><br><span class="line">data.txt:</span><br><span class="line">1 2</span><br><span class="line">3 4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">for i in `cat /opt/data.txt`</span><br><span class="line">do</span><br><span class="line">   echo $i</span><br><span class="line">done</span><br><span class="line"><span class="meta">#</span><span class="bash">注意：<span class="keyword">for</span>循环能够识别空格、制表符和换行</span></span><br><span class="line">-------------------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">read -p"请输入一个数字" START  END</span><br><span class="line">for i in $(seq $START $END)</span><br><span class="line">do</span><br><span class="line">  echo $i</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+        </div>
+    </header>
+    
+    <div class="content" itemprop="articleBody">
+        <h2 id="for循环格式二"><a href="#for循环格式二" class="headerlink" title="for循环格式二"></a>for循环格式二</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">for...in 语句</span><br><span class="line">&#123;1..10&#125; #表示集合 1到10</span><br><span class="line">&#123;1,2,3&#125; #表示集合 1 2 3</span><br><span class="line">------------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#循环输出1-10的所有数</span></span></span><br><span class="line">for i in &#123;1..10&#125;</span><br><span class="line">do</span><br><span class="line">  echo $i</span><br><span class="line">done</span><br><span class="line">--------------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#循环输出1-10的所有数</span></span></span><br><span class="line">for i in &#123;1,2,3,4,5,6,7,8,9,10&#125;</span><br><span class="line">do</span><br><span class="line">  echo $i</span><br><span class="line">done</span><br><span class="line">------------------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">for i in 1 2 3 4 5</span><br><span class="line">do</span><br><span class="line"> echo $i</span><br><span class="line">done</span><br><span class="line">-----------------------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">a=(1 2 3 4 5)</span><br><span class="line">for i in $&#123;a[*]&#125;</span><br><span class="line">do</span><br><span class="line"> echo $i</span><br><span class="line">done</span><br><span class="line">--------------------------------------------</span><br><span class="line"></span><br><span class="line">"$*": #循环的时候，把所有的参数当作整体</span><br><span class="line">"$@": #循环的时候,把所有参数当成一个一个的元素</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">for i in "$*"</span><br><span class="line">do</span><br><span class="line">  echo $i</span><br><span class="line">done</span><br><span class="line">[root@hadoop10 opt]# ./forin03.sh 1 2 3 4 5</span><br><span class="line">1 2 3 4 5</span><br><span class="line">-------------------------------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">seq</span></span><br><span class="line">NAME</span><br><span class="line">       seq - print a sequence of numbers</span><br><span class="line">SYNOPSIS</span><br><span class="line">       seq [OPTION]... LAST</span><br><span class="line">       seq [OPTION]... FIRST LAST</span><br><span class="line">       seq [OPTION]... FIRST INCREMENT LAST</span><br><span class="line"></span><br><span class="line">----------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">for i in `seq 1 10`</span><br><span class="line">do</span><br><span class="line">  echo $i</span><br><span class="line">done</span><br><span class="line">----------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">for i in $(seq 1 10)</span><br><span class="line">do</span><br><span class="line">  echo $i</span><br><span class="line">done</span><br><span class="line">----------------------</span><br><span class="line">data.txt:</span><br><span class="line">1 2</span><br><span class="line">3 4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">for i in `cat /opt/data.txt`</span><br><span class="line">do</span><br><span class="line">   echo $i</span><br><span class="line">done</span><br><span class="line"><span class="meta">#</span><span class="bash">注意：<span class="keyword">for</span>循环能够识别空格、制表符和换行</span></span><br><span class="line">-------------------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">read -p"请输入一个数字" START  END</span><br><span class="line">for i in $(seq $START $END)</span><br><span class="line">do</span><br><span class="line">  echo $i</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 <h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">循环输出1-10的所有数 </span></span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">i=1</span><br><span class="line">while [ $i -le 10 ]</span><br><span class="line">do</span><br><span class="line">  echo $i</span><br><span class="line">  ((i++))</span><br><span class="line">done</span><br><span class="line">---------------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">循环输出1-10的所有偶数</span></span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">i=1</span><br><span class="line">while [ $i -le 10 ]</span><br><span class="line">do</span><br><span class="line">  if [ $[$i%2] -eq 0 ]</span><br><span class="line">  then</span><br><span class="line">    echo $i</span><br><span class="line">  fi</span><br><span class="line">    ((i++))</span><br><span class="line">done</span><br><span class="line">--------------------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">while read i</span><br><span class="line">do</span><br><span class="line">  echo $i</span><br><span class="line">done &lt; /opt/data.txt</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># while 读取文本是按行读取</span></span></span><br><span class="line">----------------------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">while :</span><br><span class="line">do</span><br><span class="line">  echo "shell---------"</span><br><span class="line">  sleep 2s</span><br><span class="line">done</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#这里的: 表示true</span></span></span><br></pre></td></tr></table></figure>
 <h2 id="until循环"><a href="#until循环" class="headerlink" title="until循环"></a>until循环</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">until和while正好相反。</span><br><span class="line">while是条件成立时执行</span><br><span class="line">until是条件不成立时执行</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">read -p"输入一个数据：" i</span><br><span class="line">until [ $i -le 10 ]</span><br><span class="line">do</span><br><span class="line">  echo $i</span><br><span class="line">  ((i--))</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 <h2 id="循环中断"><a href="#循环中断" class="headerlink" title="循环中断"></a>循环中断</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">break</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">for i in `seq 1 10`</span><br><span class="line">do</span><br><span class="line">   if [ $i -eq 5 ]</span><br><span class="line">   then</span><br><span class="line">     break</span><br><span class="line">   fi</span><br><span class="line">    echo "$i"</span><br><span class="line">done</span><br><span class="line">-------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">continue</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">for i in `seq 1 10`</span><br><span class="line">do</span><br><span class="line">   if [ $i -eq 5 ]</span><br><span class="line">   then</span><br><span class="line">     continue</span><br><span class="line">   fi</span><br><span class="line">    echo "$i"</span><br><span class="line">done</span><br><span class="line">--------------------------</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">exit</span> 终止脚本程序</span></span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">for i in `seq 1 10`</span><br><span class="line">do</span><br><span class="line">   if [ $i -eq 5 ]</span><br><span class="line">   then</span><br><span class="line">     exit 100</span><br><span class="line">   fi</span><br><span class="line">    echo "$i"</span><br><span class="line">done</span><br><span class="line">echo "over----------"</span><br></pre></td></tr></table></figure>
@@ -163,168 +163,356 @@
 <h2 id="编写一个脚本，实现将文件分发到其他远程节点"><a href="#编写一个脚本，实现将文件分发到其他远程节点" class="headerlink" title="编写一个脚本，实现将文件分发到其他远程节点"></a>编写一个脚本，实现将文件分发到其他远程节点</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#判断参数</span></span></span><br><span class="line">if [ $# -eq 0 ];then</span><br><span class="line">  echo "Please enter one or more files or directories!!"</span><br><span class="line">  exit 1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#获取当前的用户名</span></span></span><br><span class="line">USERNAME=$(whoami)</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#获取当前的主机名</span></span></span><br><span class="line">HOSTNAME=$(hostname)</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#获取机配置文件nodes的路径</span></span></span><br><span class="line">DIRNAME=`dirname $0`</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#读取目标主机配置文件nodes</span></span></span><br><span class="line"></span><br><span class="line">for HOST in `cat $DIRNAME/nodes`</span><br><span class="line">do</span><br><span class="line">        if [ "$HOST" = "$HOSTNAME" ];then</span><br><span class="line">          continue</span><br><span class="line">        fi</span><br><span class="line">        </span><br><span class="line">        #获取文件</span><br><span class="line">        for file in $*</span><br><span class="line">         do</span><br><span class="line">         ## 获取文件的相对路径</span><br><span class="line">         DIR_NAME=`dirname $file`</span><br><span class="line">         ##获取文件的名称</span><br><span class="line">         FILE_NAME=$(basename $file)         </span><br><span class="line">         ## 相对路径转成绝对路径</span><br><span class="line">         FILE_ABS_PATH=`cd $DIR_NAME;pwd`</span><br><span class="line">         </span><br><span class="line">         rsync -rvl $FILE_ABS_PATH/$FILE_NAME $USERNAME@$HOST:$FILE_ABS_PATH</span><br><span class="line">        done</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 <h2 id="sed流编辑器-—-扩展"><a href="#sed流编辑器-—-扩展" class="headerlink" title="sed流编辑器 —- 扩展"></a>sed流编辑器 —- 扩展</h2><p>vim编辑器是基于交互方式的编辑器。在shell编程的代码我们需要通过代码编辑文本，此时使用sed流编辑器。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">sed语法格式</span></span><br><span class="line">sed [可选] command 文件</span><br><span class="line"><span class="meta">#</span><span class="bash">可选</span></span><br><span class="line">-n: #只会打印到匹配到的行</span><br><span class="line">-i: #修改原文件</span><br><span class="line">-r: #扩展正则</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">command</span></span></span><br><span class="line">这里可以是命令和正则规则</span><br><span class="line">d #删除</span><br><span class="line">n #</span><br><span class="line">p # 打印输出</span><br><span class="line"></span><br><span class="line">--------------------</span><br><span class="line">[root@hadoop10 opt]# sed -i '9,$d' 1.txt #删除第9行到最后一行，-i更改源文件</span><br><span class="line">[root@hadoop10 opt]# sed -n /daemon/p 1.txt #打印匹配的行</span><br><span class="line"></span><br><span class="line">[root@hadoop10 opt]# sed /adm/d 1.txt  #删除匹配内容的行</span><br><span class="line"></span><br><span class="line">[root@hadoop10 opt]# sed 's/bin/xxx/g' 1.txt &gt; 2.txt #将所有的bin替换成xxx,修改后的内容保存成2.txt</span><br></pre></td></tr></table></figure>
-  </div>
+    </div>
 </article>
 
-    <div class="blog-post-comments">
-        
-        
-        <div class="vcomment"></div>
-        
-    </div>
-
-
-
-        
-          <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/">首页</a></li>
-         
-          <li><a href="/archives/">归档</a></li>
-         
-          <li><a href="/tags/">标签</a></li>
-         
-          <li><a href="/search/">搜索</a></li>
-         
-          <li><a href="/about/">关于</a></li>
-        
-      </ul>
-    </div>
-
-    <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#for循环格式二"><span class="toc-number">1.</span> <span class="toc-text">for循环格式二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#while循环"><span class="toc-number">2.</span> <span class="toc-text">while循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#until循环"><span class="toc-number">3.</span> <span class="toc-text">until循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环中断"><span class="toc-number">4.</span> <span class="toc-text">循环中断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写脚本，检测当前网络中哪些服务器在线？？"><span class="toc-number">5.</span> <span class="toc-text">编写脚本，检测当前网络中哪些服务器在线？？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#批量添加用户"><span class="toc-number">6.</span> <span class="toc-text">批量添加用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写一个脚本，实现将文件分发到其他远程节点"><span class="toc-number">7.</span> <span class="toc-text">编写一个脚本，实现将文件分发到其他远程节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sed流编辑器-—-扩展"><span class="toc-number">8.</span> <span class="toc-text">sed流编辑器 —- 扩展</span></a></li></ol>
-    </div>
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&text=Shell学习-02" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&title=Shell学习-02" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&is_video=false&description=Shell学习-02" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Shell学习-02&body=Check out this article: https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&title=Shell学习-02" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&title=Shell学习-02" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&title=Shell学习-02" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&title=Shell学习-02" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&name=Shell学习-02&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&t=Shell学习-02" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
-    </div>
-
-  </div>
+<div class="blog-post-comments">
+  <section id="comment">
+    <div id="valine_container" class="valine_thread"></div>
+  </section>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script>
+    var GUEST_INFO = ["nick", "mail", "link"];
+    var guest_info = "nick,mail,link"
+      .split(",")
+      .filter(function (item) {
+        return GUEST_INFO.indexOf(item) > -1;
+      });
+    var valine = new Valine();
+    valine.init({
+      el: "#valine_container",
+      appId: "",
+      appKey: "",
+      placeholder: "Just go go",
+      pageSize: "15",
+      avatar: "mp",
+      lang: "zh-cn",
+      emojiCDN: "https://mirrorcdn.bili33.top/",
+      // 表情title和图片映射
+      emojiMaps: {
+        Tieba2: "Tieba/i_f01.png",
+        Tieba3: "Tieba/i_f02.png",
+        Tieba4: "Tieba/i_f03.png",
+        Tieba5: "Tieba/i_f04.png",
+        Tieba6: "Tieba/i_f05.png",
+        Tieba7: "Tieba/i_f06.png",
+        Tieba8: "Tieba/i_f07.png",
+        Tieba9: "Tieba/i_f08.png",
+        Tieba10: "Tieba/i_f09.png",
+        Tieba11: "Tieba/i_f10.png",
+        Tieba12: "Tieba/i_f11.png",
+        Tieba13: "Tieba/i_f12.png",
+        Tieba14: "Tieba/i_f13.png",
+        Tieba15: "Tieba/i_f14.png",
+        Tieba16: "Tieba/i_f15.png",
+        Tieba17: "Tieba/i_f16.png",
+        Tieba18: "Tieba/i_f17.png",
+        Tieba19: "Tieba/i_f18.png",
+        Tieba20: "Tieba/i_f19.png",
+        Tieba21: "Tieba/i_f20.png",
+        Tieba22: "Tieba/i_f21.png",
+        Tieba23: "Tieba/i_f22.png",
+        Tieba24: "Tieba/i_f23.png",
+        Tieba25: "Tieba/i_f24.png",
+        Tieba26: "Tieba/i_f25.png",
+        Tieba27: "Tieba/i_f26.png",
+        Tieba28: "Tieba/i_f27.png",
+        Tieba29: "Tieba/i_f28.png",
+        Tieba30: "Tieba/i_f29.png",
+        Tieba31: "Tieba/i_f30.png",
+        Tieba32: "Tieba/i_f31.png",
+        Tieba33: "Tieba/i_f32.png",
+        Tieba34: "Tieba/i_f33.png",
+        bilibilitv2: "bilibilitv/[tv_doge].png",
+        bilibilitv3: "bilibilitv/[tv_亲亲].png",
+        bilibilitv4: "bilibilitv/[tv_偷笑].png",
+        bilibilitv5: "bilibilitv/[tv_再见].png",
+        bilibilitv6: "bilibilitv/[tv_冷漠].png",
+        bilibilitv7: "bilibilitv/[tv_发怒].png",
+        bilibilitv8: "bilibilitv/[tv_发财].png",
+        bilibilitv9: "bilibilitv/[tv_可爱].png",
+        bilibilitv10: "bilibilitv/[tv_吐血].png",
+        bilibilitv11: "bilibilitv/[tv_呆].png",
+        bilibilitv12: "bilibilitv/[tv_呕吐].png",
+        bilibilitv13: "bilibilitv/[tv_困].png",
+        bilibilitv14: "bilibilitv/[tv_坏笑].png",
+        bilibilitv15: "bilibilitv/[tv_大佬].png",
+        bilibilitv16: "bilibilitv/[tv_大哭].png",
+        bilibilitv17: "bilibilitv/[tv_委屈].png",
+        bilibilitv18: "bilibilitv/[tv_害羞].png",
+        bilibilitv19: "bilibilitv/[tv_尴尬].png",
+        bilibilitv20: "bilibilitv/[tv_微笑].png",
+        bilibilitv21: "bilibilitv/[tv_思考].png",
+        bilibilitv22: "bilibilitv/[tv_惊吓].png",
+        bilibilitv23: "bilibilitv/[tv_打脸].png",
+        bilibilitv24: "bilibilitv/[tv_抓狂].png",
+        bilibilitv25: "bilibilitv/[tv_抠鼻].png",
+        bilibilitv26: "bilibilitv/[tv_斜眼笑].png",
+        bilibilitv27: "bilibilitv/[tv_无奈].png",
+        bilibilitv28: "bilibilitv/[tv_晕].png",
+        bilibilitv29: "bilibilitv/[tv_流汗].png",
+        bilibilitv30: "bilibilitv/[tv_流泪].png",
+        bilibilitv31: "bilibilitv/[tv_流鼻血].png",
+        bilibilitv32: "bilibilitv/[tv_点赞].png",
+        bilibilitv33: "bilibilitv/[tv_生气].png",
+        bilibilitv34: "bilibilitv/[tv_生病].png",
+        bilibilitv35: "bilibilitv/[tv_疑问].png",
+        bilibilitv36: "bilibilitv/[tv_白眼].png",
+        bilibilitv37: "bilibilitv/[tv_皱眉].png",
+        bilibilitv38: "bilibilitv/[tv_目瞪口呆].png",
+        bilibilitv39: "bilibilitv/[tv_睡着].png",
+        bilibilitv40: "bilibilitv/[tv_笑哭].png",
+        bilibilitv41: "bilibilitv/[tv_腼腆].png",
+        bilibilitv42: "bilibilitv/[tv_色].png",
+        bilibilitv43: "bilibilitv/[tv_调侃].png",
+        bilibilitv44: "bilibilitv/[tv_调皮].png",
+        bilibilitv45: "bilibilitv/[tv_鄙视].png",
+        bilibilitv46: "bilibilitv/[tv_闭嘴].png",
+        bilibilitv47: "bilibilitv/[tv_难过].png",
+        bilibilitv48: "bilibilitv/[tv_馋].png",
+        bilibilitv49: "bilibilitv/[tv_鬼脸].png",
+        bilibilitv50: "bilibilitv/[tv_黑人问号].png",
+        bilibilitv51: "bilibilitv/[tv_鼓掌].png",
+        bilibili22332: "bilibili2233/[2233娘_卖萌].png",
+        bilibili22333: "bilibili2233/[2233娘_吃惊].png",
+        bilibili22334: "bilibili2233/[2233娘_吐魂].png",
+        bilibili22335: "bilibili2233/[2233娘_喝水].png",
+        bilibili22336: "bilibili2233/[2233娘_困惑].png",
+        bilibili22337: "bilibili2233/[2233娘_大哭].png",
+        bilibili22338: "bilibili2233/[2233娘_大笑].png",
+        bilibili22339: "bilibili2233/[2233娘_委屈].png",
+        bilibili223310: "bilibili2233/[2233娘_怒].png",
+        bilibili223311: "bilibili2233/[2233娘_无言].png",
+        bilibili223312: "bilibili2233/[2233娘_汗].png",
+        bilibili223313: "bilibili2233/[2233娘_疑问].png",
+        bilibili223314: "bilibili2233/[2233娘_第一].png",
+        bilibili223315: "bilibili2233/[2233娘_耶].png",
+        bilibili223316: "bilibili2233/[2233娘_郁闷].png",
+      },
+    });
+  </script>
 </div>
 
-        
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
+
+
+<script>
+    //检测推送
+    var pushType = "";
+    var pushLink = "";
+    var siteName = "木子李G";
+  
+    var ValineButton = document.getElementsByClassName("vsubmit vbtn")[0];
+    //分情况推送
+    if (pushType === "sc") {
+      var title = "text=" + siteName + "上又有新评论啦~!";
+      function send_valine_Server() {
+        //获取元素信息
+        var pagename = document.title;
+        var wz = pagename.indexOf("|");
+        var res = pagename.substring(0, wz);
+        var pageurl = document.URL;
+        var ptime = new Date();
+        var vnick = document.getElementsByClassName("vnick vinput")[0].value;
+        var vmail = document.getElementsByClassName("vmail vinput")[0].value;
+        var vlink = document.getElementsByClassName("vlink vinput")[0].value;
+        var veditor = document.getElementsByClassName("veditor vinput")[0].value;
+        var text = "desp=";
+        var data =
+          text +
+          "|昵称：" +
+          "|邮箱：" +
+          "|网站地址：" +
+          "|当前页面：" +
+          "|评论内容：" +
+          "|跳转链接：" +
+          "|评论时间" +
+          "\n" +
+          "|----|----|----|----|" +
+          "\n" +
+          "|   " +
+          vnick +
+          "   |   " +
+          vmail +
+          "  |  " +
+          vlink +
+          "|   " +
+          res +
+          "| " +
+          veditor +
+          "| " +
+          pageurl +
+          "|" +
+          ptime.toLocaleString() +
+          "|";
+        var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
+        httpRequest.open("POST", pushLink, true); //第二步：打开连接
+        httpRequest.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+        httpRequest.send(title + "&" + data); //发送请求 将情头体写在send中
+      }
+      ValineButton.onclick = send_valine_Server;
+    } else if (pushType === "qmsg") {
+      var title = "msg=" + siteName + "上又有新评论啦~!\n";
+      function send_valine_Qmsg() {
+        //获取元素信息
+        var pagename = document.title;
+        var wz = pagename.indexOf("|");
+        var res = pagename.substring(0, wz);
+        var pageurl = document.URL;
+        var ptime = new Date();
+        var vnick = document.getElementsByClassName("vnick vinput")[0].value;
+        var vmail = document.getElementsByClassName("vmail vinput")[0].value;
+        var vlink = document.getElementsByClassName("vlink vinput")[0].value;
+        var veditor = document.getElementsByClassName("veditor vinput")[0].value;
+        var data =
+          "昵称：" +
+          vnick +
+          "\n邮箱：" +
+          vmail +
+          "\n网站地址：" +
+          vlink +
+          "\n当前页面：" +
+          pagename +
+          "\n评论内容：" +
+          veditor +
+          "\n跳转链接：" +
+          pageurl +
+          "\n评论时间" +
+          ptime.toLocaleString();
+        var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
+        httpRequest.open("POST", pushLink, true); //第二步：打开连接
+        httpRequest.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+        httpRequest.send(title + data); //发送请求 将情头体写在send中
+      }
+      ValineButton.onclick = send_valine_Qmsg;
+    }
+  </script>
     
+        <div id="footer-post-container">
+    <div id="footer-post">
+
+        <div id="nav-footer" style="display: none">
+            <ul>
+                
+                    <li><a href="/">首页</a></li>
+                
+                    <li><a href="/archives/">归档</a></li>
+                
+                    <li><a href="/categories/">分类</a></li>
+                
+                    <li><a href="/tags/">标签</a></li>
+                
+                    <li><a href="/search/">搜索</a></li>
+                
+                    <li><a href="/about/">关于</a></li>
+                
+            </ul>
+        </div>
+
+        <div id="toc-footer" style="display: none">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#for循环格式二"><span class="toc-number">1.</span> <span class="toc-text">for循环格式二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#while循环"><span class="toc-number">2.</span> <span class="toc-text">while循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#until循环"><span class="toc-number">3.</span> <span class="toc-text">until循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环中断"><span class="toc-number">4.</span> <span class="toc-text">循环中断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写脚本，检测当前网络中哪些服务器在线？？"><span class="toc-number">5.</span> <span class="toc-text">编写脚本，检测当前网络中哪些服务器在线？？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#批量添加用户"><span class="toc-number">6.</span> <span class="toc-text">批量添加用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编写一个脚本，实现将文件分发到其他远程节点"><span class="toc-number">7.</span> <span class="toc-text">编写一个脚本，实现将文件分发到其他远程节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sed流编辑器-—-扩展"><span class="toc-number">8.</span> <span class="toc-text">sed流编辑器 —- 扩展</span></a></li></ol>
+        </div>
+
+        <div id="share-footer" style="display: none">
+            <ul>
+    <li><a class="icon"
+           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&title=Shell学习-02"><i
+                    class="fab fa-qq fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon"
+           href="https://service.weibo.com/share/share.php?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&title=Shell学习-02"><i
+                    class="fab fa-weibo fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/&text=Shell学习-02" target="_blank" rel="noopener"><i
+                    class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="mailto:?subject=Shell学习-02&body=Check out this article: https://lg118.github.io/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/"><i
+                    class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+        </div>
+
+        <div id="actions-footer">
+            <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i
+                        class="fas fa-bars fa-lg"
+                        aria-hidden="true"></i> 菜单</a>
+            <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i
+                        class="fas fa-list fa-lg"
+                        aria-hidden="true"></i> 目录</a>
+            <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i
+                        class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+            <a id="top" style="display:none" class="icon" href="#"
+               onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg"
+                                                                               aria-hidden="true"></i> 返回顶部
+            </a>
+        </div>
+
+    </div>
+</div>
     
-    2018-2021
-    木子李
+    <footer id="footer">
+  <div class="footer-top">
+    &copy; 2021 <i class="fas fa-heart"></i>
+    木子李 
   </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-          <li><a href="/">首页</a></li>
-         
-          <li><a href="/archives/">归档</a></li>
-         
-          <li><a href="/tags/">标签</a></li>
-         
-          <li><a href="/search/">搜索</a></li>
-         
-          <li><a href="/about/">关于</a></li>
-        
-      </ul>
-    </nav>
+
+  <div class="footer-bottom">
+    
+    <!-- tongji -->
+    <script
+      async
+      src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+	
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+    <br />
+     
   </div>
 </footer>
 
-    </div>
-    <!-- styles -->
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+</div>
+<!-- styles -->
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/justifiedGallery/3.7.0/css/justifiedGallery.min.css">
+<!-- jquery -->
+<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard 
 
-    <!-- jquery -->
-<script src="/lib/jquery/jquery.min.js"></script>
-<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
-<!-- clipboard -->
+    <script src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // copy-btn HTML
+            var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+            btn += '<i class="far fa-clone"></i>';
+            btn += '</span>';
+            // mount it!
+            $(".highlight .code pre").before(btn);
+            var clip = new ClipboardJS('.btn-copy', {
+                target: function (trigger) {
+                    return trigger.nextElementSibling;
+                }
+            });
+            clip.on('success', function (e) {
+                e.trigger.setAttribute('aria-label', "复制成功!");
+                e.clearSelection();
+            })
+        })
+    </script>
 
-  <script src="/lib/clipboard/clipboard.min.js"></script>
-  <script type="text/javascript">
-  $(function() {
-    // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
-    btn += '<i class="far fa-clone"></i>';
-    btn += '</span>'; 
-    // mount it!
-    $(".highlight table").before(btn);
-    var clip = new ClipboardJS('.btn-copy', {
-      text: function(trigger) {
-        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
-      }
-    });
-    clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "复制成功!");
-      e.clearSelection();
-    })
-  })
-  </script>
-
+-->
 <script src="/js/main.js"></script>
 <!-- search -->
 
-<!-- Google Analytics -->
-
-<!-- Baidu Analytics -->
-
-<!-- Cloudflare Analytics -->
-
-<!-- Umami Analytics -->
-
-<!-- Disqus Comments -->
-
-
-
-<!-- Valine Comments -->
-
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
-<script type="text/javascript">
-    var notify = 'false' == true ? true : false;
-    var verify = 'false' == true ? true : false;
-    var GUEST_INFO = ['nick','mail','link'];
-    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-      return GUEST_INFO.indexOf(item) > -1
-    });
-    guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
-    new Valine({
-        el: '.vcomment',
-        notify: notify,
-        verify: verify,
-        appId: "",
-        appKey: "",
-        avatar:"",
-        placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
-        guest_info:guest_info,
-        pageSize:"10"
-    })
-</script>
-
-
 </body>
+
 </html>
