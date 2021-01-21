@@ -25,7 +25,7 @@
         
     
     <!-- title -->
-    <title>Linux学习-02</title>
+    <title>Shell自定义分(群)发脚本</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet">
@@ -65,13 +65,13 @@
     <span id="actions">
       <ul>
           
-              <li><a class="icon" href="/2018/03/09/Linux%E5%AD%A6%E4%B9%A0-04/"><i class="fas fa-chevron-left"
+              <li><a class="icon" href="/2019/12/24/Scala%E4%B8%AD%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90/"><i class="fas fa-chevron-left"
                                                                            aria-hidden="true"
                                                                            onmouseover="$('#i-prev').toggle();"
                                                                            onmouseout="$('#i-prev').toggle();"></i></a></li>
           
           
-              <li><a class="icon" href="/2018/03/06/Linux%E5%AD%A6%E4%B9%A0-01/"><i class="fas fa-chevron-right"
+              <li><a class="icon" href="/2018/03/12/Shell%E5%AD%A6%E4%B9%A0-03/"><i class="fas fa-chevron-right"
                                                                            aria-hidden="true"
                                                                            onmouseover="$('#i-next').toggle();"
                                                                            onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -92,19 +92,19 @@
     <div id="share" style="display: none">
       <ul>
     <li><a class="icon"
-           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lg118.github.io/2018/03/08/Linux%E5%AD%A6%E4%B9%A0-02/&title=Linux学习-02"><i
+           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lg118.github.io/2018/04/21/Shell%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%86(%E7%BE%A4)%E5%8F%91%E8%84%9A%E6%9C%AC/&title=Shell自定义分(群)发脚本"><i
                     class="fab fa-qq " aria-hidden="true"></i></a></li>
     <li><a class="icon"
-           href="https://service.weibo.com/share/share.php?url=https://lg118.github.io/2018/03/08/Linux%E5%AD%A6%E4%B9%A0-02/&title=Linux学习-02"><i
+           href="https://service.weibo.com/share/share.php?url=https://lg118.github.io/2018/04/21/Shell%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%86(%E7%BE%A4)%E5%8F%91%E8%84%9A%E6%9C%AC/&title=Shell自定义分(群)发脚本"><i
                     class="fab fa-weibo " aria-hidden="true"></i></a></li>
-    <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2018/03/08/Linux%E5%AD%A6%E4%B9%A0-02/&text=Linux学习-02" target="_blank" rel="noopener"><i
+    <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2018/04/21/Shell%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%86(%E7%BE%A4)%E5%8F%91%E8%84%9A%E6%9C%AC/&text=Shell自定义分(群)发脚本" target="_blank" rel="noopener"><i
                     class="fab fa-twitter " aria-hidden="true"></i></a></li>
-    <li><a class="icon" href="mailto:?subject=Linux学习-02&body=Check out this article: https://lg118.github.io/2018/03/08/Linux%E5%AD%A6%E4%B9%A0-02/"><i
+    <li><a class="icon" href="mailto:?subject=Shell自定义分(群)发脚本&body=Check out this article: https://lg118.github.io/2018/04/21/Shell%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%86(%E7%BE%A4)%E5%8F%91%E8%84%9A%E6%9C%AC/"><i
                     class="fas fa-envelope " aria-hidden="true"></i></a></li>
 </ul>
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vim编辑器"><span class="toc-number">1.</span> <span class="toc-text">Vim编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命令模式"><span class="toc-number">1.1.</span> <span class="toc-text">命令模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#末行模式（底部扩展命令模式）"><span class="toc-number">1.2.</span> <span class="toc-text">末行模式（底部扩展命令模式）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可视化模式（visual）"><span class="toc-number">1.3.</span> <span class="toc-text">可视化模式（visual）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux文件类型"><span class="toc-number">2.</span> <span class="toc-text">Linux文件类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux文件的时间"><span class="toc-number">3.</span> <span class="toc-text">Linux文件的时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看文件的属性"><span class="toc-number">4.</span> <span class="toc-text">查看文件的属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复制和移动"><span class="toc-number">5.</span> <span class="toc-text">复制和移动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看文件内容"><span class="toc-number">6.</span> <span class="toc-text">查看文件内容</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Shell自定义分-群-发脚本"><span class="toc-number">1.</span> <span class="toc-text">Shell自定义分(群)发脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-准备工作"><span class="toc-number">1.1.</span> <span class="toc-text">1. 准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-创建文件夹"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 创建文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-创建资源文件"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 创建资源文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-添加主机名"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3 添加主机名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-编写脚本"><span class="toc-number">1.2.</span> <span class="toc-text">2. 编写脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-创建脚本文件"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 创建脚本文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-编写脚本代码"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 编写脚本代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、设置xsync文件的执行权限"><span class="toc-number">1.3.</span> <span class="toc-text">3、设置xsync文件的执行权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、配置环境变量"><span class="toc-number">1.4.</span> <span class="toc-text">4、配置环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、使环境变量生效"><span class="toc-number">1.5.</span> <span class="toc-text">5、使环境变量生效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、使用脚本"><span class="toc-number">1.6.</span> <span class="toc-text">6、使用脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-错误使用提示"><span class="toc-number">1.6.1.</span> <span class="toc-text">6.1 错误使用提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-分发文件"><span class="toc-number">1.6.2.</span> <span class="toc-text">6.2 分发文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-分发目录-文件夹"><span class="toc-number">1.6.3.</span> <span class="toc-text">6.3 分发目录(文件夹)</span></a></li></ol></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -115,7 +115,7 @@
     <header>
         
     <h1 class="posttitle" itemprop="name headline">
-        Linux学习-02
+        Shell自定义分(群)发脚本
     </h1>
 
         <div class="meta">
@@ -128,12 +128,12 @@
             
     <div class="postdate">
         
-            <time datetime="2018-03-07T16:00:00.000Z"
-                  itemprop="datePublished">2018-03-08</time>
+            <time datetime="2018-04-20T16:00:00.000Z"
+                  itemprop="datePublished">2018-04-21</time>
             
                 (Updated:
-                <time datetime="2018-03-07T16:00:00.000Z"
-                      itemprop="dateModified">2018-03-08</time>)
+                <time datetime="2018-04-20T16:00:00.000Z"
+                      itemprop="dateModified">2018-04-21</time>)
             
         
     </div>
@@ -141,38 +141,50 @@
             
     <div class="article-category">
         <i class="fas fa-archive"></i>
-        <a class="category-link" href="/categories/Linux/">Linux</a>
+        <a class="category-link" href="/categories/Shell/">Shell</a>
     </div>
 
             
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/Linux/" rel="tag">Linux</a>
+        <a class="tag-link" href="/tags/Shell/" rel="tag">Shell</a>
     </div>
 
         </div>
     </header>
     
     <div class="content" itemprop="articleBody">
-        <h2 id="Vim编辑器"><a href="#Vim编辑器" class="headerlink" title="Vim编辑器"></a>Vim编辑器</h2><p>vim 是 vi 的增强版</p>
-<p>ctrl+s 锁定shell窗口</p>
-<p>ctrl+q 解锁shell窗口</p>
-<p><img src="https://i.loli.net/2020/11/10/EtaezGNJrdy5x6f.png" alt="1604990135712.png"></p>
-<h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">d: 删除  y：复制</span><br><span class="line">dd  删除当前行 -- 剪切</span><br><span class="line">dG 从当前行删除到行尾</span><br><span class="line">dgg  从当前行删除到行首</span><br><span class="line">ndd  从当前光标行开始删除n行</span><br><span class="line">D    从光标开始删除到行尾</span><br><span class="line">d0   从光标开始删除到行首</span><br><span class="line">yy  复制当前行</span><br><span class="line">nyy  复制n行</span><br><span class="line">p  粘贴到光标位置</span><br><span class="line">u  (undo) 撤销</span><br><span class="line">ctrl+r  撤销还原</span><br><span class="line">gg  回到行首</span><br><span class="line">ngg 回到第n行</span><br><span class="line">shift + g  回到行尾</span><br><span class="line">ygg   从当前行复制到行首</span><br><span class="line">yG    从当前行复制到行尾</span><br><span class="line">0 或者 ^      回到当前行的开始位置</span><br><span class="line"><span class="meta">$</span><span class="bash">     回到当前行的尾部位置</span></span><br><span class="line">/搜索的文字   n 表示下一个  N 向上查找</span><br><span class="line">/^字符串    查找以什么字符串开头的</span><br><span class="line">/字符串$    查找以什么字符串结尾的</span><br><span class="line">   如果替换的时候需要忽略大小写，需要到末行模式设置set noic</span><br><span class="line">r  替换单个字符</span><br><span class="line">shift+r  进入替换模式  替换光标后的多个字符</span><br><span class="line">x 从光标位置开始逐一删除后面的内容</span><br><span class="line">shift+x 从光标位置开始逐一删除前面的内容</span><br><span class="line">替换模式 ---&gt; esc ---&gt; 命令模式</span><br></pre></td></tr></table></figure>
-<h3 id="末行模式（底部扩展命令模式）"><a href="#末行模式（底部扩展命令模式）" class="headerlink" title="末行模式（底部扩展命令模式）"></a>末行模式（底部扩展命令模式）</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">替换语法：</span><br><span class="line">:[范围] s/old/new/[选项]</span><br><span class="line">-------------------------------</span><br><span class="line">:s/root/abc/  将光标所在行的第一个root换成abc</span><br><span class="line">:2,2 s/root/abc/   将第二行的第一个root换成abc   </span><br><span class="line">:1,2 s/root/abc/g  将第一行到二行的所有的root换成abc   </span><br><span class="line">:% s/root/abc/g    将所有行的所有root换成abc</span><br><span class="line">:% s/.$//     将所有行的最后一个字符替换成空</span><br><span class="line">备注：上面的/是可以用其他的符号替换的。都遇见匹配的内容有/的时候就可以用其他符号</span><br><span class="line">比如：</span><br><span class="line">:s #/dev/null#abc#   将光标所在行的第一个/dev/null替换成abc</span><br><span class="line">:% s/.*/&amp;#/   在所有行的末尾添加#</span><br><span class="line">.* 表示一行的所有内容</span><br><span class="line">&amp; 表示的就是匹配到的内容</span><br><span class="line">--------------------------------</span><br><span class="line">:set nu  显示行号</span><br><span class="line">:set nonu 取消行号</span><br><span class="line">:set ic (ignore case) 忽略大小写</span><br><span class="line">:set noic 区分大小写</span><br><span class="line">:set list 查字符串中的符号  比如可以看换行符 空格符  制表符</span><br><span class="line">:set nolist 取消显示符号</span><br><span class="line">:set ai 设置缩进</span><br><span class="line">:set noai 取消缩进</span><br></pre></td></tr></table></figure>
-<h3 id="可视化模式（visual）"><a href="#可视化模式（visual）" class="headerlink" title="可视化模式（visual）"></a>可视化模式（visual）</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ctrl+v 可视化块</span><br><span class="line">shfit+v 可视化行</span><br><span class="line"></span><br><span class="line">shfit + &gt; 向右缩进</span><br><span class="line">shfit + &lt; 向左缩进</span><br><span class="line"></span><br><span class="line">在多行前添加内容</span><br><span class="line">先选中内容 --&gt; I ---&gt; 输入添加的内容 --&gt;esc</span><br><span class="line">x 和 d 删除选中内容</span><br><span class="line">y 是复制</span><br></pre></td></tr></table></figure>
-<h2 id="Linux文件类型"><a href="#Linux文件类型" class="headerlink" title="Linux文件类型"></a>Linux文件类型</h2><p>在LInux中一切皆文件。Linux中的文件是没有扩展名的。Linux文件如果加上扩展名也仅仅是告诉开发人员看的。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">d：文件夹</span><br><span class="line">-：文件</span><br><span class="line">l：链接文件</span><br><span class="line">b：块设备文件  硬盘  U盘</span><br><span class="line">c: 字符设备文件  打印机  终端</span><br><span class="line">s：socket文件</span><br></pre></td></tr></table></figure>
-<p>可以使用<code>file</code>命名查看文件和目录类型</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@hadoop10 dev]# file vcs</span><br><span class="line">vcs: character special</span><br></pre></td></tr></table></figure>
-<h2 id="Linux文件的时间"><a href="#Linux文件的时间" class="headerlink" title="Linux文件的时间"></a>Linux文件的时间</h2><p>Access Time（atime）: 访问时间</p>
-<p>访问时间要发生变化需要满足以下任意一个条件：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1、有数据写入</span><br><span class="line">2、本次访问时间和上一次访问时间间隔达到86400秒</span><br></pre></td></tr></table></figure>
-<p>Modify Time (mtime): 文件内容发生变化的时间</p>
-<p>Change Time (ctime): 文件属性发生变化的时间</p>
-<h2 id="查看文件的属性"><a href="#查看文件的属性" class="headerlink" title="查看文件的属性"></a>查看文件的属性</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">stat 文件</span><br><span class="line"></span><br><span class="line">[root@hadoop10 opt]# stat 2.txt </span><br><span class="line">  File: `2.txt'</span><br><span class="line">  Size: 51      Blocks: 8      IO Block: 4096      regular file</span><br><span class="line">Device: fd00h/64768d    Inode: 267517      Links: 1</span><br><span class="line">Access: (0700/-rwx------)  Uid: (    0/    root)   Gid: (    0/    root)</span><br><span class="line">Access: 2020-07-30 16:45:31.291999243 +0800</span><br><span class="line">Modify: 2020-07-30 16:45:31.291999243 +0800</span><br><span class="line">Change: 2020-07-30 16:45:31.362999191 +0800</span><br></pre></td></tr></table></figure>
-<h2 id="复制和移动"><a href="#复制和移动" class="headerlink" title="复制和移动"></a>复制和移动</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp 文件  指定的文件路径  #拷贝文件到指定路径</span><br><span class="line">mv 文件/目录  指定的路径  #剪切文件/目录到指定路径  可以重命名文件</span><br><span class="line">cp -r 目录  指定的路径  #拷贝目录到指定路径</span><br></pre></td></tr></table></figure>
-<h2 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat 文件</span><br><span class="line">head 文件 # 默认查看文件的前10行内容</span><br><span class="line">head -n 2 文件  # 查看文件的前2行内容</span><br><span class="line">tail 文件 # 默认查看文件的最后10行内容</span><br><span class="line">tail -n 2 文件  # 查看文件的最后2行内容</span><br><span class="line">tail -f 文件  # 根据文件的描述符信息监控文件。文件名更改后就监控不到了</span><br><span class="line">tail -F 文件 # 根据文件的名称监控文件，而且还有重试</span><br><span class="line">more 文件   # 分页查看</span><br><span class="line">    空格 下一页</span><br><span class="line">    b   上一页</span><br><span class="line">    回车 下一行</span><br><span class="line">less 文件    # 可以接收命令</span><br><span class="line">    空格 下一页</span><br><span class="line">    b   上一页</span><br><span class="line">    回车 下一行</span><br><span class="line">    q 退出</span><br></pre></td></tr></table></figure>
+        <h1 id="Shell自定义分-群-发脚本"><a href="#Shell自定义分-群-发脚本" class="headerlink" title="Shell自定义分(群)发脚本"></a>Shell自定义分(群)发脚本</h1><h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h2><h3 id="1-1-创建文件夹"><a href="#1-1-创建文件夹" class="headerlink" title="1.1 创建文件夹"></a>1.1 创建文件夹</h3><p>在当前用户的home目录下创建文件夹，用来存放相关的资源文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop101 ~]$ mkdir -p script/tool</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-创建资源文件"><a href="#1-2-创建资源文件" class="headerlink" title="1.2 创建资源文件"></a>1.2 创建资源文件</h3><p>在 ~/script/tool下创建文件，该文件用来保存需要分发文件的主机名</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop101 tool]$ vim nodes</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-添加主机名"><a href="#1-3-添加主机名" class="headerlink" title="1.3 添加主机名"></a>1.3 添加主机名</h3><p>往nodes文件中添加需要分发文件的主机名。</p>
+<p><strong>注意：</strong>使用主机名的前提是必须在hosts中配置了主机名和ip的映射。不会的自行百度。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hadoop101</span><br><span class="line">hadoop102</span><br><span class="line">hadoop103</span><br></pre></td></tr></table></figure>
+<h2 id="2-编写脚本"><a href="#2-编写脚本" class="headerlink" title="2. 编写脚本"></a>2. 编写脚本</h2><h3 id="2-1-创建脚本文件"><a href="#2-1-创建脚本文件" class="headerlink" title="2.1 创建脚本文件"></a>2.1 创建脚本文件</h3><p>在 ~/script/tool下创建文件，该文件用来编写shell脚本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop101 tool]$ vim xsync</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-编写脚本代码"><a href="#2-2-编写脚本代码" class="headerlink" title="2.2 编写脚本代码"></a>2.2 编写脚本代码</h3><ul>
+<li><p>在xsync文件中编写分发文件的脚本代码。在该脚本中会读取nodes文件中配置的主机名，进行文件的分发。</p>
+</li>
+<li><p>脚本根据分发的文件，自动获取文件路径，然后将文件分发到目标主机的</p>
+<p>对应路径中</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#判断参数</span></span></span><br><span class="line">if [ $# -eq 0 ];then</span><br><span class="line">  echo "Please enter one or more files or directories!!"</span><br><span class="line">  exit 1</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#获取当前的用户名</span></span></span><br><span class="line">USERNAME=$(whoami)</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#获取当前的主机名</span></span></span><br><span class="line">HOSTNAME=$(hostname)</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#获取机配置文件nodes的路径</span></span></span><br><span class="line">DIRNAME=`dirname $0`</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#读取目标主机配置文件nodes</span></span></span><br><span class="line"></span><br><span class="line">for HOST in `cat $DIRNAME/nodes`</span><br><span class="line">do</span><br><span class="line">        if [ "$HOST" = "$HOSTNAME" ];then</span><br><span class="line">          continue</span><br><span class="line">        fi</span><br><span class="line">        </span><br><span class="line">        #获取文件</span><br><span class="line">        for file in $*</span><br><span class="line">         do</span><br><span class="line">         ## 获取文件的相对路径</span><br><span class="line">         DIR_NAME=`dirname $file`</span><br><span class="line">         ##获取文件的名称</span><br><span class="line">         FILE_NAME=$(basename $file)         </span><br><span class="line">         ## 相对路径转成绝对路径</span><br><span class="line">         FILE_ABS_PATH=`cd $DIR_NAME;pwd`</span><br><span class="line">         </span><br><span class="line">         rsync -rvl $FILE_ABS_PATH/$FILE_NAME $USERNAME@$HOST:$FILE_ABS_PATH</span><br><span class="line">        done</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<h2 id="3、设置xsync文件的执行权限"><a href="#3、设置xsync文件的执行权限" class="headerlink" title="3、设置xsync文件的执行权限"></a>3、设置xsync文件的执行权限</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop101 tool]$ sudo chmod u+x xsync</span><br></pre></td></tr></table></figure>
+<h2 id="4、配置环境变量"><a href="#4、配置环境变量" class="headerlink" title="4、配置环境变量"></a>4、配置环境变量</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop101 tool]$ sudo vim /etc/profile</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 自定义脚本的环境变量</span></span></span><br><span class="line">export TOOL_HOME=/home/hadoop/script/tool</span><br><span class="line">export PATH=$PATH:$TOOL_HOME</span><br></pre></td></tr></table></figure>
+<h2 id="5、使环境变量生效"><a href="#5、使环境变量生效" class="headerlink" title="5、使环境变量生效"></a>5、使环境变量生效</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop101 tool]$ source /etc/profile</span><br></pre></td></tr></table></figure>
+<h2 id="6、使用脚本"><a href="#6、使用脚本" class="headerlink" title="6、使用脚本"></a>6、使用脚本</h2><h3 id="6-1-错误使用提示"><a href="#6-1-错误使用提示" class="headerlink" title="6.1 错误使用提示"></a>6.1 错误使用提示</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop101 tool]$ xsync </span><br><span class="line">Please enter one or more files or directories!!</span><br></pre></td></tr></table></figure>
+<h3 id="6-2-分发文件"><a href="#6-2-分发文件" class="headerlink" title="6.2 分发文件"></a>6.2 分发文件</h3><p>分发的文件可以使用<strong>相对路径</strong>或者<strong>绝对路径</strong>。</p>
+<p>xsync脚本会自动根据分发的文件获取文件路径，然后将文件分发到目标主机的对应目录中。</p>
+<blockquote>
+<p>比如：以下案例中脚本就会将wc.txt文件分发到目标主机hadoop102，hadoop103的/home/hadoop/data目录下。</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop101 data]$ xsync wc.txt</span><br><span class="line">[hadoop@hadoop101 data]$ xsync /home/hadoop/data/wc.txt</span><br></pre></td></tr></table></figure>
+<h3 id="6-3-分发目录-文件夹"><a href="#6-3-分发目录-文件夹" class="headerlink" title="6.3 分发目录(文件夹)"></a>6.3 分发目录(文件夹)</h3><p>分发的文件夹可以使用<strong>相对路径</strong>或者<strong>绝对路径</strong>。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop101 data]$ xsync flume</span><br><span class="line">[hadoop@hadoop101 data]$ xsync /home/hadoop/data/flume/</span><br></pre></td></tr></table></figure>
+<p><strong>注意：该脚本也可以用来分发软连接文件</strong></p>
+
     </div>
 </article>
 
@@ -426,20 +438,20 @@
         </div>
 
         <div id="toc-footer" style="display: none">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vim编辑器"><span class="toc-number">1.</span> <span class="toc-text">Vim编辑器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#命令模式"><span class="toc-number">1.1.</span> <span class="toc-text">命令模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#末行模式（底部扩展命令模式）"><span class="toc-number">1.2.</span> <span class="toc-text">末行模式（底部扩展命令模式）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可视化模式（visual）"><span class="toc-number">1.3.</span> <span class="toc-text">可视化模式（visual）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux文件类型"><span class="toc-number">2.</span> <span class="toc-text">Linux文件类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux文件的时间"><span class="toc-number">3.</span> <span class="toc-text">Linux文件的时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看文件的属性"><span class="toc-number">4.</span> <span class="toc-text">查看文件的属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复制和移动"><span class="toc-number">5.</span> <span class="toc-text">复制和移动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看文件内容"><span class="toc-number">6.</span> <span class="toc-text">查看文件内容</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Shell自定义分-群-发脚本"><span class="toc-number">1.</span> <span class="toc-text">Shell自定义分(群)发脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-准备工作"><span class="toc-number">1.1.</span> <span class="toc-text">1. 准备工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-创建文件夹"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.1 创建文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-创建资源文件"><span class="toc-number">1.1.2.</span> <span class="toc-text">1.2 创建资源文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-添加主机名"><span class="toc-number">1.1.3.</span> <span class="toc-text">1.3 添加主机名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-编写脚本"><span class="toc-number">1.2.</span> <span class="toc-text">2. 编写脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-创建脚本文件"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 创建脚本文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-编写脚本代码"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 编写脚本代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、设置xsync文件的执行权限"><span class="toc-number">1.3.</span> <span class="toc-text">3、设置xsync文件的执行权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、配置环境变量"><span class="toc-number">1.4.</span> <span class="toc-text">4、配置环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、使环境变量生效"><span class="toc-number">1.5.</span> <span class="toc-text">5、使环境变量生效</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、使用脚本"><span class="toc-number">1.6.</span> <span class="toc-text">6、使用脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-错误使用提示"><span class="toc-number">1.6.1.</span> <span class="toc-text">6.1 错误使用提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-分发文件"><span class="toc-number">1.6.2.</span> <span class="toc-text">6.2 分发文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-分发目录-文件夹"><span class="toc-number">1.6.3.</span> <span class="toc-text">6.3 分发目录(文件夹)</span></a></li></ol></li></ol></li></ol>
         </div>
 
         <div id="share-footer" style="display: none">
             <ul>
     <li><a class="icon"
-           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lg118.github.io/2018/03/08/Linux%E5%AD%A6%E4%B9%A0-02/&title=Linux学习-02"><i
+           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lg118.github.io/2018/04/21/Shell%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%86(%E7%BE%A4)%E5%8F%91%E8%84%9A%E6%9C%AC/&title=Shell自定义分(群)发脚本"><i
                     class="fab fa-qq fa-lg" aria-hidden="true"></i></a></li>
     <li><a class="icon"
-           href="https://service.weibo.com/share/share.php?url=https://lg118.github.io/2018/03/08/Linux%E5%AD%A6%E4%B9%A0-02/&title=Linux学习-02"><i
+           href="https://service.weibo.com/share/share.php?url=https://lg118.github.io/2018/04/21/Shell%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%86(%E7%BE%A4)%E5%8F%91%E8%84%9A%E6%9C%AC/&title=Shell自定义分(群)发脚本"><i
                     class="fab fa-weibo fa-lg" aria-hidden="true"></i></a></li>
-    <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2018/03/08/Linux%E5%AD%A6%E4%B9%A0-02/&text=Linux学习-02" target="_blank" rel="noopener"><i
+    <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2018/04/21/Shell%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%86(%E7%BE%A4)%E5%8F%91%E8%84%9A%E6%9C%AC/&text=Shell自定义分(群)发脚本" target="_blank" rel="noopener"><i
                     class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-    <li><a class="icon" href="mailto:?subject=Linux学习-02&body=Check out this article: https://lg118.github.io/2018/03/08/Linux%E5%AD%A6%E4%B9%A0-02/"><i
+    <li><a class="icon" href="mailto:?subject=Shell自定义分(群)发脚本&body=Check out this article: https://lg118.github.io/2018/04/21/Shell%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%86(%E7%BE%A4)%E5%8F%91%E8%84%9A%E6%9C%AC/"><i
                     class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
 </ul>
         </div>
