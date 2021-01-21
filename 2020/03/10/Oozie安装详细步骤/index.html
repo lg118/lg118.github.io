@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    
+    
+        
+            
+                <link rel="shortcut icon" href="/images/favicon.ico">
+            
+        
+        
+            
+                <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+            
+        
+        
+            
+                <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+            
+        
+    
+    <!-- title -->
+    <title>Oozie安装详细步骤</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/fira_code.css" rel="stylesheet">
+    <!-- rss -->
+    
+    
+<link rel="alternate" href="/atom.xml" title="木子李G" type="application/atom+xml">
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+
+    <div id="header-post">
+    <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+    <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+    <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i
+                class="fas fa-chevron-up fa-lg"></i></a>
+    <span id="menu">
+    <span id="nav">
+      <ul>
+          
+              <li><a href="/">首页</a></li>
+          
+              <li><a href="/archives/">归档</a></li>
+          
+              <li><a href="/categories/">分类</a></li>
+          
+              <li><a href="/tags/">标签</a></li>
+          
+              <li><a href="/search/">搜索</a></li>
+          
+              <li><a href="/about/">关于</a></li>
+          
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+          
+          
+              <li><a class="icon" href="/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/"><i class="fas fa-chevron-right"
+                                                                           aria-hidden="true"
+                                                                           onmouseover="$('#i-next').toggle();"
+                                                                           onmouseout="$('#i-next').toggle();"></i></a></li>
+          
+          <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i
+                          class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();"
+                          onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true"
+                                        onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();"
+                                        onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+    <li><a class="icon"
+           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lg118.github.io/2020/03/10/Oozie%E5%AE%89%E8%A3%85%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/&title=Oozie安装详细步骤"><i
+                    class="fab fa-qq " aria-hidden="true"></i></a></li>
+    <li><a class="icon"
+           href="https://service.weibo.com/share/share.php?url=https://lg118.github.io/2020/03/10/Oozie%E5%AE%89%E8%A3%85%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/&title=Oozie安装详细步骤"><i
+                    class="fab fa-weibo " aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2020/03/10/Oozie%E5%AE%89%E8%A3%85%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/&text=Oozie安装详细步骤" target="_blank" rel="noopener"><i
+                    class="fab fa-twitter " aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="mailto:?subject=Oozie安装详细步骤&body=Check out this article: https://lg118.github.io/2020/03/10/Oozie%E5%AE%89%E8%A3%85%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/"><i
+                    class="fas fa-envelope " aria-hidden="true"></i></a></li>
+</ul>
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Oozie安装详细步骤"><span class="toc-number">1.</span> <span class="toc-text">Oozie安装详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、Oozie的下载"><span class="toc-number">1.1.</span> <span class="toc-text">一、Oozie的下载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Oozie下载地址："><span class="toc-number">1.1.1.</span> <span class="toc-text">Oozie下载地址：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ExtJS下载地址："><span class="toc-number">1.1.2.</span> <span class="toc-text">ExtJS下载地址：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、Oozie的安装"><span class="toc-number">1.2.</span> <span class="toc-text">二、Oozie的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、上传压缩包"><span class="toc-number">1.2.1.</span> <span class="toc-text">1、上传压缩包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、解压Oozie"><span class="toc-number">1.2.2.</span> <span class="toc-text">2、解压Oozie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、-在Hadoop-core-site-xml中需要以下两个属性"><span class="toc-number">1.2.3.</span> <span class="toc-text">3、 在Hadoop core-site.xml中需要以下两个属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、分发-core-site-xml，然后重新启动Hadoop"><span class="toc-number">1.2.4.</span> <span class="toc-text">4、分发 core-site.xml，然后重新启动Hadoop</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、将oozie-hadooplibs-4-1-0-cdh5-14-4-tar-gz解压到Ooize的解压目录下"><span class="toc-number">1.2.5.</span> <span class="toc-text">5、将oozie-hadooplibs-4.1.0-cdh5.14.4.tar.gz解压到Ooize的解压目录下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、-在Oozie的解压目录中创建一个libext-目录"><span class="toc-number">1.2.6.</span> <span class="toc-text">6、 在Oozie的解压目录中创建一个libext/目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、-将相应的Hadoop-jar从hadooplibs-hadooplib-2-6-0-cdh5-14-4-oozie-4-1-0-cdh5-14-4复制到libext-目录中"><span class="toc-number">1.2.7.</span> <span class="toc-text">7、 将相应的Hadoop jar从hadooplibs/hadooplib-2.6.0-cdh5.14.4.oozie-4.1.0-cdh5.14.4复制到libext/目录中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、将mysql的驱动包上传到Oozie的libext下"><span class="toc-number">1.2.8.</span> <span class="toc-text">8、将mysql的驱动包上传到Oozie的libext下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、-如果使用ExtJS库，将ZIP文件复制到libext-目录"><span class="toc-number">1.2.9.</span> <span class="toc-text">9、 如果使用ExtJS库，将ZIP文件复制到libext/目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、在MySQL中创建oozie数据库"><span class="toc-number">1.2.10.</span> <span class="toc-text">10、在MySQL中创建oozie数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、更改oozie-site-xml-配置文件，将数据库换成MySQL"><span class="toc-number">1.2.11.</span> <span class="toc-text">11、更改oozie-site.xml 配置文件，将数据库换成MySQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、在oozie-site-xml-中设置Oozie的hadoop的配置目录"><span class="toc-number">1.2.12.</span> <span class="toc-text">12、在oozie-site.xml 中设置Oozie的hadoop的配置目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13、使用脚本创建Oozie在hdfs上的共享库-需要启动hdfs-yarn"><span class="toc-number">1.2.13.</span> <span class="toc-text">13、使用脚本创建Oozie在hdfs上的共享库(需要启动hdfs,yarn)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14、使用脚本初始化Oozie在数据库中的状态信息（建表）"><span class="toc-number">1.2.14.</span> <span class="toc-text">14、使用脚本初始化Oozie在数据库中的状态信息（建表）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15、使用脚本将Oozie打成war包"><span class="toc-number">1.2.15.</span> <span class="toc-text">15、使用脚本将Oozie打成war包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16、-启动Oozie"><span class="toc-number">1.2.16.</span> <span class="toc-text">16、 启动Oozie</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#16-1-以守护进程的方式启动Oozie"><span class="toc-number">1.2.16.1.</span> <span class="toc-text">16.1 以守护进程的方式启动Oozie</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-2-或者以前台进程运行的方式启动Oozie"><span class="toc-number">1.2.16.2.</span> <span class="toc-text">16.2 或者以前台进程运行的方式启动Oozie:</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+<div class="content index py4">
+    
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        
+    <h1 class="posttitle" itemprop="name headline">
+        Oozie安装详细步骤
+    </h1>
+
+        <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">
+            木子李
+            
+        </span>
+      </span>
+            
+    <div class="postdate">
+        
+            <time datetime="2020-03-09T16:00:00.000Z"
+                  itemprop="datePublished">2020-03-10</time>
+            
+                (Updated:
+                <time datetime="2020-03-09T16:00:00.000Z"
+                      itemprop="dateModified">2020-03-10</time>)
+            
+        
+    </div>
+
+            
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/">任务调度</a>
+    </div>
+
+            
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Oozie/" rel="tag">Oozie</a>
+    </div>
+
+        </div>
+    </header>
+    
+    <div class="content" itemprop="articleBody">
+        <h1 id="Oozie安装详细步骤"><a href="#Oozie安装详细步骤" class="headerlink" title="Oozie安装详细步骤"></a>Oozie安装详细步骤</h1><h2 id="一、Oozie的下载"><a href="#一、Oozie的下载" class="headerlink" title="一、Oozie的下载"></a>一、Oozie的下载</h2><p>Apache Ooize是需要进行编译的。</p>
+<p>我们使用CDH编译好的Oozie</p>
+<h3 id="Oozie下载地址："><a href="#Oozie下载地址：" class="headerlink" title="Oozie下载地址："></a>Oozie下载地址：</h3><p><a href="http://archive.cloudera.com/cdh5/cdh/5/oozie-4.1.0-cdh5.14.4/.tar.gz" target="_blank" rel="noopener">http://archive.cloudera.com/cdh5/cdh/5/oozie-4.1.0-cdh5.14.4/.tar.gz</a></p>
+<p>Oozie的webUI使用ExtJS</p>
+<h3 id="ExtJS下载地址："><a href="#ExtJS下载地址：" class="headerlink" title="ExtJS下载地址："></a>ExtJS下载地址：</h3><p> <a href="http://archive.cloudera.com/gplextras/misc/ext-2.2.zip" target="_blank" rel="noopener">http://archive.cloudera.com/gplextras/misc/ext-2.2.zip</a> </p>
+<h2 id="二、Oozie的安装"><a href="#二、Oozie的安装" class="headerlink" title="二、Oozie的安装"></a>二、Oozie的安装</h2><p>安装文档：<a href="http://oozie.apache.org/docs/4.1.0/DG_QuickStart.html#Server_Installation" target="_blank" rel="noopener">http://oozie.apache.org/docs/4.1.0/DG_QuickStart.html#Server_Installation</a></p>
+<h3 id="1、上传压缩包"><a href="#1、上传压缩包" class="headerlink" title="1、上传压缩包"></a>1、上传压缩包</h3><blockquote>
+<p>oozie-4.1.0-cdh5.14.4.tar.gz<br>ext-2.2.zip</p>
+<p>mysql-connector-java-5.1.39.jar</p>
+</blockquote>
+<h3 id="2、解压Oozie"><a href="#2、解压Oozie" class="headerlink" title="2、解压Oozie"></a>2、解压Oozie</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop10 installPkg]$ tar -zxvf oozie-4.1.0-cdh5.14.4.tar.gz -C ../apps/</span><br></pre></td></tr></table></figure>
+<h3 id="3、-在Hadoop-core-site-xml中需要以下两个属性"><a href="#3、-在Hadoop-core-site-xml中需要以下两个属性" class="headerlink" title="3、 在Hadoop core-site.xml中需要以下两个属性"></a>3、 在Hadoop core-site.xml中需要以下两个属性</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">OOZIE</span></span><br><span class="line"><span class="comment">* 表示所有host和group</span></span><br><span class="line"><span class="comment"> --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.proxyuser.hadoop.hosts<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>*<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.proxyuser.hadoop.groups<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>*<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="4、分发-core-site-xml，然后重新启动Hadoop"><a href="#4、分发-core-site-xml，然后重新启动Hadoop" class="headerlink" title="4、分发 core-site.xml，然后重新启动Hadoop"></a>4、分发 core-site.xml，然后重新启动Hadoop</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop10 hadoop]$ xsync core-site.xml</span><br></pre></td></tr></table></figure>
+<h3 id="5、将oozie-hadooplibs-4-1-0-cdh5-14-4-tar-gz解压到Ooize的解压目录下"><a href="#5、将oozie-hadooplibs-4-1-0-cdh5-14-4-tar-gz解压到Ooize的解压目录下" class="headerlink" title="5、将oozie-hadooplibs-4.1.0-cdh5.14.4.tar.gz解压到Ooize的解压目录下"></a>5、将oozie-hadooplibs-4.1.0-cdh5.14.4.tar.gz解压到Ooize的解压目录下</h3><p><strong>注意：hadooplibs直接在解压目录之下</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop10 oozie-4.1.0-cdh5.14.4]$ tar -zxvf oozie-hadooplibs-4.1.0-cdh5.14.4.tar.gz -C /home/hadoop/apps/</span><br></pre></td></tr></table></figure>
+<h3 id="6、-在Oozie的解压目录中创建一个libext-目录"><a href="#6、-在Oozie的解压目录中创建一个libext-目录" class="headerlink" title="6、 在Oozie的解压目录中创建一个libext/目录"></a>6、 在Oozie的解压目录中创建一个libext/目录</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop10 oozie-4.1.0-cdh5.14.4]$ mkdir libext</span><br></pre></td></tr></table></figure>
+<h3 id="7、-将相应的Hadoop-jar从hadooplibs-hadooplib-2-6-0-cdh5-14-4-oozie-4-1-0-cdh5-14-4复制到libext-目录中"><a href="#7、-将相应的Hadoop-jar从hadooplibs-hadooplib-2-6-0-cdh5-14-4-oozie-4-1-0-cdh5-14-4复制到libext-目录中" class="headerlink" title="7、 将相应的Hadoop jar从hadooplibs/hadooplib-2.6.0-cdh5.14.4.oozie-4.1.0-cdh5.14.4复制到libext/目录中"></a>7、 将相应的Hadoop jar从hadooplibs/hadooplib-2.6.0-cdh5.14.4.oozie-4.1.0-cdh5.14.4复制到libext/目录中</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop10 oozie-4.1.0-cdh5.14.4]$ cp hadooplibs/hadooplib-2.6.0-cdh5.14.4.oozie-4.1.0-cdh5.14.4/* libext/</span><br></pre></td></tr></table></figure>
+<h3 id="8、将mysql的驱动包上传到Oozie的libext下"><a href="#8、将mysql的驱动包上传到Oozie的libext下" class="headerlink" title="8、将mysql的驱动包上传到Oozie的libext下"></a>8、将mysql的驱动包上传到Oozie的libext下</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop10 oozie-4.1.0-cdh5.14.4]$ cp /home/hadoop/apps/hive/lib/mysql-connector-java-5.1.39.jar libext/</span><br></pre></td></tr></table></figure>
+<h3 id="9、-如果使用ExtJS库，将ZIP文件复制到libext-目录"><a href="#9、-如果使用ExtJS库，将ZIP文件复制到libext-目录" class="headerlink" title="9、 如果使用ExtJS库，将ZIP文件复制到libext/目录"></a>9、 如果使用ExtJS库，将ZIP文件复制到libext/目录</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop10 oozie-4.1.0-cdh5.14.4]$ cp /home/hadoop/installPkg/ext-2.2.zip libext/</span><br></pre></td></tr></table></figure>
+<h3 id="10、在MySQL中创建oozie数据库"><a href="#10、在MySQL中创建oozie数据库" class="headerlink" title="10、在MySQL中创建oozie数据库"></a>10、在MySQL中创建oozie数据库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop10 libext]$ mysql -uroot -p123456</span><br><span class="line">mysql&gt; create database oozie;</span><br></pre></td></tr></table></figure>
+<h3 id="11、更改oozie-site-xml-配置文件，将数据库换成MySQL"><a href="#11、更改oozie-site-xml-配置文件，将数据库换成MySQL" class="headerlink" title="11、更改oozie-site.xml 配置文件，将数据库换成MySQL"></a>11、更改oozie-site.xml 配置文件，将数据库换成MySQL</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop10 conf]$ vim oozie-site.xml </span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>oozie.service.JPAService.jdbc.driver<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">value</span>&gt;</span>com.mysql.jdbc.Driver<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">        </span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">   <span class="tag">&lt;<span class="name">name</span>&gt;</span>oozie.service.JPAService.jdbc.url<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">   <span class="tag">&lt;<span class="name">value</span>&gt;</span>jdbc:mysql://hadoop10:3306/oozie<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">       </span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">   <span class="tag">&lt;<span class="name">name</span>&gt;</span>oozie.service.JPAService.jdbc.username<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">   <span class="tag">&lt;<span class="name">value</span>&gt;</span>root<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">       </span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">   <span class="tag">&lt;<span class="name">name</span>&gt;</span>oozie.service.JPAService.jdbc.password<span class="tag">&lt;/<span class="name">name</span>&gt;</span>      </span><br><span class="line">   <span class="tag">&lt;<span class="name">value</span>&gt;</span>123456<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">       </span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="12、在oozie-site-xml-中设置Oozie的hadoop的配置目录"><a href="#12、在oozie-site-xml-中设置Oozie的hadoop的配置目录" class="headerlink" title="12、在oozie-site.xml 中设置Oozie的hadoop的配置目录"></a>12、在oozie-site.xml 中设置Oozie的hadoop的配置目录</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop10 conf]$ vim oozie-site.xml </span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">*= 表示hadoop所有的配置文件都在该目录下</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        	   <span class="tag">&lt;<span class="name">name</span>&gt;</span>oozie.service.HadoopAccessorService.hadoop.configurations<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">value</span>&gt;</span>*=/home/hadoop/apps/hadoop/etc/hadoop<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">   </span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="13、使用脚本创建Oozie在hdfs上的共享库-需要启动hdfs-yarn"><a href="#13、使用脚本创建Oozie在hdfs上的共享库-需要启动hdfs-yarn" class="headerlink" title="13、使用脚本创建Oozie在hdfs上的共享库(需要启动hdfs,yarn)"></a>13、使用脚本创建Oozie在hdfs上的共享库(需要启动hdfs,yarn)</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop10 oozie-4.1.0-cdh5.14.4]$ bin/oozie-setup.sh sharelib create -fs hdfs://ns1 -locallib oozie-sharelib-4.1.0-cdh5.14.4-yarn.tar.gz </span><br><span class="line"></span><br><span class="line">the destination path for sharelib is: /user/hadoop/share/lib/lib_20201104142818</span><br></pre></td></tr></table></figure>
+<h3 id="14、使用脚本初始化Oozie在数据库中的状态信息（建表）"><a href="#14、使用脚本初始化Oozie在数据库中的状态信息（建表）" class="headerlink" title="14、使用脚本初始化Oozie在数据库中的状态信息（建表）"></a>14、使用脚本初始化Oozie在数据库中的状态信息（建表）</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop10 oozie-4.1.0-cdh5.14.4]$ bin/oozie-setup.sh db create -run -sqlfile ./OozieSql.sql</span><br></pre></td></tr></table></figure>
+<h3 id="15、使用脚本将Oozie打成war包"><a href="#15、使用脚本将Oozie打成war包" class="headerlink" title="15、使用脚本将Oozie打成war包"></a>15、使用脚本将Oozie打成war包</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop10 oozie-4.1.0-cdh5.14.4]$ bin/oozie-setup.sh prepare-war</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">New Oozie WAR file with added 'ExtJS library' at /home/hadoop/apps/oozie-4.1.0-cdh5.14.4/oozie-server/webapps/oozie.war</span><br><span class="line"></span><br><span class="line">INFO: Oozie is ready to be started</span><br></pre></td></tr></table></figure>
+<h3 id="16、-启动Oozie"><a href="#16、-启动Oozie" class="headerlink" title="16、 启动Oozie"></a>16、 启动Oozie</h3><h4 id="16-1-以守护进程的方式启动Oozie"><a href="#16-1-以守护进程的方式启动Oozie" class="headerlink" title="16.1 以守护进程的方式启动Oozie"></a>16.1 以守护进程的方式启动Oozie</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop10 oozie-4.1.0-cdh5.14.4]$ bin/oozied.sh start</span><br></pre></td></tr></table></figure>
+<h4 id="16-2-或者以前台进程运行的方式启动Oozie"><a href="#16-2-或者以前台进程运行的方式启动Oozie" class="headerlink" title="16.2 或者以前台进程运行的方式启动Oozie:"></a>16.2 或者以前台进程运行的方式启动Oozie:</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[hadoop@hadoop10 oozie-4.1.0-cdh5.14.4]$ bin/oozied.sh run</span><br></pre></td></tr></table></figure>
+
+    </div>
+</article>
+
+<div class="blog-post-comments">
+  <section id="comment">
+    <div id="valine_container" class="valine_thread"></div>
+  </section>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script>
+    var GUEST_INFO = ["nick", "mail", "link"];
+    var guest_info = "nick,mail,link"
+      .split(",")
+      .filter(function (item) {
+        return GUEST_INFO.indexOf(item) > -1;
+      });
+    var valine = new Valine();
+    valine.init({
+      el: "#valine_container",
+      appId: "",
+      appKey: "",
+      placeholder: "Just go go",
+      pageSize: "15",
+      avatar: "mp",
+      lang: "zh-cn",
+      emojiCDN: "https://mirrorcdn.bili33.top/",
+      // 表情title和图片映射
+      emojiMaps: {
+        Tieba2: "Tieba/i_f01.png",
+        Tieba3: "Tieba/i_f02.png",
+        Tieba4: "Tieba/i_f03.png",
+        Tieba5: "Tieba/i_f04.png",
+        Tieba6: "Tieba/i_f05.png",
+        Tieba7: "Tieba/i_f06.png",
+        Tieba8: "Tieba/i_f07.png",
+        Tieba9: "Tieba/i_f08.png",
+        Tieba10: "Tieba/i_f09.png",
+        Tieba11: "Tieba/i_f10.png",
+        Tieba12: "Tieba/i_f11.png",
+        Tieba13: "Tieba/i_f12.png",
+        Tieba14: "Tieba/i_f13.png",
+        Tieba15: "Tieba/i_f14.png",
+        Tieba16: "Tieba/i_f15.png",
+        Tieba17: "Tieba/i_f16.png",
+        Tieba18: "Tieba/i_f17.png",
+        Tieba19: "Tieba/i_f18.png",
+        Tieba20: "Tieba/i_f19.png",
+        Tieba21: "Tieba/i_f20.png",
+        Tieba22: "Tieba/i_f21.png",
+        Tieba23: "Tieba/i_f22.png",
+        Tieba24: "Tieba/i_f23.png",
+        Tieba25: "Tieba/i_f24.png",
+        Tieba26: "Tieba/i_f25.png",
+        Tieba27: "Tieba/i_f26.png",
+        Tieba28: "Tieba/i_f27.png",
+        Tieba29: "Tieba/i_f28.png",
+        Tieba30: "Tieba/i_f29.png",
+        Tieba31: "Tieba/i_f30.png",
+        Tieba32: "Tieba/i_f31.png",
+        Tieba33: "Tieba/i_f32.png",
+        Tieba34: "Tieba/i_f33.png",
+        bilibilitv2: "bilibilitv/[tv_doge].png",
+        bilibilitv3: "bilibilitv/[tv_亲亲].png",
+        bilibilitv4: "bilibilitv/[tv_偷笑].png",
+        bilibilitv5: "bilibilitv/[tv_再见].png",
+        bilibilitv6: "bilibilitv/[tv_冷漠].png",
+        bilibilitv7: "bilibilitv/[tv_发怒].png",
+        bilibilitv8: "bilibilitv/[tv_发财].png",
+        bilibilitv9: "bilibilitv/[tv_可爱].png",
+        bilibilitv10: "bilibilitv/[tv_吐血].png",
+        bilibilitv11: "bilibilitv/[tv_呆].png",
+        bilibilitv12: "bilibilitv/[tv_呕吐].png",
+        bilibilitv13: "bilibilitv/[tv_困].png",
+        bilibilitv14: "bilibilitv/[tv_坏笑].png",
+        bilibilitv15: "bilibilitv/[tv_大佬].png",
+        bilibilitv16: "bilibilitv/[tv_大哭].png",
+        bilibilitv17: "bilibilitv/[tv_委屈].png",
+        bilibilitv18: "bilibilitv/[tv_害羞].png",
+        bilibilitv19: "bilibilitv/[tv_尴尬].png",
+        bilibilitv20: "bilibilitv/[tv_微笑].png",
+        bilibilitv21: "bilibilitv/[tv_思考].png",
+        bilibilitv22: "bilibilitv/[tv_惊吓].png",
+        bilibilitv23: "bilibilitv/[tv_打脸].png",
+        bilibilitv24: "bilibilitv/[tv_抓狂].png",
+        bilibilitv25: "bilibilitv/[tv_抠鼻].png",
+        bilibilitv26: "bilibilitv/[tv_斜眼笑].png",
+        bilibilitv27: "bilibilitv/[tv_无奈].png",
+        bilibilitv28: "bilibilitv/[tv_晕].png",
+        bilibilitv29: "bilibilitv/[tv_流汗].png",
+        bilibilitv30: "bilibilitv/[tv_流泪].png",
+        bilibilitv31: "bilibilitv/[tv_流鼻血].png",
+        bilibilitv32: "bilibilitv/[tv_点赞].png",
+        bilibilitv33: "bilibilitv/[tv_生气].png",
+        bilibilitv34: "bilibilitv/[tv_生病].png",
+        bilibilitv35: "bilibilitv/[tv_疑问].png",
+        bilibilitv36: "bilibilitv/[tv_白眼].png",
+        bilibilitv37: "bilibilitv/[tv_皱眉].png",
+        bilibilitv38: "bilibilitv/[tv_目瞪口呆].png",
+        bilibilitv39: "bilibilitv/[tv_睡着].png",
+        bilibilitv40: "bilibilitv/[tv_笑哭].png",
+        bilibilitv41: "bilibilitv/[tv_腼腆].png",
+        bilibilitv42: "bilibilitv/[tv_色].png",
+        bilibilitv43: "bilibilitv/[tv_调侃].png",
+        bilibilitv44: "bilibilitv/[tv_调皮].png",
+        bilibilitv45: "bilibilitv/[tv_鄙视].png",
+        bilibilitv46: "bilibilitv/[tv_闭嘴].png",
+        bilibilitv47: "bilibilitv/[tv_难过].png",
+        bilibilitv48: "bilibilitv/[tv_馋].png",
+        bilibilitv49: "bilibilitv/[tv_鬼脸].png",
+        bilibilitv50: "bilibilitv/[tv_黑人问号].png",
+        bilibilitv51: "bilibilitv/[tv_鼓掌].png",
+        bilibili22332: "bilibili2233/[2233娘_卖萌].png",
+        bilibili22333: "bilibili2233/[2233娘_吃惊].png",
+        bilibili22334: "bilibili2233/[2233娘_吐魂].png",
+        bilibili22335: "bilibili2233/[2233娘_喝水].png",
+        bilibili22336: "bilibili2233/[2233娘_困惑].png",
+        bilibili22337: "bilibili2233/[2233娘_大哭].png",
+        bilibili22338: "bilibili2233/[2233娘_大笑].png",
+        bilibili22339: "bilibili2233/[2233娘_委屈].png",
+        bilibili223310: "bilibili2233/[2233娘_怒].png",
+        bilibili223311: "bilibili2233/[2233娘_无言].png",
+        bilibili223312: "bilibili2233/[2233娘_汗].png",
+        bilibili223313: "bilibili2233/[2233娘_疑问].png",
+        bilibili223314: "bilibili2233/[2233娘_第一].png",
+        bilibili223315: "bilibili2233/[2233娘_耶].png",
+        bilibili223316: "bilibili2233/[2233娘_郁闷].png",
+      },
+    });
+  </script>
+</div>
+
+
+
+<script>
+    //检测推送
+    var pushType = "";
+    var pushLink = "";
+    var siteName = "木子李G";
+  
+    var ValineButton = document.getElementsByClassName("vsubmit vbtn")[0];
+    //分情况推送
+    if (pushType === "sc") {
+      var title = "text=" + siteName + "上又有新评论啦~!";
+      function send_valine_Server() {
+        //获取元素信息
+        var pagename = document.title;
+        var wz = pagename.indexOf("|");
+        var res = pagename.substring(0, wz);
+        var pageurl = document.URL;
+        var ptime = new Date();
+        var vnick = document.getElementsByClassName("vnick vinput")[0].value;
+        var vmail = document.getElementsByClassName("vmail vinput")[0].value;
+        var vlink = document.getElementsByClassName("vlink vinput")[0].value;
+        var veditor = document.getElementsByClassName("veditor vinput")[0].value;
+        var text = "desp=";
+        var data =
+          text +
+          "|昵称：" +
+          "|邮箱：" +
+          "|网站地址：" +
+          "|当前页面：" +
+          "|评论内容：" +
+          "|跳转链接：" +
+          "|评论时间" +
+          "\n" +
+          "|----|----|----|----|" +
+          "\n" +
+          "|   " +
+          vnick +
+          "   |   " +
+          vmail +
+          "  |  " +
+          vlink +
+          "|   " +
+          res +
+          "| " +
+          veditor +
+          "| " +
+          pageurl +
+          "|" +
+          ptime.toLocaleString() +
+          "|";
+        var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
+        httpRequest.open("POST", pushLink, true); //第二步：打开连接
+        httpRequest.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+        httpRequest.send(title + "&" + data); //发送请求 将情头体写在send中
+      }
+      ValineButton.onclick = send_valine_Server;
+    } else if (pushType === "qmsg") {
+      var title = "msg=" + siteName + "上又有新评论啦~!\n";
+      function send_valine_Qmsg() {
+        //获取元素信息
+        var pagename = document.title;
+        var wz = pagename.indexOf("|");
+        var res = pagename.substring(0, wz);
+        var pageurl = document.URL;
+        var ptime = new Date();
+        var vnick = document.getElementsByClassName("vnick vinput")[0].value;
+        var vmail = document.getElementsByClassName("vmail vinput")[0].value;
+        var vlink = document.getElementsByClassName("vlink vinput")[0].value;
+        var veditor = document.getElementsByClassName("veditor vinput")[0].value;
+        var data =
+          "昵称：" +
+          vnick +
+          "\n邮箱：" +
+          vmail +
+          "\n网站地址：" +
+          vlink +
+          "\n当前页面：" +
+          pagename +
+          "\n评论内容：" +
+          veditor +
+          "\n跳转链接：" +
+          pageurl +
+          "\n评论时间" +
+          ptime.toLocaleString();
+        var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
+        httpRequest.open("POST", pushLink, true); //第二步：打开连接
+        httpRequest.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+        httpRequest.send(title + data); //发送请求 将情头体写在send中
+      }
+      ValineButton.onclick = send_valine_Qmsg;
+    }
+  </script>
+    
+        <div id="footer-post-container">
+    <div id="footer-post">
+
+        <div id="nav-footer" style="display: none">
+            <ul>
+                
+                    <li><a href="/">首页</a></li>
+                
+                    <li><a href="/archives/">归档</a></li>
+                
+                    <li><a href="/categories/">分类</a></li>
+                
+                    <li><a href="/tags/">标签</a></li>
+                
+                    <li><a href="/search/">搜索</a></li>
+                
+                    <li><a href="/about/">关于</a></li>
+                
+            </ul>
+        </div>
+
+        <div id="toc-footer" style="display: none">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Oozie安装详细步骤"><span class="toc-number">1.</span> <span class="toc-text">Oozie安装详细步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、Oozie的下载"><span class="toc-number">1.1.</span> <span class="toc-text">一、Oozie的下载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Oozie下载地址："><span class="toc-number">1.1.1.</span> <span class="toc-text">Oozie下载地址：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ExtJS下载地址："><span class="toc-number">1.1.2.</span> <span class="toc-text">ExtJS下载地址：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、Oozie的安装"><span class="toc-number">1.2.</span> <span class="toc-text">二、Oozie的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、上传压缩包"><span class="toc-number">1.2.1.</span> <span class="toc-text">1、上传压缩包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、解压Oozie"><span class="toc-number">1.2.2.</span> <span class="toc-text">2、解压Oozie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、-在Hadoop-core-site-xml中需要以下两个属性"><span class="toc-number">1.2.3.</span> <span class="toc-text">3、 在Hadoop core-site.xml中需要以下两个属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、分发-core-site-xml，然后重新启动Hadoop"><span class="toc-number">1.2.4.</span> <span class="toc-text">4、分发 core-site.xml，然后重新启动Hadoop</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、将oozie-hadooplibs-4-1-0-cdh5-14-4-tar-gz解压到Ooize的解压目录下"><span class="toc-number">1.2.5.</span> <span class="toc-text">5、将oozie-hadooplibs-4.1.0-cdh5.14.4.tar.gz解压到Ooize的解压目录下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、-在Oozie的解压目录中创建一个libext-目录"><span class="toc-number">1.2.6.</span> <span class="toc-text">6、 在Oozie的解压目录中创建一个libext/目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、-将相应的Hadoop-jar从hadooplibs-hadooplib-2-6-0-cdh5-14-4-oozie-4-1-0-cdh5-14-4复制到libext-目录中"><span class="toc-number">1.2.7.</span> <span class="toc-text">7、 将相应的Hadoop jar从hadooplibs/hadooplib-2.6.0-cdh5.14.4.oozie-4.1.0-cdh5.14.4复制到libext/目录中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、将mysql的驱动包上传到Oozie的libext下"><span class="toc-number">1.2.8.</span> <span class="toc-text">8、将mysql的驱动包上传到Oozie的libext下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、-如果使用ExtJS库，将ZIP文件复制到libext-目录"><span class="toc-number">1.2.9.</span> <span class="toc-text">9、 如果使用ExtJS库，将ZIP文件复制到libext/目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、在MySQL中创建oozie数据库"><span class="toc-number">1.2.10.</span> <span class="toc-text">10、在MySQL中创建oozie数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、更改oozie-site-xml-配置文件，将数据库换成MySQL"><span class="toc-number">1.2.11.</span> <span class="toc-text">11、更改oozie-site.xml 配置文件，将数据库换成MySQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、在oozie-site-xml-中设置Oozie的hadoop的配置目录"><span class="toc-number">1.2.12.</span> <span class="toc-text">12、在oozie-site.xml 中设置Oozie的hadoop的配置目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13、使用脚本创建Oozie在hdfs上的共享库-需要启动hdfs-yarn"><span class="toc-number">1.2.13.</span> <span class="toc-text">13、使用脚本创建Oozie在hdfs上的共享库(需要启动hdfs,yarn)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14、使用脚本初始化Oozie在数据库中的状态信息（建表）"><span class="toc-number">1.2.14.</span> <span class="toc-text">14、使用脚本初始化Oozie在数据库中的状态信息（建表）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15、使用脚本将Oozie打成war包"><span class="toc-number">1.2.15.</span> <span class="toc-text">15、使用脚本将Oozie打成war包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16、-启动Oozie"><span class="toc-number">1.2.16.</span> <span class="toc-text">16、 启动Oozie</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#16-1-以守护进程的方式启动Oozie"><span class="toc-number">1.2.16.1.</span> <span class="toc-text">16.1 以守护进程的方式启动Oozie</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-2-或者以前台进程运行的方式启动Oozie"><span class="toc-number">1.2.16.2.</span> <span class="toc-text">16.2 或者以前台进程运行的方式启动Oozie:</span></a></li></ol></li></ol></li></ol></li></ol>
+        </div>
+
+        <div id="share-footer" style="display: none">
+            <ul>
+    <li><a class="icon"
+           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lg118.github.io/2020/03/10/Oozie%E5%AE%89%E8%A3%85%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/&title=Oozie安装详细步骤"><i
+                    class="fab fa-qq fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon"
+           href="https://service.weibo.com/share/share.php?url=https://lg118.github.io/2020/03/10/Oozie%E5%AE%89%E8%A3%85%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/&title=Oozie安装详细步骤"><i
+                    class="fab fa-weibo fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2020/03/10/Oozie%E5%AE%89%E8%A3%85%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/&text=Oozie安装详细步骤" target="_blank" rel="noopener"><i
+                    class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="mailto:?subject=Oozie安装详细步骤&body=Check out this article: https://lg118.github.io/2020/03/10/Oozie%E5%AE%89%E8%A3%85%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/"><i
+                    class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+        </div>
+
+        <div id="actions-footer">
+            <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i
+                        class="fas fa-bars fa-lg"
+                        aria-hidden="true"></i> 菜单</a>
+            <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i
+                        class="fas fa-list fa-lg"
+                        aria-hidden="true"></i> 目录</a>
+            <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i
+                        class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+            <a id="top" style="display:none" class="icon" href="#"
+               onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg"
+                                                                               aria-hidden="true"></i> 返回顶部
+            </a>
+        </div>
+
+    </div>
+</div>
+    
+    <footer id="footer">
+  <div class="footer-top">
+    &copy; 2021 <i class="fas fa-heart"></i>
+    木子李 
+  </div>
+
+  <div class="footer-bottom">
+    
+    <!-- tongji -->
+    <script
+      async
+      src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+    ></script>
+	
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+    <br />
+     
+  </div>
+</footer>
+
+</div>
+<!-- styles -->
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/justifiedGallery/3.7.0/css/justifiedGallery.min.css">
+<!-- jquery -->
+<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js"></script>
+<!-- clipboard 
+
+    <script src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // copy-btn HTML
+            var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+            btn += '<i class="far fa-clone"></i>';
+            btn += '</span>';
+            // mount it!
+            $(".highlight .code pre").before(btn);
+            var clip = new ClipboardJS('.btn-copy', {
+                target: function (trigger) {
+                    return trigger.nextElementSibling;
+                }
+            });
+            clip.on('success', function (e) {
+                e.trigger.setAttribute('aria-label', "复制成功!");
+                e.clearSelection();
+            })
+        })
+    </script>
+
+-->
+<script src="/js/main.js"></script>
+<!-- search -->
+
+</body>
+
+</html>
