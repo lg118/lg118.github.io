@@ -25,7 +25,7 @@
         
     
     <!-- title -->
-    <title>Oracle安装和卸载</title>
+    <title>Ambari安装hadoop的详细介绍</title>
     <!-- styles -->
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet">
@@ -65,13 +65,13 @@
     <span id="actions">
       <ul>
           
-              <li><a class="icon" href="/2018/03/11/Shell%E5%AD%A6%E4%B9%A0-02/"><i class="fas fa-chevron-left"
+              <li><a class="icon" href="/2020/03/10/Oozie%E5%AE%89%E8%A3%85%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4/"><i class="fas fa-chevron-left"
                                                                            aria-hidden="true"
                                                                            onmouseover="$('#i-prev').toggle();"
                                                                            onmouseout="$('#i-prev').toggle();"></i></a></li>
           
           
-              <li><a class="icon" href="/2018/03/10/Linux%E5%AD%A6%E4%B9%A0-05/"><i class="fas fa-chevron-right"
+              <li><a class="icon" href="/2020/01/08/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%88%A9%E5%99%A8--Ambari+HDP/"><i class="fas fa-chevron-right"
                                                                            aria-hidden="true"
                                                                            onmouseover="$('#i-next').toggle();"
                                                                            onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -92,19 +92,19 @@
     <div id="share" style="display: none">
       <ul>
     <li><a class="icon"
-           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lg118.github.io/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/&title=Oracle安装和卸载"><i
+           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lg118.github.io/2020/01/22/Ambari%E5%AE%89%E8%A3%85hadoop%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D/&title=Ambari安装hadoop的详细介绍"><i
                     class="fab fa-qq " aria-hidden="true"></i></a></li>
     <li><a class="icon"
-           href="https://service.weibo.com/share/share.php?url=https://lg118.github.io/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/&title=Oracle安装和卸载"><i
+           href="https://service.weibo.com/share/share.php?url=https://lg118.github.io/2020/01/22/Ambari%E5%AE%89%E8%A3%85hadoop%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D/&title=Ambari安装hadoop的详细介绍"><i
                     class="fab fa-weibo " aria-hidden="true"></i></a></li>
-    <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/&text=Oracle安装和卸载" target="_blank" rel="noopener"><i
+    <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2020/01/22/Ambari%E5%AE%89%E8%A3%85hadoop%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D/&text=Ambari安装hadoop的详细介绍" target="_blank" rel="noopener"><i
                     class="fab fa-twitter " aria-hidden="true"></i></a></li>
-    <li><a class="icon" href="mailto:?subject=Oracle安装和卸载&body=Check out this article: https://lg118.github.io/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/"><i
+    <li><a class="icon" href="mailto:?subject=Ambari安装hadoop的详细介绍&body=Check out this article: https://lg118.github.io/2020/01/22/Ambari%E5%AE%89%E8%A3%85hadoop%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D/"><i
                     class="fas fa-envelope " aria-hidden="true"></i></a></li>
 </ul>
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Oracle安装和卸载"><span class="toc-number">1.</span> <span class="toc-text">Oracle安装和卸载</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Oracle版本说明"><span class="toc-number">1.1.</span> <span class="toc-text">Oracle版本说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Oracle安装"><span class="toc-number">1.2.</span> <span class="toc-text">Oracle安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Oracle卸载"><span class="toc-number">1.3.</span> <span class="toc-text">Oracle卸载</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ambari安装hadoop的详细介绍"><span class="toc-number">1.</span> <span class="toc-text">Ambari安装hadoop的详细介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-登录ambari"><span class="toc-number">1.1.</span> <span class="toc-text">1. 登录ambari</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-启动安装向导"><span class="toc-number">1.2.</span> <span class="toc-text">2. 启动安装向导</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-给集群定义一个名称"><span class="toc-number">1.3.</span> <span class="toc-text">3. 给集群定义一个名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-选择hdp的版本和本地仓库"><span class="toc-number">1.4.</span> <span class="toc-text">4. 选择hdp的版本和本地仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-安装选项"><span class="toc-number">1.5.</span> <span class="toc-text">4. 安装选项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-主机确认"><span class="toc-number">1.6.</span> <span class="toc-text">5. 主机确认</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-选在需要安装的服务"><span class="toc-number">1.7.</span> <span class="toc-text">6. 选在需要安装的服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-为安装的服务分配Master节点"><span class="toc-number">1.8.</span> <span class="toc-text">7. 为安装的服务分配Master节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-为安装的服务分配Slaves节点和client节点"><span class="toc-number">1.9.</span> <span class="toc-text">8.为安装的服务分配Slaves节点和client节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-服务定制"><span class="toc-number">1.10.</span> <span class="toc-text">9. 服务定制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-检查配置信息无误后，点击Deploy部署"><span class="toc-number">1.11.</span> <span class="toc-text">10. 检查配置信息无误后，点击Deploy部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-开始安装"><span class="toc-number">1.12.</span> <span class="toc-text">11. 开始安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-查看错误信息"><span class="toc-number">1.13.</span> <span class="toc-text">12. 查看错误信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案："><span class="toc-number">1.13.1.</span> <span class="toc-text">解决方案：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-安装完成"><span class="toc-number">1.14.</span> <span class="toc-text">13. 安装完成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-Abmari仪表盘界面"><span class="toc-number">1.15.</span> <span class="toc-text">14. Abmari仪表盘界面</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -115,7 +115,7 @@
     <header>
         
     <h1 class="posttitle" itemprop="name headline">
-        Oracle安装和卸载
+        Ambari安装hadoop的详细介绍
     </h1>
 
         <div class="meta">
@@ -128,12 +128,12 @@
             
     <div class="postdate">
         
-            <time datetime="2018-03-09T16:00:00.000Z"
-                  itemprop="datePublished">2018-03-10</time>
+            <time datetime="2020-01-21T16:00:00.000Z"
+                  itemprop="datePublished">2020-01-22</time>
             
                 (Updated:
-                <time datetime="2019-12-16T03:38:19.205Z"
-                      itemprop="dateModified">2019-12-16</time>)
+                <time datetime="2021-01-22T09:28:16.918Z"
+                      itemprop="dateModified">2021-01-22</time>)
             
         
     </div>
@@ -141,88 +141,88 @@
             
     <div class="article-category">
         <i class="fas fa-archive"></i>
-        <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+        <a class="category-link" href="/categories/Ambari-HDP/">Ambari+HDP</a>
     </div>
 
             
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/Oracle/" rel="tag">Oracle</a>
+        <a class="tag-link" href="/tags/Ambari/" rel="tag">Ambari</a>
     </div>
 
         </div>
     </header>
     
     <div class="content" itemprop="articleBody">
-        <h1 id="Oracle安装和卸载"><a href="#Oracle安装和卸载" class="headerlink" title="Oracle安装和卸载"></a>Oracle安装和卸载</h1><h2 id="Oracle版本说明"><a href="#Oracle版本说明" class="headerlink" title="Oracle版本说明"></a>Oracle版本说明</h2><p>Oracle 9i<br>Oracle 10g<br>Oracle 11g<br>Oracle 12c</p>
-<p>i：i 代表 Internet。8i 版本开启对 Internet 的支持。所以，在版本号之后，添加了标识 i。<br>g：g 代表 Grid 网格。10g 加入了网格计算的功能，因此版本号之后的标识使用了字母g。<br>c：c 代表云(cloud)计算设计。12c 版本表示对云计算的支持。</p>
-<h2 id="Oracle安装"><a href="#Oracle安装" class="headerlink" title="Oracle安装"></a>Oracle安装</h2><ol>
-<li><p>两个.zip文件下载完成后，解压两个压缩包到同一目录（默认是“database”）。</p>
+        <h1 id="Ambari安装hadoop的详细介绍"><a href="#Ambari安装hadoop的详细介绍" class="headerlink" title="Ambari安装hadoop的详细介绍"></a>Ambari安装hadoop的详细介绍</h1><h2 id="1-登录ambari"><a href="#1-登录ambari" class="headerlink" title="1. 登录ambari"></a>1. 登录ambari</h2><blockquote>
+<p>用户名和密码默认都是：amdin</p>
+</blockquote>
+<p><img src="https://i.loli.net/2021/01/22/thDQdn4S9moZywx.png" alt="1611300950379.png"></p>
+<h2 id="2-启动安装向导"><a href="#2-启动安装向导" class="headerlink" title="2. 启动安装向导"></a>2. 启动安装向导</h2><p><img src="https://i.loli.net/2021/01/22/1YhxdiHrXAstaRP.png" alt="1611300972550.png"></p>
+<h2 id="3-给集群定义一个名称"><a href="#3-给集群定义一个名称" class="headerlink" title="3. 给集群定义一个名称"></a>3. 给集群定义一个名称</h2><p><img src="https://i.loli.net/2021/01/22/mselR7IUzQ3PdY2.png" alt="1611301023661.png"></p>
+<h2 id="4-选择hdp的版本和本地仓库"><a href="#4-选择hdp的版本和本地仓库" class="headerlink" title="4. 选择hdp的版本和本地仓库"></a>4. 选择hdp的版本和本地仓库</h2><blockquote>
+<p>选择一个和hdp安装时候对应的版本</p>
+<p>选择使用自己的本地yum仓库</p>
+</blockquote>
+<p><img src="https://i.loli.net/2021/01/22/Vvj5ZucxLO6DqTI.png" alt="1611301129827.png"></p>
+<blockquote>
+<p>填写自己本地的yum仓库地址</p>
+<p>HDP-2.6-GPL 本地仓库没有，可以使用默认的远程地址</p>
+</blockquote>
+<p><img src="https://i.loli.net/2021/01/22/Xa6TYZx3qyiMUs5.png" alt="1611301283089.png"></p>
+<h2 id="4-安装选项"><a href="#4-安装选项" class="headerlink" title="4. 安装选项"></a>4. 安装选项</h2><ul>
+<li><p>填写需要安装集群的目标主机</p>
 </li>
-<li><p>双击解压目录下的setup.exe安装oracle（注意：安装文件路径不要使用特殊字符、空格、汉字等）。执行安装程序，会出现一个命令行窗口。</p>
-</li>
-<li><p>命令行窗口小时候，如果出现以下界面：</p>
-<p><img src="https://i.loli.net/2019/12/16/pRQrNP8syHDjvBS.jpg" alt="0.jpg"></p>
-<p>出现这个问题是因为配置文件中配置了对应的系统，所以需要添加自己对应的系统。<br>首先打开解压后的database文件夹，找到stage文件夹，再找到cvu文件夹，进去后打开cvu_prereq.xml文件，在该文件中的CERTIFIED_SYSTEMS标签中添加如下内容：</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">OPERATING_SYSTEM</span> <span class="attr">RELEASE</span>=<span class="string">"6.2"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">VERSION</span> <span class="attr">VALUE</span>=<span class="string">"3"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ARCHITECTURE</span> <span class="attr">VALUE</span>=<span class="string">"64-bit"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">NAME</span> <span class="attr">VALUE</span>=<span class="string">"Windows 10"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ENV_VAR_LIST</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ENV_VAR</span> <span class="attr">NAME</span>=<span class="string">"PATH"</span> <span class="attr">MAX_LENGTH</span>=<span class="string">"1023"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ENV_VAR_LIST</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">OPERATING_SYSTEM</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>修改完成后保存退出，再次点击setup.exe运行就不会出现这个错误了。</p>
-</li>
-<li><p>开始安装<br><img src="https://i.loli.net/2019/12/16/jza9GdfpF6BknMu.jpg" alt="1.jpg"></p>
-<p><img src="https://i.loli.net/2019/12/16/KOXfQHAoj5iRZsm.jpg" alt="2.jpg"></p>
-</li>
-</ol>
-<p>​        <img src="https://i.loli.net/2019/12/16/bMKkYPWxU69hHDn.jpg" alt="3.jpg"></p>
-<p><img src="https://i.loli.net/2019/12/16/i5CFNlHKczEAQRg.jpg" alt="4.jpg"></p>
-<p><img src="https://i.loli.net/2019/12/16/NKAMr5Z3ByLgVzD.jpg" alt="4-1.jpg"></p>
-<p><img src="https://i.loli.net/2019/12/16/CfMtenBqkVXU4vS.jpg" alt="4-2.jpg"></p>
-<p><img src="https://i.loli.net/2019/12/16/EFTkZA6sQaw4mqj.jpg" alt="5.jpg"></p>
-<p><img src="https://i.loli.net/2019/12/16/cvMHVqlZw9uf5rg.jpg" alt="6.jpg"></p>
-<p><img src="https://i.loli.net/2019/12/16/YBj39618g52PFGp.jpg" alt="7.jpg"></p>
-<p><img src="https://i.loli.net/2019/12/16/wqvpmD3tkcoBx6S.jpg" alt="7-1.jpg"></p>
-<p><img src="https://i.loli.net/2019/12/16/IjraQJVFX5HZuSk.jpg" alt="7-2.jpg"></p>
-<p><img src="https://i.loli.net/2019/12/16/1MQrmJ4n6Wy2D9d.jpg" alt="7-3.jpg"></p>
-<p><img src="https://i.loli.net/2019/12/16/RMyVxrPzDUNwQJE.jpg" alt="7-4.jpg"></p>
-<p><img src="https://i.loli.net/2019/12/16/NaidTWpsxj5PLol.jpg" alt="8.jpg"></p>
-<h2 id="Oracle卸载"><a href="#Oracle卸载" class="headerlink" title="Oracle卸载"></a>Oracle卸载</h2><ol>
-<li><p>停止使用 Oracle 的服务</p>
-<p>进入计算机管理，在服务中，找到 oracle 开头的所有服务，右击选择停止。</p>
-</li>
-<li><p>运行卸载 Oracle 数据库程</p>
-<p>在开始菜单中找到 Oracle 安装产品，点击运行 Oracle 自带的卸载程序 Universal Installer工具卸载。</p>
-</li>
-<li><p>删除使用 Oracle 的服务</p>
-<p>开始菜单中，找到 Universal Installer，运行 Oracle Universal Installer，单击卸载产品，在产品清单窗口中，单击全部展开，除了 OraDb11g_home1 外，勾选其他项目，单击删除，根据软件提示单击下一步最终完成卸载。</p>
-</li>
-<li><p>删除注册表中 Oracle 相关项</p>
+<li><p>ssh密钥</p>
 <ul>
-<li><p>在 命 令 窗 口 ， 输 入 regedit ， 打 开 注 册 表 ， 依 次 展 开<code>HKEY_LOCAL_MACHINE\SOFTWARE</code>，找到 oracle删除</p>
-</li>
-<li><p>依次展开 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services</code> 中，删除所有oracle 开头的项</p>
-</li>
-<li><p>依 次 展 开<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application</code>，删除<br>所有 oracle 开头的项</p>
-</li>
-<li>扩展删除（以下不是必须的注册表删除项），如果安装不成功也可以把这些删除了<ul>
-<li>在 <code>HKEY_CLASSES_ROOT</code>，删除以 Ora、Oracle、Orcl 或 EnumOra 为前缀的键</li>
-<li>删 除<br><code>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MenuOrder\StartMenu\Programs</code> 中所有以 oracle 开头的键</li>
-<li>删 除 <code>HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBCINST.INI</code> 中 除 <code>Microsoft ODBC for Oracle</code>注册表键以外的所有含有 Oracle 的键</li>
+<li>AmbariServer安装在hadoop102主机上，所以在hadoop102上生成密钥，并配置hadoop102和hadoop103的免密</li>
+<li>ssh密钥：填写hadoop102主机的密钥</li>
 </ul>
 </li>
 </ul>
-</li>
-<li><p>删除 Oracle 环境变量</p>
-<p>右键点击我的电脑—&gt;属性—&gt;高级—&gt;环境变量,删除环境变量 ORACLE_HOME、TNS_ADMIN 等环境变量，删除 PATH 中等环境变量有关 Oracle 的设定的路径信息</p>
-</li>
-<li><p>删除“开始”菜单中 Oracle 目录</p>
-<p>打开资源管理器，在地址栏中输入“%userprofile%\「开始」菜单\程序”回车，删除安装的 Oracle 目录。然后再到地址栏中输入“%allusersprofile%\「开始」菜单\程序”回车，删除安装的 Oracle 目录</p>
-</li>
-<li><p>重新启动计算机</p>
-</li>
-<li><p>删除 Program Files\Oracle 目录</p>
-<p>如果 Program Files\Oracle 目录存在，则删除 Program Files\Oracle 目录。</p>
-</li>
-<li><p>删除 Oracle 安装目录</p>
-</li>
-</ol>
+<p><img src="https://i.loli.net/2021/01/22/UXDZngf1sN7hwcm.png" alt="1611301429898.png"></p>
+<h2 id="5-主机确认"><a href="#5-主机确认" class="headerlink" title="5. 主机确认"></a>5. 主机确认</h2><p>绿色表示主机确认成功。如果有警告和错误，需要查看具体的问题。</p>
+<p>该界面下方有一个黄色的警告信息，点击进去可以看详细信息。</p>
+<p><img src="https://i.loli.net/2021/01/22/UXDZngf1sN7hwcm.png" alt="1611301429898.png"></p>
+<p>点击警告信息进来，提示在两台目标主机中存在用户hadoop了。</p>
+<blockquote>
+<p>这里说明一下：Ambari在安装集群组件过程中，会根据组件产生对应的用户名。所以安装hadoop的时候也会有hadoop用户，而我的电脑之前有一个hadoop用户了，所以产生了这个警告信息。</p>
+<p>因为我之前创建的hadoop用户对我还有用途，所以这里我不处理这个警告了。</p>
+</blockquote>
+<p><img src="https://i.loli.net/2021/01/22/9rjvzCB24hneqSf.png" alt="1611301650440.png"></p>
+<h2 id="6-选在需要安装的服务"><a href="#6-选在需要安装的服务" class="headerlink" title="6. 选在需要安装的服务"></a>6. 选在需要安装的服务</h2><blockquote>
+<p>注意：这里不要一次性安装太多的服务，做得越多问题越多，所以我们做一个解决一个的问题。但是有的服务是必须安装的。必须安装的服务你不用关心是哪些，ambari在安装过程中会提示的。</p>
+</blockquote>
+<p>这里我们先选择安装hadoop相关的服务</p>
+<p><img src="https://i.loli.net/2021/01/22/CDzTIbRHEMKZ5vA.png" alt="1611301797575.png"></p>
+<h2 id="7-为安装的服务分配Master节点"><a href="#7-为安装的服务分配Master节点" class="headerlink" title="7. 为安装的服务分配Master节点"></a>7. 为安装的服务分配Master节点</h2><p>这里根据自己主机资源的实际情况来做调整。</p>
+<p>做到不要饿的饿死，撑的撑死。</p>
+<p><img src="https://i.loli.net/2021/01/22/6HaYwMc82Oz9EkX.png" alt="1611301825821.png"></p>
+<h2 id="8-为安装的服务分配Slaves节点和client节点"><a href="#8-为安装的服务分配Slaves节点和client节点" class="headerlink" title="8.为安装的服务分配Slaves节点和client节点"></a>8.为安装的服务分配Slaves节点和client节点</h2><p>根据自己主机资源的情况调整即可。</p>
+<p><img src="https://i.loli.net/2021/01/22/N97hTXFPBLywJut.png" alt="1611301857764.png"></p>
+<h2 id="9-服务定制"><a href="#9-服务定制" class="headerlink" title="9. 服务定制"></a>9. 服务定制</h2><p>注意: 下图中出现的红色标记是Alert（警告）。必须要解决掉的。</p>
+<ul>
+<li>给可视化监控工具grafana配置密码</li>
+</ul>
+<p><img src="https://i.loli.net/2021/01/22/JzWPrp81ZADkEXd.png" alt="1611301899563.png"></p>
+<ul>
+<li>给Ambari诊断工具SmartSense配置密码</li>
+</ul>
+<p><img src="https://i.loli.net/2021/01/22/8mr4cIMNfyBCYEd.png" alt="1611301926121.png"></p>
+<h2 id="10-检查配置信息无误后，点击Deploy部署"><a href="#10-检查配置信息无误后，点击Deploy部署" class="headerlink" title="10. 检查配置信息无误后，点击Deploy部署"></a>10. 检查配置信息无误后，点击Deploy部署</h2><p><img src="https://i.loli.net/2021/01/22/DI4mY9aGuP6j1zl.png" alt="1611301957883.png"></p>
+<h2 id="11-开始安装"><a href="#11-开始安装" class="headerlink" title="11. 开始安装"></a>11. 开始安装</h2><p><img src="https://i.loli.net/2021/01/22/NgmhlWiUBV2rMaR.png" alt="1611301991641.png"></p>
+<h2 id="12-查看错误信息"><a href="#12-查看错误信息" class="headerlink" title="12. 查看错误信息"></a>12. 查看错误信息</h2><p>安装过程出现黄色警告或红色错误，可以查看问题出现的原因</p>
+<p>这里DataNode启动失败是因为jdk安装目录权限的问题</p>
+<p><img src="https://i.loli.net/2021/01/22/bgQ9e74lMJWVPHB.png" alt="1611302588223.png"></p>
+<h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><blockquote>
+<p>因为jdk是安装在/home/hadoop目录下的，所以将hadoop102,hadoop103上/home/hadoop目录的权限更改成755</p>
+</blockquote>
+<p><img src="https://i.loli.net/2021/01/22/gderH3BN4okVma1.png" alt="1611302709948.png"></p>
+<p><img src="https://i.loli.net/2021/01/22/eR4dyuWovmOMHba.png" alt="1611302754746.png"></p>
+<h2 id="13-安装完成"><a href="#13-安装完成" class="headerlink" title="13. 安装完成"></a>13. 安装完成</h2><p><img src="https://i.loli.net/2021/01/22/RxiNoS6Ke79hgQz.png" alt="1611302798735.png"></p>
+<h2 id="14-Abmari仪表盘界面"><a href="#14-Abmari仪表盘界面" class="headerlink" title="14. Abmari仪表盘界面"></a>14. Abmari仪表盘界面</h2><p>界面中出现的各种alert信息，一个一个点击查看原因，然后解决</p>
+<p><img src="https://i.loli.net/2021/01/22/Wv7G2YSKfjzdkoq.png" alt="1611302812629.png"></p>
+<p><img src="https://i.loli.net/2021/01/22/EeIcRdGYKJzshm5.png" alt="1611302886530.png"></p>
 
     </div>
 </article>
@@ -477,20 +477,20 @@
         </div>
 
         <div id="toc-footer" style="display: none">
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Oracle安装和卸载"><span class="toc-number">1.</span> <span class="toc-text">Oracle安装和卸载</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Oracle版本说明"><span class="toc-number">1.1.</span> <span class="toc-text">Oracle版本说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Oracle安装"><span class="toc-number">1.2.</span> <span class="toc-text">Oracle安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Oracle卸载"><span class="toc-number">1.3.</span> <span class="toc-text">Oracle卸载</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ambari安装hadoop的详细介绍"><span class="toc-number">1.</span> <span class="toc-text">Ambari安装hadoop的详细介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-登录ambari"><span class="toc-number">1.1.</span> <span class="toc-text">1. 登录ambari</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-启动安装向导"><span class="toc-number">1.2.</span> <span class="toc-text">2. 启动安装向导</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-给集群定义一个名称"><span class="toc-number">1.3.</span> <span class="toc-text">3. 给集群定义一个名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-选择hdp的版本和本地仓库"><span class="toc-number">1.4.</span> <span class="toc-text">4. 选择hdp的版本和本地仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-安装选项"><span class="toc-number">1.5.</span> <span class="toc-text">4. 安装选项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-主机确认"><span class="toc-number">1.6.</span> <span class="toc-text">5. 主机确认</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-选在需要安装的服务"><span class="toc-number">1.7.</span> <span class="toc-text">6. 选在需要安装的服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-为安装的服务分配Master节点"><span class="toc-number">1.8.</span> <span class="toc-text">7. 为安装的服务分配Master节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-为安装的服务分配Slaves节点和client节点"><span class="toc-number">1.9.</span> <span class="toc-text">8.为安装的服务分配Slaves节点和client节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-服务定制"><span class="toc-number">1.10.</span> <span class="toc-text">9. 服务定制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-检查配置信息无误后，点击Deploy部署"><span class="toc-number">1.11.</span> <span class="toc-text">10. 检查配置信息无误后，点击Deploy部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-开始安装"><span class="toc-number">1.12.</span> <span class="toc-text">11. 开始安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-查看错误信息"><span class="toc-number">1.13.</span> <span class="toc-text">12. 查看错误信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方案："><span class="toc-number">1.13.1.</span> <span class="toc-text">解决方案：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-安装完成"><span class="toc-number">1.14.</span> <span class="toc-text">13. 安装完成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-Abmari仪表盘界面"><span class="toc-number">1.15.</span> <span class="toc-text">14. Abmari仪表盘界面</span></a></li></ol></li></ol>
         </div>
 
         <div id="share-footer" style="display: none">
             <ul>
     <li><a class="icon"
-           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lg118.github.io/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/&title=Oracle安装和卸载"><i
+           href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lg118.github.io/2020/01/22/Ambari%E5%AE%89%E8%A3%85hadoop%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D/&title=Ambari安装hadoop的详细介绍"><i
                     class="fab fa-qq fa-lg" aria-hidden="true"></i></a></li>
     <li><a class="icon"
-           href="https://service.weibo.com/share/share.php?url=https://lg118.github.io/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/&title=Oracle安装和卸载"><i
+           href="https://service.weibo.com/share/share.php?url=https://lg118.github.io/2020/01/22/Ambari%E5%AE%89%E8%A3%85hadoop%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D/&title=Ambari安装hadoop的详细介绍"><i
                     class="fab fa-weibo fa-lg" aria-hidden="true"></i></a></li>
-    <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/&text=Oracle安装和卸载" target="_blank" rel="noopener"><i
+    <li><a class="icon" href="https://twitter.com/share?url=https://lg118.github.io/2020/01/22/Ambari%E5%AE%89%E8%A3%85hadoop%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D/&text=Ambari安装hadoop的详细介绍" target="_blank" rel="noopener"><i
                     class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-    <li><a class="icon" href="mailto:?subject=Oracle安装和卸载&body=Check out this article: https://lg118.github.io/2018/03/10/Oracle%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/"><i
+    <li><a class="icon" href="mailto:?subject=Ambari安装hadoop的详细介绍&body=Check out this article: https://lg118.github.io/2020/01/22/Ambari%E5%AE%89%E8%A3%85hadoop%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D/"><i
                     class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
 </ul>
         </div>
